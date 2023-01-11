@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import checkoutScreen from "./src/screens/checkoutScreen";
+import homeScreen from './src/screens/homeScreen'
+import onboardingScreen from "./src/screens/onboardingScreen";
+import productScreen from "./src/screens/productScreen";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator = createStackNavigator(
+  {
+    Home: homeScreen,
+    Product: productScreen,
+    Checkout: checkoutScreen,
+    Onboarding: onboardingScreen
   },
-});
+  {
+    initialRouteName: "Onboarding",
+    defaultNavigationOptions: {
+      title: "Tech ecommerce",
+    },
+  }
+)
+
+export default createAppContainer(navigator);
