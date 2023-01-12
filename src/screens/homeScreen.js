@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
@@ -35,163 +35,173 @@ export default function homeScreen({navigation}) {
 
   return (
     <View style={{ backgroundColor: '#E5E5E5'}}>
+      
+      <ScrollView>
       <View style={styles.body}>
 
-      <View style={styles.firstFlex}>
-      <View style={styles.inputBox}>
-      <Feather style={styles.search} name="search" size={24} color="#CFCFCF" />
-      <TextInput style={styles.input}
-        placeholder="Search Products"
-        placeholderTextColor={'#CFCFCF'}
-        ></TextInput>
-      </View>
-        <View style={styles.bell}>
-            <View style={styles.bulletPoint}></View>
-        <SimpleLineIcons style={styles.bellIcon} name="bell" size={20} color="#CFCFCF" />
-        </View>
-      </View>
+<View style={styles.firstFlex}>
+<View style={styles.inputBox}>
+<Feather style={styles.search} name="search" size={24} color="#CFCFCF" />
+<TextInput style={styles.input}
+  placeholder="Search Products"
+  placeholderTextColor={'#CFCFCF'}
+  ></TextInput>
+</View>
+  <View style={styles.bell}>
+      <View style={styles.bulletPoint}></View>
+  <SimpleLineIcons style={styles.bellIcon} name="bell" size={20} color="#CFCFCF" />
+  </View>
+</View>
 
-      <View>
-         <Image
-         style={{width: 358, height: 179, marginTop: 10}}
-         source={homebg}
-         >
-         </Image>
-         <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
-      </View>
+<View>
+   <Image
+   style={{width: 358, height: 179, marginTop: 10}}
+   source={homebg}
+   >
+   </Image>
+   <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
+</View>
 
-      {/* <View style={styles.gradientBox}>
-      <LinearGradient
-        style={styles.background}
-        colors={['#CE048C','#4D0A8E' ]}
-        start={{ x: 0, y: 0.5 }}
-        end={{ x: 1, y: 0.5 }}
-      >
-        <View style={styles.sectionTwo}>
-        <View style={styles.textBox}>
-            <Text style={styles.cyber}>CYBER</Text>
-            <Text style={styles.linio}>LINIO</Text>
-            
-            <Text style={styles.forty}>40% <Text style={styles.discount}>DSCNT</Text> </Text>
-            
-            <Text style={styles.technology}>in technology</Text>
-            
-            <Text style={styles.shipping}>FREE SHIPPING</Text> 
-        </View>
-        <View style={styles.gadgetBox}>
-            <Image
-            style={styles.gadget}
-            source={Gadget}
-            ></Image>
-        </View>
-        </View>
-        
-      </LinearGradient>
-      </View> */}
+{/* <View style={styles.gradientBox}>
+<LinearGradient
+  style={styles.background}
+  colors={['#CE048C','#4D0A8E' ]}
+  start={{ x: 0, y: 0.5 }}
+  end={{ x: 1, y: 0.5 }}
+>
+  <View style={styles.sectionTwo}>
+  <View style={styles.textBox}>
+      <Text style={styles.cyber}>CYBER</Text>
+      <Text style={styles.linio}>LINIO</Text>
       
+      <Text style={styles.forty}>40% <Text style={styles.discount}>DSCNT</Text> </Text>
+      
+      <Text style={styles.technology}>in technology</Text>
+      
+      <Text style={styles.shipping}>FREE SHIPPING</Text> 
+  </View>
+  <View style={styles.gadgetBox}>
+      <Image
+      style={styles.gadget}
+      source={Gadget}
+      ></Image>
+  </View>
+  </View>
+  
+</LinearGradient>
+</View> */}
 
-        <View style={styles.flat}>
-            <FlatList
-            horizontal
-            keyExtractor={DATA => DATA.title}
-            data={DATA}
-            renderItem={({ item }) => {
-                return <Text style={styles.listItem}>{item.title}</Text>
-            }}
-            ></FlatList>
-        </View>
 
-        <View>
-            <View style={styles.thirdSection}>
-                <Text style={styles.sale}>Hot Sales</Text>
-                <View style={styles.dotFlex}>
-                    <View style={styles.firstDot}></View>
-                    <View style={styles.dot}></View>
-                    <View style={styles.dot}></View>
-                    <View style={styles.dot}></View>
-                </View>
-            </View>
+  <View style={styles.flat}>
+      <FlatList
+      horizontal
+      keyExtractor={DATA => DATA.title}
+      data={DATA}
+      renderItem={({ item }) => {
+          return <Text style={styles.listItem}>{item.title}</Text>
+      }}
+      ></FlatList>
+  </View>
+  
 
-            <View style={styles.forthSection}>
-                <View style={styles.laptopBox}>
-                    <View style={styles.badge}>
-                    <Text style={styles.badgeText}>Free shipping</Text>
-                    </View>
-                    <Image
-                    style={styles.laptop}
-                    source={Laptop}
-                    ></Image>
-                    <View style={styles.titleHeader}>
-                    <Text style={styles.nameTitle}>Macbook Air M1</Text>
-                    <Text style={styles.priceTitle}>$ 29,999</Text>
-                    </View>
-                </View>
-                <View style={styles.laptopBox}>
-                <View style={styles.badge}>
-                    <Text style={styles.badgeText}>Free shipping</Text>
-                    </View>
-                    <Image
-                    style={styles.headphone}
-                    source={Headphone}
-                    ></Image>
-                    <View style={styles.titleHeader}>
-                    <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
-                    <Text style={styles.priceTitle}>$ 4,999</Text>
-                    </View>
-                </View>
-                <View style={styles.laptopBox}>
-                <View style={styles.badge}>
-                    <Text style={styles.badgeText}>Free shipping</Text>
-                    </View>
-                    <Image
-                    style={styles.airPod}
-                    source={airPod}
-                    ></Image>
-                    <View style={styles.titleHeader}>
-                    <Text style={styles.nameTitle}>FreeBuds Huawei</Text>
-                    <Text style={styles.priceTitle}>$ 1,499</Text>
-                    </View>
-                </View>
-            </View>
-        </View>
-
-        <View style={styles.fifthSection}>
-            <Text style={styles.recentViewed}>Recently viewed</Text>
-            <View style={styles.recent}>
-            <View style={styles.huawei}>
-                <View style={styles.huaweiFlex}>
-                <Image
-                style={styles.huaLap}
-                source={huaweiLaptop}
-                ></Image>
-                <View style={styles.heartBox}>
-            <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
-            </View>
-                </View>
-                <View style={styles.textMain}>
-                <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
-                <Text style={styles.textTitlePrice}>$ 20,999</Text>
-                </View>
-            </View>
-            <View style={styles.sound}>
-                <View style={styles.huaweiFlex}>
-                <Image
-                style={styles.soundBoxHua}
-                source={soundBox}
-                ></Image>
-                <View style={styles.heartBoxSound}>
-            <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
-            </View>
-                </View>
-                <View style={styles.textMain}>
-                <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
-                <Text style={styles.textTitlePrice}>$ 20,999</Text>
-                </View>
-            </View>
-            </View>
-        </View>
-    
+  
+  <View>
+      <View style={styles.thirdSection}>
+          <Text style={styles.sale}>Hot Sales</Text>
+          <View style={styles.dotFlex}>
+              <View style={styles.firstDot}></View>
+              <View style={styles.dot}></View>
+              <View style={styles.dot}></View>
+              <View style={styles.dot}></View>
+          </View>
       </View>
+
+      <View style={styles.forthSection}>
+          <View style={styles.laptopBox}>
+              <View style={styles.badge}>
+              <Text style={styles.badgeText}>Free shipping</Text>
+              </View>
+              <Image
+              style={styles.laptop}
+              source={Laptop}
+              ></Image>
+              <View style={styles.titleHeader}>
+              <Text style={styles.nameTitle}>Macbook Air M1</Text>
+              <Text style={styles.priceTitle}>$ 29,999</Text>
+              </View>
+          </View>
+          <View style={styles.laptopBox}>
+          <View style={styles.badge}>
+              <Text style={styles.badgeText}>Free shipping</Text>
+              </View>
+              <Image
+              style={styles.headphone}
+              source={Headphone}
+              ></Image>
+              <View style={styles.titleHeader}>
+              <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
+              <Text style={styles.priceTitle}>$ 4,999</Text>
+              </View>
+          </View>
+          <View style={styles.laptopBox}>
+          <View style={styles.badge}>
+              <Text style={styles.badgeText}>Free shipping</Text>
+              </View>
+              <Image
+              style={styles.airPod}
+              source={airPod}
+              ></Image>
+              <View style={styles.titleHeader}>
+              <Text style={styles.nameTitle}>FreeBuds Huawei</Text>
+              <Text style={styles.priceTitle}>$ 1,499</Text>
+              </View>
+          </View>
+      </View>
+  </View>
+
+  <View style={styles.fifthSection}>
+      <Text style={styles.recentViewed}>Recently viewed</Text>
+      <View style={styles.recent}>
+      <View style={styles.huawei}>
+          <View style={styles.huaweiFlex}>
+          <Image
+          style={styles.huaLap}
+          source={huaweiLaptop}
+          ></Image>
+          <View style={styles.heartBox}>
+      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
+      </View>
+          </View>
+          <View style={styles.textMain}>
+          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
+          <Text style={styles.textTitlePrice}>$ 20,999</Text>
+          </View>
+      </View>
+      <View style={styles.sound}>
+          <View style={styles.huaweiFlex}>
+          <Image
+          style={styles.soundBoxHua}
+          source={soundBox}
+          ></Image>
+          <View style={styles.heartBoxSound}>
+      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
+      </View>
+          </View>
+          <View style={styles.textMain}>
+          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
+          <Text style={styles.textTitlePrice}>$ 20,999</Text>
+          </View>
+      </View>
+      </View>
+  </View>
+  <View style={{width: 200, height: 400, backgroundColor: 'red'}}>
+
+</View>
+</View>
+
+
+      </ScrollView>
+      
       <View style={styles.lastSection}>
             <View style={styles.last}>
             <View style={styles.homeIcon}>
@@ -308,7 +318,9 @@ const styles = StyleSheet.create({
      valid:{
         paddingLeft: 75,
         fontSize: 10,
-        fontWeight: '400'
+        fontWeight: '400',
+        position: 'absolute',
+        marginTop: 175
      },
      listItem:{
         marginHorizontal: 10,
@@ -376,25 +388,27 @@ const styles = StyleSheet.create({
      nameTitle:{
         fontSize: 13,
         fontWeight: '700',
-        color: '#343A40'
+        color: '#343A40',
+      textAlign: 'center'
      },
      priceTitle:{
         fontSize: 18,
         fontWeight: '900',
-        color: '#343A40'
+        color: '#343A40',
+      textAlign: 'center'
      },
      titleHeader:{
         marginBottom: 10,
-        marginLeft: 16
+        marginLeft: 1
      },
      laptop:{
-        marginLeft: 12,
+        marginLeft: 30,
         marginTop: 14,
         width: 80,
         height: 60
      },
      headphone:{
-        marginLeft: 30,
+        marginLeft: 35,
         marginTop: 5,
         width: 70,
         height: 70
@@ -493,15 +507,18 @@ const styles = StyleSheet.create({
      },
      
      lastSection:{
-        height: 120,
+        width: 390,
+        height: 100,
         backgroundColor: 'white',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 20,
+        position: 'absolute',
+        marginTop: 666
      },
      last:{
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 28
+        marginTop: 30
      },
      homeIcon:{
         height: 40,
