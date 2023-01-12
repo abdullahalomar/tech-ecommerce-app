@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { FontAwesome } from '@expo/vector-icons';
 import Headphones from '../../assets/headPhonep.png'
 import First from '../../assets/first.png'
 import Second from '../../assets/second.png'
@@ -11,6 +12,18 @@ import Third from '../../assets/third.png'
 
 
 export default function productScreen({navigation}) {
+
+    const [counter, setCounter] = useState(0);
+
+    const increment = () => {
+        setCounter(counter + 1)
+    }
+    const decrement = () => {
+        if (counter > 0) {
+            setCounter(counter - 1)
+        }
+    }
+
   return (
     <View style={styles.background}>
       <View style={styles.body}>
@@ -94,7 +107,9 @@ export default function productScreen({navigation}) {
 
         <View style={styles.lastSection}>
             <View style={styles.firstF}>
-                <Text style={styles.increase}>- 1 +</Text>
+                <FontAwesome style={styles.decrease} name="minus" size={17} color="#f55b5b" onPress={decrement} />
+                <Text style={styles.iCNumber}>{counter}</Text>
+                <FontAwesome style={styles.increase} name="plus" size={17} color="#02e346" onPress={increment} />
             </View>
             <TouchableOpacity 
             style={styles.secF}
@@ -312,7 +327,10 @@ const styles = StyleSheet.create({
         borderRadius: 36,
         borderWidth: 1,
         borderColor: '#C4C4C4',
-        marginTop: 8
+        marginTop: 8,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        paddingRight: 5
     },
     secF:{
         width: 100,
@@ -333,11 +351,16 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     increase:{
-        fontSize: 20,
-        fontWeight: '500',
-        letterSpacing: 8,
+        marginTop:8
+    },
+    decrease:{
+        marginTop:8,
         marginLeft: 6,
-        marginTop:2,
+    },
+    iCNumber:{
+        fontSize: 18,
+        marginTop: 2.5,
+        paddingHorizontal: 5,
         color: '#909090'
     },
     buttonText:{
