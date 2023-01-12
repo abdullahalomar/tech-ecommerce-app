@@ -102,6 +102,12 @@ export default function productScreen({navigation}) {
             >
                 <Text style={styles.buttonText}>Buy Now</Text>
             </TouchableOpacity>
+            <TouchableOpacity 
+            style={styles.secFCart}
+            onPress={()=> navigation.navigate('Checkout')}
+            >
+                <Text style={styles.buttonText}>Add to cart</Text>
+            </TouchableOpacity>
         </View>
 
         </View>
@@ -309,9 +315,15 @@ const styles = StyleSheet.create({
         marginTop: 8
     },
     secF:{
-        width: 211,
+        width: 100,
         height: 48,
         backgroundColor: '#ef9534',
+        borderRadius: 55,
+    },
+    secFCart:{
+        width: 100,
+        height: 48,
+        backgroundColor: '#f57c5b',
         borderRadius: 55,
     },
     lastSection:{
@@ -329,11 +341,11 @@ const styles = StyleSheet.create({
         color: '#909090'
     },
     buttonText:{
-        fontSize: 18,
+        fontSize: 17,
         fontWeight: '600',
         color: 'white',
-        marginLeft: 80,
-        marginTop: 10
+        marginTop: 10,
+        textAlign: 'center'
     },
     
 })
