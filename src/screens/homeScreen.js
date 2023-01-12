@@ -36,7 +36,7 @@ export default function homeScreen({navigation}) {
   return (
     <View style={{ backgroundColor: '#E5E5E5'}}>
       
-      <ScrollView>
+    
       <View style={styles.body}>
 
 <View style={styles.firstFlex}>
@@ -95,15 +95,16 @@ export default function homeScreen({navigation}) {
   <View style={styles.flat}>
       <FlatList
       horizontal
+      showsHorizontalScrollIndicator={false}
       keyExtractor={DATA => DATA.title}
       data={DATA}
       renderItem={({ item }) => {
-          return <Text style={styles.listItem}>{item.title}</Text>
+          return (
+          <Text style={styles.listItem}>{item.title}</Text>
+          )
       }}
       ></FlatList>
   </View>
-  
-
   
   <View>
       <View style={styles.thirdSection}>
@@ -116,6 +117,7 @@ export default function homeScreen({navigation}) {
           </View>
       </View>
 
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <View style={styles.forthSection}>
           <View style={styles.laptopBox}>
               <View style={styles.badge}>
@@ -129,6 +131,7 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>Macbook Air M1</Text>
               <Text style={styles.priceTitle}>$ 29,999</Text>
               </View>
+      
           </View>
           <View style={styles.laptopBox}>
           <View style={styles.badge}>
@@ -157,6 +160,7 @@ export default function homeScreen({navigation}) {
               </View>
           </View>
       </View>
+      </ScrollView>
   </View>
 
   <View style={styles.fifthSection}>
@@ -194,13 +198,11 @@ export default function homeScreen({navigation}) {
       </View>
       </View>
   </View>
-  <View style={{width: 200, height: 400, backgroundColor: 'red'}}>
-
-</View>
+  <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View>
 </View>
 
 
-      </ScrollView>
+      
       
       <View style={styles.lastSection}>
             <View style={styles.last}>
@@ -389,7 +391,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontWeight: '700',
         color: '#343A40',
-      textAlign: 'center'
+        textAlign: 'center',
      },
      priceTitle:{
         fontSize: 18,

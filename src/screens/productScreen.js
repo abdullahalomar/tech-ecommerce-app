@@ -107,9 +107,17 @@ export default function productScreen({navigation}) {
 
         <View style={styles.lastSection}>
             <View style={styles.firstF}>
-                <FontAwesome style={styles.decrease} name="minus" size={17} color="#f55b5b" onPress={decrement} />
+                <TouchableOpacity
+                onPress={decrement}
+                >
+                <FontAwesome style={styles.decrease} name="minus" size={17} color="#f55b5b" />
+                </TouchableOpacity>
                 <Text style={styles.iCNumber}>{counter}</Text>
-                <FontAwesome style={styles.increase} name="plus" size={17} color="#02e346" onPress={increment} />
+                <TouchableOpacity
+                onPress={increment}
+                >
+                <FontAwesome style={styles.increase} name="plus" size={17} color="#02e346" />
+                </TouchableOpacity>
             </View>
             <TouchableOpacity 
             style={styles.secF}
