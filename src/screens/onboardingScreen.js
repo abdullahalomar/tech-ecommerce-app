@@ -68,7 +68,7 @@ export default function onboardingScreen({navigation}) {
         
 
         <Image
-        style={{marginTop: 60, marginLeft: 47, width: 270, height: 480}}
+        style={{marginTop: 60, marginLeft: 35, width: 310, height: 480}}
         source={scr}
         ></Image>
         <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
