@@ -15,6 +15,7 @@ import remote from '../../assets/onboard/onboardremote.png'
 import tech from '../../assets/onboard/technology.png'
 import screen from '../../assets/onboard/Screenshot.png'
 import scr from '../../assets/onboard/ScreenshotTT.png'
+import avater from '../../assets/avater.png'
 
 
 export default function onboardingScreen({navigation}) {
@@ -26,7 +27,7 @@ export default function onboardingScreen({navigation}) {
       ></Image> */}
 
 <LinearGradient
-        colors={['#CE048C', '#4D0A8E']}
+        colors={['#ebf0f5', '#5956E9']}
         style={styles.container}
         start={{ x: 1, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -39,6 +40,7 @@ export default function onboardingScreen({navigation}) {
         <View style={styles.firstMain}>
         <View>
 
+            <View style={{flexDirection: 'row'}}>
             <View style={styles.first}>
               <Image
               source={percent}
@@ -47,18 +49,22 @@ export default function onboardingScreen({navigation}) {
               source={dscnt}
               ></Image>
             </View>
-
             <Image
-            style={{marginTop: 7}}
+            // style={{position: 'absolute', marginLeft: 120, marginBottom: 20}}
+            source={flash}
+            ></Image>
+            </View>
+            <View>
+            <Image
+            // style={{marginTop: 7}}
             source={tech}
             ></Image>
             
             <Text style={styles.free}>FREE SHIPPING</Text>
+            </View>
             
             </View>
-            <Image
-            source={flash}
-            ></Image>
+            
         </View>
         <Image
         style={{marginLeft: 50, paddingBottom: 30}}
@@ -67,10 +73,37 @@ export default function onboardingScreen({navigation}) {
 
         
 
-        <Image
+        {/* <Image
         style={{marginTop: 60, marginLeft: 35, width: 310, height: 480}}
         source={scr}
-        ></Image>
+        ></Image> */}
+        <View style={{marginTop: 80}}>
+        <Image 
+        style={{position: 'absolute', marginLeft: 190}}
+        source={airpod}
+        >
+        </Image>
+        <Image 
+        style={{position: 'absolute', marginLeft: 10}}
+        source={gamming}
+        >
+        </Image>
+        <Image 
+        style={{position: 'absolute', marginLeft: 240}}
+        source={headphone}
+        >
+        </Image>
+         <Image
+         style={{width: 100, height: 90, marginTop: 120, marginLeft: 100, position: 'absolute'}}
+         source={laptop}
+         >
+         </Image>
+        </View>
+        <Image
+        style={{width: 320, height: 390, marginLeft: 25, marginTop: 80}}
+        source={avater}
+        >
+        </Image>
         <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
         <TouchableOpacity 
         style={styles.button}
