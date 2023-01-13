@@ -16,7 +16,7 @@ const navigator = createStackNavigator(
     Login: loginScreen,
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "Product",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

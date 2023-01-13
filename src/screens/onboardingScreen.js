@@ -122,18 +122,18 @@ export default function onboardingScreen({navigation}) {
         style={styles.button}
         onPress={()=> navigation.navigate('Login')}
         >
-          <Text style={styles.btnText}>LOG IN</Text>
+          <Text style={styles.btnText}>Get started</Text>
         </TouchableOpacity>
-        <View style={styles.mainDot}>
+        {/* <View style={styles.mainDot}>
         <View style={styles.dot}></View>
         <View style={styles.dot}></View>
         <View style={styles.line}></View>
-        </View>
-        <TouchableOpacity
+        </View> */}
+        {/* <TouchableOpacity
         onPress={()=> navigation.navigate('Login')}
         >
         <Text style={styles.skip}>SKIP</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         </View>
       </LinearGradient>
     </View>
@@ -173,19 +173,19 @@ const styles = StyleSheet.create({
    },
    button:{
       width: 292,
-      height: 48,
+      height: 54,
       backgroundColor: 'white',
       marginLeft: 49,
       marginTop: 27,
       borderRadius: 65
    },
    btnText:{
-      marginLeft: 124,
-      marginTop: 13,
+      textAlign: 'center',
+      marginTop: 12,
       marginBottom: 17,
-      fontSize: 16,
-      fontWeight: '800',
-      color: '#FF5500'
+      fontSize: 20,
+      fontWeight: '900',
+      color: '#5351db'
    },
    mainDot:{
       flexDirection: 'row',
@@ -211,6 +211,6 @@ const styles = StyleSheet.create({
       fontWeight: '700',
       color: 'white',
       marginLeft: 337,
-      
+      marginTop: 30
    }
 })

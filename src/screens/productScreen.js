@@ -108,12 +108,14 @@ export default function productScreen({navigation}) {
         <View style={styles.lastSection}>
             <View style={styles.firstF}>
                 <TouchableOpacity
+                style={styles.decreaseBtn}
                 onPress={decrement}
                 >
                 <FontAwesome style={styles.decrease} name="minus" size={17} color="#f55b5b" />
                 </TouchableOpacity>
                 <Text style={styles.iCNumber}>{counter}</Text>
                 <TouchableOpacity
+                style={styles.increaseBtn}
                 onPress={increment}
                 >
                 <FontAwesome style={styles.increase} name="plus" size={17} color="#02e346" />
@@ -129,7 +131,7 @@ export default function productScreen({navigation}) {
             style={styles.secFCart}
             onPress={()=> navigation.navigate('Checkout')}
             >
-                <Text style={styles.buttonText}>Add to cart</Text>
+                <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>
         </View>
 
@@ -378,5 +380,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
         textAlign: 'center'
     },
-    
+    increaseBtn:{
+       
+    },
+    increaseBtn:{
+      
+    },
 })
