@@ -147,7 +147,6 @@ const styles = StyleSheet.create({
    container:{
       width: 394,
       height: 766,
-      
    },
    first:{
       flexDirection: 'row',
