@@ -74,40 +74,53 @@ export default function onboardingScreen({navigation}) {
         
 
         {/* <Image
-        style={{marginTop: 60, marginLeft: 35, width: 310, height: 480}}
-        source={scr}
+        style={{marginTop: 10, marginLeft: 35, width: 68, height: 25}}
+        source={percent}
         ></Image> */}
-        <View style={{marginTop: 80}}>
-        <Image 
-        style={{position: 'absolute', marginLeft: 190}}
-        source={airpod}
-        >
-        </Image>
-        <Image 
-        style={{position: 'absolute', marginLeft: 10}}
+        <View style={{marginTop: 60, marginLeft: 10}}>
+         <Image
+         style={{width: 190, height: 110, marginTop: 10, marginLeft: 30, position: 'absolute'}}
+         source={laptop}
+         >
+         </Image>
+         <Image 
+        style={{position: 'absolute', marginLeft: 120, marginTop: 49, width: 150, height: 120}}
         source={gamming}
         >
         </Image>
         <Image 
-        style={{position: 'absolute', marginLeft: 240}}
+        style={{position: 'absolute', marginLeft: 235, width: 110, height: 100,}}
         source={headphone}
         >
         </Image>
-         <Image
-         style={{width: 100, height: 90, marginTop: 120, marginLeft: 100, position: 'absolute'}}
-         source={laptop}
+        <Image
+         style={{width: 130, height: 50, marginTop: 150, marginLeft: 35, position: 'absolute'}}
+         source={sound}
+         >
+         </Image>
+         <Image 
+        style={{position: 'absolute', marginLeft: 105, marginTop: 180, width: 70, height: 46}}
+        source={airpod}
+        >
+        </Image>
+        <Image
+         style={{width: 90, height: 60, marginTop: 168, marginLeft: 180, position: 'absolute'}}
+         source={remote}
          >
          </Image>
         </View>
+        
+        <View style={{marginTop: 120}}>
         <Image
-        style={{width: 320, height: 390, marginLeft: 25, marginTop: 80}}
+        style={{width: 320, height: 390, marginLeft: 25}}
         source={avater}
         >
         </Image>
+
         <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
         <TouchableOpacity 
         style={styles.button}
-        onPress={()=> navigation.navigate('Home')}
+        onPress={()=> navigation.navigate('Login')}
         >
           <Text style={styles.btnText}>LOG IN</Text>
         </TouchableOpacity>
@@ -117,10 +130,11 @@ export default function onboardingScreen({navigation}) {
         <View style={styles.line}></View>
         </View>
         <TouchableOpacity
-        onPress={()=> navigation.navigate('Home')}
+        onPress={()=> navigation.navigate('Login')}
         >
         <Text style={styles.skip}>SKIP</Text>
         </TouchableOpacity>
+        </View>
       </LinearGradient>
     </View>
   )
@@ -177,7 +191,8 @@ const styles = StyleSheet.create({
    mainDot:{
       flexDirection: 'row',
       marginLeft: 171,
-      marginVertical: 27,
+      marginTop: 25,
+      marginBottom: 10
    },
    dot:{
       width: 6,
