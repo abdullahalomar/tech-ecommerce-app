@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 import google from '../../assets/icons/google.png'
 import facebook from '../../assets/icons/facebook.png'
 
-export default function loginScreen() {
+export default function loginScreen({navigation}) {
 
     const [email, onChangeEmail] = React.useState('')
     const [password, onChangePassword] = React.useState('')
@@ -69,6 +69,7 @@ export default function loginScreen() {
         </TouchableOpacity>
         <TouchableOpacity
         style={styles.loginButton}
+        onPress={()=> navigation.navigate('Home')}
         >
             <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>

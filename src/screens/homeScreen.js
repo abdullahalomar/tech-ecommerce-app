@@ -198,7 +198,7 @@ export default function homeScreen({navigation}) {
       </View>
       </View>
   </View>
-  <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View>
+  {/* <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View> */}
 </View>
 
 
@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
      huawei:{
         backgroundColor: '#f0bbeb',
         width: 169,
-        height: 140,
+        height: 155,
         marginRight: 10,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -445,7 +445,7 @@ const styles = StyleSheet.create({
      sound:{
         backgroundColor: '#c1abc9',
         width: 169,
-        height: 140,
+        height: 155,
         marginLeft: 10,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
