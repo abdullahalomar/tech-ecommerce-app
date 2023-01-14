@@ -36,10 +36,11 @@ export default function homeScreen({navigation}) {
   return (
     <View style={styles.bg}>
       
-    
+      
+      <ScrollView>
       <View style={styles.body}>
 
-<View style={styles.firstFlex}>
+      <View style={styles.firstFlex}>
 <View style={styles.inputBox}>
 <Feather style={styles.search} name="search" size={24} color="#CFCFCF" />
 <TextInput style={styles.input}
@@ -55,7 +56,7 @@ export default function homeScreen({navigation}) {
 
 <View>
    <Image
-   style={{width: 358, height: 179, marginTop: 10}}
+   style={{width: 360, height: 179, marginTop: 10}}
    source={homebg}
    >
    </Image>
@@ -119,7 +120,12 @@ export default function homeScreen({navigation}) {
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <View style={styles.forthSection}>
-          <View style={styles.laptopBox}>
+          <LinearGradient 
+          style={styles.laptopBox}
+          colors={[ '#c1dae8', '#7db3d1', ]}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 0, y: 0 }}
+          >
               <View style={styles.badge}>
               <Text style={styles.badgeText}>Free shipping</Text>
               </View>
@@ -132,8 +138,13 @@ export default function homeScreen({navigation}) {
               <Text style={styles.priceTitle}>$ 29,999</Text>
               </View>
       
-          </View>
-          <View style={styles.laptopBox}>
+          </LinearGradient>
+          <LinearGradient 
+          style={styles.laptopBox}
+          colors={[ '#BCDCEC', '#8aa6eb', ]}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 0, y: 0 }}
+          >
           <View style={styles.badge}>
               <Text style={styles.badgeText}>Free shipping</Text>
               </View>
@@ -145,8 +156,13 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
               <Text style={styles.priceTitle}>$ 4,999</Text>
               </View>
-          </View>
-          <View style={styles.laptopBox}>
+          </LinearGradient>
+          <LinearGradient 
+          style={styles.laptopBox}
+          colors={['#cbb9ed', '#a083d6' ]}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 0, y: 0 }}
+          >
           <View style={styles.badge}>
               <Text style={styles.badgeText}>Free shipping</Text>
               </View>
@@ -158,15 +174,23 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>FreeBuds Huawei</Text>
               <Text style={styles.priceTitle}>$ 1,499</Text>
               </View>
-          </View>
+          </LinearGradient>
       </View>
       </ScrollView>
   </View>
-
-  <View style={styles.fifthSection}>
-      <Text style={styles.recentViewed}>Recently viewed</Text>
+  <Text style={styles.recentViewed}>Recently viewed</Text>
+  <ScrollView 
+  horizontal 
+  showsHorizontalScrollIndicator={false}
+  style={styles.fifthSection}>
+      
       <View style={styles.recent}>
-      <View style={styles.huawei}>
+      <LinearGradient
+       style={styles.huawei}
+       colors={['#f0bbeb', '#94AEE0' ]}
+       start={{ x: 1, y: 0.5 }}
+       end={{ x: 0, y: 0.5 }}
+       >
           <View style={styles.huaweiFlex}>
           <Image
           style={styles.huaLap}
@@ -180,8 +204,13 @@ export default function homeScreen({navigation}) {
           <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
           <Text style={styles.textTitlePrice}>$ 20,999</Text>
           </View>
-      </View>
-      <View style={styles.sound}>
+      </LinearGradient>
+      <LinearGradient
+      style={styles.sound}
+      colors={['#c1abc9', '#9CC9E2' ]}
+      start={{ x: 1, y: 0.5 }}
+      end={{ x: 0, y: 0.5 }}
+      >
           <View style={styles.huaweiFlex}>
           <Image
           style={styles.soundBoxHua}
@@ -195,18 +224,39 @@ export default function homeScreen({navigation}) {
           <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
           <Text style={styles.textTitlePrice}>$ 20,999</Text>
           </View>
+      </LinearGradient>
+      <LinearGradient
+      style={styles.sound}
+      colors={['#c1abc9', '#9CC9E2' ]}
+      start={{ x: 1, y: 0.5 }}
+      end={{ x: 0, y: 0.5 }}
+      >
+          <View style={styles.huaweiFlex}>
+          <Image
+          style={styles.soundBoxHua}
+          source={soundBox}
+          ></Image>
+          <View style={styles.heartBoxSound}>
+      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
       </View>
+          </View>
+          <View style={styles.textMain}>
+          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
+          <Text style={styles.textTitlePrice}>$ 20,999</Text>
+          </View>
+      </LinearGradient>
       </View>
-  </View>
+  </ScrollView>
   {/* <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View> */}
 </View>
+      </ScrollView>
 
 
       
       
       <LinearGradient
        style={styles.lastSection}
-       colors={['#ffffff', '#d5d8e3' ]}
+       colors={['#ffffff', '#9CBCE4' ]}
         start={{ x: 1, y: 0 }}
         end={{ x: 1, y: 1 }}
        >
@@ -249,7 +299,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#E5E5E5'
    },
     body:{
-        marginHorizontal: 15,
+        marginHorizontal: 17,
         marginTop: 10
      },
      search:{
@@ -266,6 +316,7 @@ const styles = StyleSheet.create({
      },
      firstFlex:{
          flexDirection: 'row',
+         
      },
      bell:{
          marginLeft: 10,
@@ -457,9 +508,9 @@ const styles = StyleSheet.create({
         width: 169,
         height: 155,
         marginRight: 10,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
-        
+      //   borderTopLeftRadius: 10,
+      //   borderTopRightRadius: 10,
+        borderRadius: 10
      },
      huaweiFlex:{
         flexDirection: 'row',
@@ -470,8 +521,10 @@ const styles = StyleSheet.create({
         width: 169,
         height: 155,
         marginLeft: 10,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+      //   borderTopLeftRadius: 10,
+      //   borderTopRightRadius: 10,
+      borderRadius: 10,
+      marginRight: 7
      },
      huaLap:{
         marginLeft: 30,
@@ -525,10 +578,10 @@ const styles = StyleSheet.create({
       fontSize:18,
       fontWeight: '800',
       color: '#343A40',
-      marginBottom: 5
+      marginTop: 10
      },
      fifthSection:{
-        marginTop: 10
+        marginTop: 9
      },
      
      lastSection:{

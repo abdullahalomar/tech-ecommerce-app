@@ -82,7 +82,12 @@ export default function productScreen({navigation}) {
         </View>
         </View>
 
-        <View style={styles.fifthSection}>
+        <LinearGradient 
+        style={styles.fifthSection}
+        colors={[ '#C4ECFC', '#FFFFFF', ]}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 0, y: 0 }}
+        >
            <View style={styles.fifth}>
             <Text style={styles.free}>FREE SHIPPING</Text>
             <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>4.8</Text> (231)</Text>
@@ -135,7 +140,7 @@ export default function productScreen({navigation}) {
             </TouchableOpacity>
         </View>
 
-        </View>
+        </LinearGradient>
       </View>
     </View>
   )
@@ -203,7 +208,7 @@ const styles = StyleSheet.create({
     dotLineTwo:{
         width: 30,
         height: 8,
-        backgroundColor: '#FF5500',
+        backgroundColor: '#729bd6',
         borderRadius: 10,
         marginRight: 10,
         marginLeft: 10
@@ -345,13 +350,13 @@ const styles = StyleSheet.create({
     secF:{
         width: 100,
         height: 48,
-        backgroundColor: '#ef9534',
+        backgroundColor: '#87a0de',
         borderRadius: 55,
     },
     secFCart:{
         width: 100,
         height: 48,
-        backgroundColor: '#f57c5b',
+        backgroundColor: '#70d491',
         borderRadius: 55,
     },
     lastSection:{
