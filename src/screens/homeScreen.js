@@ -10,10 +10,10 @@ import airPod from '../../assets/airpod.png'
 import huaweiLaptop from '../../assets/huaweiLaptop.png'
 import soundBox from '../../assets/soundBox.png'
 import { Entypo } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
+import { FontAwesome } from '@expo/vector-icons';
 
 
 export default function homeScreen({navigation}) {
@@ -34,7 +34,7 @@ export default function homeScreen({navigation}) {
       ];
 
   return (
-    <View style={{ backgroundColor: '#E5E5E5'}}>
+    <View style={styles.bg}>
       
     
       <View style={styles.body}>
@@ -204,28 +204,50 @@ export default function homeScreen({navigation}) {
 
       
       
-      <View style={styles.lastSection}>
+      <LinearGradient
+       style={styles.lastSection}
+       colors={['#ffffff', '#d5d8e3' ]}
+        start={{ x: 1, y: 0 }}
+        end={{ x: 1, y: 1 }}
+       >
             <View style={styles.last}>
-            <View style={styles.homeIcon}>
-            <Octicons style={styles.homeIc}  name="home" size={22} color="#FF5500" />
-            <Text style={styles.home}>Home</Text>
-            </View>
+            <TouchableOpacity style={{marginTop: 7,}}>
+            <Entypo name="shop" size={24} color="#8B8B8B" />
+            </TouchableOpacity>
+
             <TouchableOpacity
             onPress={()=> navigation.navigate('Product')}
             >
-            <MaterialCommunityIcons style={{marginTop: 5}} name="shopping-outline" size={28} color="#CFCFCF" />
+            <MaterialCommunityIcons style={{marginTop: 5}} name="shopping-outline" size={28} color="#8B8B8B" />
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+            style={styles.homeIcon}
+            onPress={()=> navigation.navigate('Home')}
+            >
+            <Text style={styles.home}><Octicons style={{}} name="home" size={35} color="#5351db" /></Text>
             </TouchableOpacity>
             
-            <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#CFCFCF" />
+            
+            <TouchableOpacity>
+            <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#8B8B8B" />
+            </TouchableOpacity>
 
-            <MaterialCommunityIcons style={{marginTop: 3}} name="account-outline" size={30} color="#CFCFCF" />
+            <TouchableOpacity>
+            <MaterialCommunityIcons style={{marginTop: 3}} name="account-outline" size={30} color="#8B8B8B" />
+            </TouchableOpacity>
             </View>
-        </View>
+        </LinearGradient>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+   bg:{
+      width: 408,
+      height: 766,
+      backgroundColor: '#E5E5E5'
+   },
     body:{
         marginHorizontal: 15,
         marginTop: 10
@@ -352,7 +374,7 @@ const styles = StyleSheet.create({
      firstDot:{
         width:20,
         height: 5,
-        backgroundColor: '#FF5500',
+        backgroundColor: '#5351db',
         borderRadius: 10
      },
      dot:{
@@ -364,7 +386,8 @@ const styles = StyleSheet.create({
      },
      dotFlex:{
         flexDirection: 'row',
-        marginTop: 10
+        marginTop: 10,
+        marginRight: 25
      },
      laptopBox:{
         width: 140,
@@ -512,8 +535,8 @@ const styles = StyleSheet.create({
         width: 390,
         height: 100,
         backgroundColor: 'white',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 20,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
         position: 'absolute',
         marginTop: 666
      },
@@ -523,23 +546,19 @@ const styles = StyleSheet.create({
         marginTop: 30
      },
      homeIcon:{
-        height: 40,
-        width: 110,
-        backgroundColor: 'rgba(255, 85, 0, 0.1)',
         flexDirection: 'row',
-        borderRadius: 20,
      },
      home:{
-        fontSize: 15,
-        fontWeight: 'bold',
-        marginLeft: 8,
-        marginTop: 9,
-        color: '#FF5500'
+      //   fontSize: 15,
+      //   fontWeight: 'bold',
+      //   marginLeft: 8,
+      //   marginTop: 9,
+      //   color: '#FF5500'
      },
-     homeIc:{
-        marginLeft: 24,
-        marginTop: 8,
-        width: 21.38,
-        height: 22.5
-     }
+   //   homeIc:{
+   //      marginLeft: 24,
+   //      marginTop: 8,
+   //      width: 21.38,
+   //      height: 22.5
+   //   }
 })
