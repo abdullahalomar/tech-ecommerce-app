@@ -134,7 +134,7 @@ export default function productScreen({navigation}) {
             </TouchableOpacity>
             <TouchableOpacity 
             style={styles.secFCart}
-            onPress={()=> navigation.navigate('Checkout')}
+            onPress={()=> navigation.navigate('Cart')}
             >
                 <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>
@@ -350,7 +350,7 @@ const styles = StyleSheet.create({
     secF:{
         width: 100,
         height: 48,
-        backgroundColor: '#87a0de',
+        backgroundColor: '#6d6bed',
         borderRadius: 55,
     },
     secFCart:{

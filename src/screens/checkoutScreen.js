@@ -112,7 +112,12 @@ export default function checkoutScreen({navigation}) {
             </View>
         </View>
 
-        <View style={styles.lastSection}>
+        <LinearGradient 
+        style={styles.lastSection}
+        colors={[ '#C4ECFC', '#FFFFFF', ]}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 0, y: 0 }}
+        >
             
             <View style={{marginTop:15}}>
             <View style={styles.lstFlx}>
@@ -134,7 +139,7 @@ export default function checkoutScreen({navigation}) {
            >
                 <Text style={styles.btnTExt}>Finalize Purchase</Text>
            </TouchableOpacity>
-        </View>
+        </LinearGradient>
 
     </View>
   )
@@ -225,13 +230,13 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         color: '#3F4343',
         marginLeft: 50,
-        marginTop: 5
+        marginTop: 4.5
     },
     pickText:{
         fontWeight: '400',
         color: 'white',
         marginLeft: 50,
-        marginTop: 5
+        marginTop: 7
     },
     forthSection:{
         marginHorizontal: 16,
@@ -361,7 +366,7 @@ const styles = StyleSheet.create({
     button:{
         width: 321,
         height: 48,
-        backgroundColor: '#ef9534',
+        backgroundColor: '#6d6bed',
         borderRadius: 80,
         marginLeft: 33,
     },
