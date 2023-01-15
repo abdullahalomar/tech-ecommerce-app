@@ -6,6 +6,7 @@ import homeScreen from './src/screens/homeScreen'
 import loginScreen from "./src/screens/loginScreen";
 import onboardingScreen from "./src/screens/onboardingScreen";
 import productScreen from "./src/screens/productScreen";
+import profileScreen from "./src/screens/profileScreen";
 
 
 const navigator = createStackNavigator(
@@ -16,9 +17,10 @@ const navigator = createStackNavigator(
     Onboarding: onboardingScreen,
     Login: loginScreen,
     Cart: cartScreen,
+    Profile: profileScreen,
   },
   {
-    initialRouteName: "Onboarding",
+    initialRouteName: "Profile",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },
