@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import laptop from '../../assets/laptop.png'
 import head from '../../assets/soundBox.png'
 import pod from '../../assets/onboardairpod.png'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function cartScreen({navigation}) {
 
@@ -20,8 +21,14 @@ export default function cartScreen({navigation}) {
     } 
 
   return (
-    <View style={{backgroundColor: '#F5F5F8'}}>
-      <View style={styles.main}>
+    <View style={styles.background}>
+     
+     <ScrollView>
+        <View style={styles.body}>
+        
+
+        
+        <View style={styles.main}>
       <View style={styles.first}>
       <MaterialCommunityIcons name="bell-ring-outline" size={24} color="#3d3d3d" />
       <Text style={styles.firstText}>
@@ -30,7 +37,10 @@ export default function cartScreen({navigation}) {
       </View>
       </View>
 
-      <View style={styles.secondMain}>
+      {/* cart   */}
+      
+  <View style={{}}>
+  <View style={styles.secondMain}>
       <View style={styles.secSec}>
         <View style={{marginRight: 10}}>
             <Image
@@ -120,11 +130,47 @@ export default function cartScreen({navigation}) {
         </View>
       </View>
       </View>
+      
+  </View>
+    
+      {/* cart */}
+    
+      
+        </View>
+        </ScrollView>
 
-      <View style={{marginHorizontal: 40, marginTop: 610, position: 'absolute'}}>
-      <View style={{flexDirection: 'row'}}>
-        <Text style={{marginRight: 230, fontSize: 20, fontWeight: 'bold'}}>Total</Text>
+        <View style={{marginHorizontal: 40, marginTop: 490, position: 'absolute'}}>
+        <View style={styles.inputPromoMain}>
+            <View style={styles.inputPromo}>
+            <TextInput
+            style={{ fontSize: 18}}
+            placeholder="Promo Code"
+            placeholderTextColor={'#6d6d6e'}
+            >
+            </TextInput>
+            <TouchableOpacity>
+            <LinearGradient 
+            style={styles.promo}
+            colors={['#cbb9ed', '#6d6bed' ]}
+            start={{ x: 0, y: 1 }}
+            end={{ x: 1, y: 0 }}
+            >
+                <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', marginLeft: 17, marginTop: 5}}>USE</Text>
+            </LinearGradient>
+            </TouchableOpacity>
+            </View>
+        </View>
+      <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Total items(3)</Text>
         <Text style={{fontSize: 17,}}>$ 4000</Text>
+      </View>
+      <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
+        <Text style={{fontSize: 17, fontWeight: 'bold'}}>Delivery</Text>
+        <Text style={{fontSize: 17,}}>$ 8000</Text>
+      </View>
+      <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 8}}>
+        <Text style={{fontSize: 17, fontWeight: 'bold'}}>Total</Text>
+        <Text style={{fontSize: 17,}}>$ 12000</Text>
       </View>
       <TouchableOpacity 
       style={styles.button}
@@ -133,17 +179,23 @@ export default function cartScreen({navigation}) {
             <Text style={styles.buttonText}>Checkout</Text>
       </TouchableOpacity>
       </View>
-
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+    background:{
+        width: 408,
+        height: 766,
+        backgroundColor: '#F5F5F8'
+    },
+    body:{
+        marginTop: 25
+    },
     main:{
         width:280,
         height: 45,
         backgroundColor: '#baebff',
-        marginTop: 40,
         borderRadius: 10,
         marginLeft: 55
     },
@@ -165,7 +217,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 15,
         marginLeft: 35,
-        marginTop: 20
+        marginTop: 20,
+        borderWidth: 1,
+        borderColor: '#c4c4c4'
     },
     secSec:{
         flexDirection: 'row',
@@ -211,5 +265,23 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white'
+    },
+    inputPromoMain:{
+        width: 307,
+        height:50,
+        borderRadius: 15,
+        marginBottom: 15,
+        backgroundColor: 'white'
+    },
+    inputPromo:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 5,
+        marginTop: 4
+    },
+    promo:{
+        width: 65,
+        height: 40,
+        borderRadius: 15,
     }
 })
