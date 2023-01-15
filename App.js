@@ -18,7 +18,7 @@ const navigator = createStackNavigator(
     Cart: cartScreen,
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Cart",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

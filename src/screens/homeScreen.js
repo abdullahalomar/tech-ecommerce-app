@@ -257,8 +257,8 @@ export default function homeScreen({navigation}) {
       <LinearGradient
        style={styles.lastSection}
        colors={['#ffffff', '#9CBCE4' ]}
-        start={{ x: 1, y: 0 }}
-        end={{ x: 1, y: 1 }}
+       start={{ x: 1, y: 0 }}
+       end={{ x: 1, y: 1 }}
        >
             <View style={styles.last}>
             <TouchableOpacity style={{marginTop: 7,}}>

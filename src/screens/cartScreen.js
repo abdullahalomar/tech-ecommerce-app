@@ -22,13 +22,7 @@ export default function cartScreen({navigation}) {
 
   return (
     <View style={styles.background}>
-     
-     <ScrollView>
-        <View style={styles.body}>
-        
-
-        
-        <View style={styles.main}>
+     <View style={styles.main}>
       <View style={styles.first}>
       <MaterialCommunityIcons name="bell-ring-outline" size={24} color="#3d3d3d" />
       <Text style={styles.firstText}>
@@ -36,10 +30,13 @@ export default function cartScreen({navigation}) {
          </Text>
       </View>
       </View>
+     <ScrollView>
+        <View style={styles.body}>
+    
+        
 
       {/* cart   */}
       
-  <View style={{}}>
   <View style={styles.secondMain}>
       <View style={styles.secSec}>
         <View style={{marginRight: 10}}>
@@ -130,8 +127,90 @@ export default function cartScreen({navigation}) {
         </View>
       </View>
       </View>
-      
-  </View>
+      <View style={styles.secondMain}>
+      <View style={styles.secSec}>
+        <View style={{marginRight: 10}}>
+            <Image
+            style={{width: 113, height: 80}}
+            source={pod}
+            ></Image>
+        </View>
+        <View>
+            <Text style={styles.mack}>FreeBuds Huawei</Text>
+            <Text style={styles.price}>$ 1,499</Text>
+
+            <View style={{flexDirection: 'row'}}>
+            <Text style={styles.quantity}>Quantity</Text>
+            <View style={styles.btnIcon}>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
+            </TouchableOpacity>
+            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
+            </TouchableOpacity>
+            </View>
+            </View>
+            
+        </View>
+      </View>
+      </View>
+      <View style={styles.secondMain}>
+      <View style={styles.secSec}>
+        <View style={{marginRight: 10}}>
+            <Image
+            style={{width: 113, height: 80}}
+            source={pod}
+            ></Image>
+        </View>
+        <View>
+            <Text style={styles.mack}>FreeBuds Huawei</Text>
+            <Text style={styles.price}>$ 1,499</Text>
+
+            <View style={{flexDirection: 'row'}}>
+            <Text style={styles.quantity}>Quantity</Text>
+            <View style={styles.btnIcon}>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
+            </TouchableOpacity>
+            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
+            </TouchableOpacity>
+            </View>
+            </View>
+            
+        </View>
+      </View>
+      </View>
+      <View style={styles.secondMain}>
+      <View style={styles.secSec}>
+        <View style={{marginRight: 10}}>
+            <Image
+            style={{width: 113, height: 80}}
+            source={pod}
+            ></Image>
+        </View>
+        <View>
+            <Text style={styles.mack}>FreeBuds Huawei</Text>
+            <Text style={styles.price}>$ 1,499</Text>
+
+            <View style={{flexDirection: 'row'}}>
+            <Text style={styles.quantity}>Quantity</Text>
+            <View style={styles.btnIcon}>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
+            </TouchableOpacity>
+            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
+            <TouchableOpacity style={styles.iconBox}>
+            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
+            </TouchableOpacity>
+            </View>
+            </View>
+            
+        </View>
+      </View>
+      </View>
     
       {/* cart */}
     
@@ -139,7 +218,8 @@ export default function cartScreen({navigation}) {
         </View>
         </ScrollView>
 
-        <View style={{marginHorizontal: 40, marginTop: 490, position: 'absolute'}}>
+        
+        <View style={{marginTop: 490, position: 'absolute', marginHorizontal: 22,}}>
         <View style={styles.inputPromoMain}>
             <View style={styles.inputPromo}>
             <TextInput
@@ -160,6 +240,18 @@ export default function cartScreen({navigation}) {
             </TouchableOpacity>
             </View>
         </View>
+      <LinearGradient 
+      style={{
+      paddingVertical: 15,
+      paddingHorizontal: 20, 
+      borderRadius: 20,
+      borderWidth: 0.5,
+      borderColor: '#c2c2c2'
+      }}
+      colors={['#cacdeb', '#9CBCE4' ]}
+      start={{ x: 1, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      >
       <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>Total items(3)</Text>
         <Text style={{fontSize: 17,}}>$ 4000</Text>
@@ -178,7 +270,9 @@ export default function cartScreen({navigation}) {
       >
             <Text style={styles.buttonText}>Checkout</Text>
       </TouchableOpacity>
+      </LinearGradient>
       </View>
+        
     </View>
   )
 }
@@ -186,18 +280,20 @@ export default function cartScreen({navigation}) {
 const styles = StyleSheet.create({
     background:{
         width: 408,
-        height: 766,
+        height: 490,
         backgroundColor: '#F5F5F8'
     },
     body:{
-        marginTop: 25
+        marginTop: 25,
+        
     },
     main:{
         width:280,
         height: 45,
         backgroundColor: '#baebff',
         borderRadius: 10,
-        marginLeft: 55
+        marginLeft: 55,
+        marginTop: 20
     },
     first:{
         marginLeft: 12,
@@ -267,11 +363,13 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     inputPromoMain:{
-        width: 307,
+        width: 348,
         height:50,
         borderRadius: 15,
         marginBottom: 15,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        borderWidth: 0.5,
+        borderColor: '#c2c2c2'
     },
     inputPromo:{
         flexDirection: 'row',
