@@ -247,7 +247,7 @@ export default function homeScreen({navigation}) {
       </LinearGradient>
       </View>
   </ScrollView>
-  <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View>
+  {/* <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View> */}
 </View>
       </ScrollView>
 
