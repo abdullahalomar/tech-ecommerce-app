@@ -279,11 +279,15 @@ export default function homeScreen({navigation}) {
             </TouchableOpacity>
             
             
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=> navigation.navigate('Wishlist')}
+            >
             <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#8B8B8B" />
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=> navigation.navigate('Profile')}
+            >
             <MaterialCommunityIcons style={{marginTop: 3}} name="account-outline" size={30} color="#8B8B8B" />
             </TouchableOpacity>
             </View>
