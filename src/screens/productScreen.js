@@ -102,11 +102,11 @@ export default function productScreen({navigation}) {
             <Text style={styles.sevenNumber}>$ 4.999</Text>
            
             <View style={styles.sevenFlex}>
-                <View style={styles.firstBox}>
+                <TouchableOpacity style={styles.firstBox}>
                     <View style={styles.uperCircle}></View>
-                </View>
-                <View style={styles.secBox}></View>
-                <View style={styles.thirdBox}></View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.secBox}></TouchableOpacity>
+                <TouchableOpacity style={styles.thirdBox}></TouchableOpacity>
             </View>
         </View>
 
@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
     secBox:{
         width: 24,
         height: 24,
-        backgroundColor: '#CCC6BA',
+        backgroundColor: '#3355B1',
         borderRadius: 50,
         marginHorizontal: 8,
         marginTop: 4
@@ -329,7 +329,7 @@ const styles = StyleSheet.create({
     thirdBox:{
         width: 24,
         height: 24,
-        backgroundColor: '#CCC6BA',
+        backgroundColor: '#A833B0',
         borderRadius: 50,
         marginTop: 4
     },

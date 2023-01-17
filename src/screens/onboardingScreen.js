@@ -1,21 +1,14 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Onboarding from '../../assets/Onboarding.png'
 import { LinearGradient } from 'expo-linear-gradient'
-import Cyber from '../../assets/onboard/cyber.png'
-import percent from '../../assets/onboard/40%.png'
-import dscnt from '../../assets/onboard/DSCNT.png'
-import flash from '../../assets/onboard/flash.png'
 import laptop from '../../assets/onboard/onboardmac.png'
 import headphone from '../../assets/onboard/onboardheadphone.png'
 import gamming from '../../assets/onboard/onboardgamming.png'
 import sound from '../../assets/onboard/onboardsound.png'
 import airpod from '../../assets/onboard/onboardairpod.png'
 import remote from '../../assets/onboard/onboardremote.png'
-import tech from '../../assets/onboard/technology.png'
-import screen from '../../assets/onboard/Screenshot.png'
-import scr from '../../assets/onboard/ScreenshotTT.png'
 import avater from '../../assets/avater.png'
+
 
 
 export default function onboardingScreen({navigation}) {
@@ -32,55 +25,12 @@ export default function onboardingScreen({navigation}) {
         start={{ x: 1, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        {/* <Image
-        style={{marginTop: 90, marginLeft: 47}}
-        source={Cyber}
-        ></Image>
-
-        <View style={styles.firstMain}>
-        <View>
-
-            <View style={{flexDirection: 'row'}}>
-            <View style={styles.first}>
-              <Image
-              source={percent}
-              ></Image>
-              <Image
-              source={dscnt}
-              ></Image>
-            </View>
-            <Image
-            // style={{position: 'absolute', marginLeft: 120, marginBottom: 20}}
-            source={flash}
-            ></Image>
-            </View>
-            <View>
-            <Image
-            // style={{marginTop: 7}}
-            source={tech}
-            ></Image>
-            
-            <Text style={styles.free}>FREE SHIPPING</Text>
-            </View>
-            
-            </View>
-            
-        </View>
-        <Image
-        style={{marginLeft: 50, paddingBottom: 30}}
-        source={screen}
-        ></Image> */}
-
         
-
-        {/* <Image
-        style={{marginTop: 10, marginLeft: 35, width: 68, height: 25}}
-        source={percent}
-        ></Image> */}
         <View style={{marginTop: 60, marginLeft: 10}}>
          <Image
          style={{width: 190, height: 110, marginTop: 10, marginLeft: 30, position: 'absolute'}}
          source={laptop}
+         
          >
          </Image>
          <Image 
@@ -137,6 +87,7 @@ export default function onboardingScreen({navigation}) {
         </View>
       </LinearGradient>
     </View>
+    
   )
 }
 
@@ -214,3 +165,4 @@ const styles = StyleSheet.create({
       marginTop: 30
    }
 })
+
