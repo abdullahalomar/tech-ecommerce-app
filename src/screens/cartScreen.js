@@ -312,7 +312,7 @@ export default function cartScreen({navigation}) {
       borderRadius: 20,
       elevation: 10
       }}
-      colors={['#EFF2FA', '#D0D9F1' ]}
+      colors={[ '#ffffff', '#9CBCE4',  ]}
       start={{ x: 1, y: 0 }}
       end={{ x: 1, y: 1 }}
       >

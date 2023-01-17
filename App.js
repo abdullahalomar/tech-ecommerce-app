@@ -1,5 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
+import menubarScreen from "./src/components/menubarScreen";
 import cartScreen from "./src/screens/cartScreen";
 import checkoutScreen from "./src/screens/checkoutScreen";
 import homeScreen from './src/screens/homeScreen'
@@ -20,9 +21,10 @@ const navigator = createStackNavigator(
     Cart: cartScreen,
     Profile: profileScreen,
     Wishlist: wishlistScreen,
+    Menubar: menubarScreen,
   },
   {
-    initialRouteName: "Cart",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

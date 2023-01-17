@@ -13,13 +13,13 @@ import Third from '../../assets/third.png'
 
 export default function productScreen({navigation}) {
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
 
     const increment = () => {
         setCounter(counter + 1)
     }
     const decrement = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter - 1)
         }
     }

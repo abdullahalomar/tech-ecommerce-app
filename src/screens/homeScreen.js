@@ -14,6 +14,7 @@ import { Octicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
 import { FontAwesome } from '@expo/vector-icons';
+import menubarScreen from '../components/menubarScreen';
 
 
 export default function homeScreen({navigation}) {
@@ -252,11 +253,10 @@ export default function homeScreen({navigation}) {
       </ScrollView>
 
 
-      
-      
+      {/* menubar */}
       <LinearGradient
        style={styles.lastSection}
-       colors={['#ffffff', '#9CBCE4' ]}
+       colors={['#ffffff', '#9CBCE4', ]}
        start={{ x: 1, y: 0 }}
        end={{ x: 1, y: 1 }}
        >
@@ -292,6 +292,8 @@ export default function homeScreen({navigation}) {
             </TouchableOpacity>
             </View>
         </LinearGradient>
+      {/* menubar */}
+
     </View>
   )
 }
