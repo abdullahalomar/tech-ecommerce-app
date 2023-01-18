@@ -5,9 +5,11 @@ import { Octicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function menubarScreen({navigation}) {
+export default function MenubarScreen({children, navigation}) {
+  
   return (
     <View>
+      {children}
       <LinearGradient
        style={styles.lastSection}
        colors={['#ffffff', '#9CBCE4', ]}
@@ -58,7 +60,8 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         position: 'absolute',
-        marginTop: 666
+        marginTop: 666,
+        
      },
      last:{
         flexDirection: 'row',

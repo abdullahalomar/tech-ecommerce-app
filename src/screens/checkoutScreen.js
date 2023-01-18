@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import headP from '../../assets/headPhonep.png'
@@ -13,6 +13,11 @@ import payPal from '../../assets/paypal.png'
 
 
 export default function checkoutScreen({navigation}) {
+
+    const [delivery, setDelivery] = useState(0)
+
+    const [visa, setVisa] = useState(0)
+
   return (
     <View style={styles.background}>
         <View style={styles.firstSection}>
@@ -24,7 +29,7 @@ export default function checkoutScreen({navigation}) {
 
         <View style={styles.secondSection}>
             <LinearGradient
-        colors={['#fcfcfc', '#E5E5E5']}
+        colors={['#FFFFFF', '#E5E5E5']}
         style={styles.container}
         start={{ x: 1, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -43,20 +48,35 @@ export default function checkoutScreen({navigation}) {
         <View style={styles.thirdSection}>
             <Text style={styles.ship}>Shipping method</Text>
             <View style={styles.shippingBox}>
-                <View style={styles.home}>
-                    <Text style={styles.homeText}>Home delivery</Text>
-                </View>
-                <View>
-                    <Text style={styles.pickText}>Pick up in store</Text>
-                </View>
+                     <TouchableOpacity 
+                style={delivery == 0 ? styles.home : {width:"50%"}}
+                onPress={()=>setDelivery(0)}
+                >
+                    <Text style={delivery == 0 ? styles.homeText :styles.pickText}>Home delivery</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                
+                style={delivery == 1 ? styles.home : {width:"50%"}}
+                onPress={()=>setDelivery(1)}
+                >
+                    <Text style={delivery == 1 ? styles.homeText :styles.pickText}>Pick up in store</Text>
+                </TouchableOpacity>
             </View>
         </View>
 
-        <View style={styles.forthSection}>
-            <Text style={styles.payment}>Select your payment method</Text>
+
+        <Text style={styles.payment}>Select your payment method</Text>
+        <ScrollView 
+        showsHorizontalScrollIndicator={false}
+        horizontal 
+        style={styles.forthSection}>
+            
             
             <View style={styles.visaSecMain}>
-            <View style={styles.main}>
+            <View 
+            style={styles.main}
+            onPress
+            >
             <View style={styles.visaSection}>
             <Image
             style={styles.visa}
@@ -86,7 +106,7 @@ export default function checkoutScreen({navigation}) {
                 ></Image>
             </View>
             </View>
-        </View>
+        </ScrollView>
 
         <View style={styles.fifthSection}>
             <Text style={styles.add}>+ Add new</Text>
@@ -147,7 +167,8 @@ export default function checkoutScreen({navigation}) {
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor: '#E5E5E5'
+       
+        height: '75%'
     },
     arrow:{
         marginLeft: 10,
@@ -185,7 +206,8 @@ const styles = StyleSheet.create({
     secondSection:{
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: 35
+        marginLeft: 35,
+        elevation: 50
     },
     textTwo:{
         marginLeft: 20
@@ -212,19 +234,20 @@ const styles = StyleSheet.create({
         backgroundColor: '#3F4343',
         borderRadius: 21.5,
         opacity: 0.8,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent:'space-evenly'
     },
     thirdSection:{
         marginLeft: 16,
         marginTop: 23
     },
     home:{
-        width: 179,
+        width: '48%',
         height: 31,
         backgroundColor: '#FFFFFF',
         borderRadius: 18.5,
         marginTop: 3,
-        marginLeft: 3
+    
     },
     homeText:{
         fontWeight: '400',
@@ -244,10 +267,12 @@ const styles = StyleSheet.create({
         
     },
     payment:{
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#343A40',
-        marginBottom: 12
+        marginBottom: 1,
+        marginTop: 10,
+        marginHorizontal: 18
     },
     main:{
         width: 213,
@@ -339,11 +364,14 @@ const styles = StyleSheet.create({
     },
     lastSection:{
         width: 390,
-        height: 211,
+        height: 180,
         backgroundColor: 'white',
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         marginTop: 18,
+        position: 'absolute',
+        marginTop: '150%',
+        elevation: 7
     },
     lstFlx:{
         flexDirection: 'row',
@@ -352,6 +380,7 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     lstText:{
+        
         fontWeight: '700',
         color: '#3F4343',
     },

@@ -24,14 +24,14 @@ export default function cartScreen({navigation}) {
 
   return (
     <View style={styles.background}>
-     <View style={styles.main}>
+     {/* <View style={styles.main}>
       <View style={styles.first}>
       <MaterialCommunityIcons name="bell-ring-outline" size={24} color="#3d3d3d" />
       <Text style={styles.firstText}>
          Delivery for FREE until the end of the month
          </Text>
       </View>
-      </View>
+      </View> */}
      <ScrollView>
         <View style={styles.body}>
     
@@ -50,19 +50,14 @@ export default function cartScreen({navigation}) {
         <View style={{}}>
             <Text style={styles.mack}>Macbook Air M1</Text>
             <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
+        </View>
+        <View style={{}}>
             <TouchableOpacity>
             <AntDesign name="delete" size={20} color="red" />
             </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
+
+            <View style={styles.btnIcon}>
+            <TouchableOpacity 
             style={styles.iconBox}
             onPress={increase}
             >
@@ -76,203 +71,12 @@ export default function cartScreen({navigation}) {
             <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
             </TouchableOpacity>
             </View>
-      </View>
-      </View>
-  <View style={styles.secondMain}>
-      <View style={styles.secSec}>
-        <View style={{}}>
-            <Image
-            style={{width: 115, height: 90}}
-            source={laptop}
-            ></Image>
-        </View>
-        <View style={{}}>
-            <Text style={styles.mack}>Macbook Air M1</Text>
-            <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
             </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={increase}
-            >
-            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
-            </TouchableOpacity>
-            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
-            <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={decrease}
-            >
-            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
-            </TouchableOpacity>
-            </View>
+        
       </View>
+      
       </View>
-  <View style={styles.secondMain}>
-      <View style={styles.secSec}>
-        <View style={{}}>
-            <Image
-            style={{width: 115, height: 90}}
-            source={laptop}
-            ></Image>
-        </View>
-        <View style={{}}>
-            <Text style={styles.mack}>Macbook Air M1</Text>
-            <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={increase}
-            >
-            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
-            </TouchableOpacity>
-            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
-            <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={decrease}
-            >
-            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
-            </TouchableOpacity>
-            </View>
-      </View>
-      </View>
-  <View style={styles.secondMain}>
-      <View style={styles.secSec}>
-        <View style={{}}>
-            <Image
-            style={{width: 115, height: 90}}
-            source={laptop}
-            ></Image>
-        </View>
-        <View style={{}}>
-            <Text style={styles.mack}>Macbook Air M1</Text>
-            <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={increase}
-            >
-            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
-            </TouchableOpacity>
-            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
-            <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={decrease}
-            >
-            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
-            </TouchableOpacity>
-            </View>
-      </View>
-      </View>
-  <View style={styles.secondMain}>
-      <View style={styles.secSec}>
-        <View style={{}}>
-            <Image
-            style={{width: 115, height: 90}}
-            source={laptop}
-            ></Image>
-        </View>
-        <View style={{}}>
-            <Text style={styles.mack}>Macbook Air M1</Text>
-            <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={increase}
-            >
-            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
-            </TouchableOpacity>
-            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
-            <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={decrease}
-            >
-            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
-            </TouchableOpacity>
-            </View>
-      </View>
-      </View>
-  <View style={styles.secondMain}>
-      <View style={styles.secSec}>
-        <View style={{}}>
-            <Image
-            style={{width: 115, height: 90}}
-            source={laptop}
-            ></Image>
-        </View>
-        <View style={{}}>
-            <Text style={styles.mack}>Macbook Air M1</Text>
-            <Text style={styles.price}>$ 29,999</Text>
-
-            <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity
-                style={{flexDirection: 'row'}}>
-            <Feather style={{marginRight: 20}} name="heart" size={20} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.btnIcon}>
-        <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={increase}
-            >
-            <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
-            </TouchableOpacity>
-            <Text style={{marginHorizontal: 10, fontSize: 17,}}>{count}</Text>
-            <TouchableOpacity 
-            style={styles.iconBox}
-            onPress={decrease}
-            >
-            <FontAwesome style={styles.icon} name="minus" size={18} color="white" />
-            </TouchableOpacity>
-            </View>
-      </View>
-      </View>
+  
   
       
       
@@ -371,22 +175,22 @@ const styles = StyleSheet.create({
         marginLeft: 5
     },
     secondMain:{
-        width: 320,
+        width: 350,
         height: 150,
         backgroundColor: 'white',
         borderRadius: 15,
-        marginLeft: 35,
+        marginHorizontal: 20,
         marginBottom: 15,
         elevation: 6
     },
     secSec:{
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
+        justifyContent: 'space-around',
         marginTop: 28
     },
     btnIcon:{
-        
+        flexDirection: 'row',
+        marginTop: 30 
     },
     mack:{
         fontSize: 19,
