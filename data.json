@@ -1,0 +1,37 @@
+[
+    {
+      "_id": "63c9ac719993ea7d78908b2c",
+      "index": 0,
+      "balance": "$ 20,999",
+      "picture": "./assets/laptop.png",
+      "title": "Huawei Matebook X 13"
+    },
+    {
+      "_id": "63c9ac71f48c376671529816",
+      "index": 1,
+      "balance": "$ 4,999",
+      "picture": "./assets/second.png",
+      "title": "Sony WH/1000XM4"
+    },
+    {
+      "_id": "63c9ac71ba38f719f4370148",
+      "index": 2,
+      "balance": "$ 1,499",
+      "picture": "./assets/airpod.png",
+      "title": "FreeBuds Huawei"
+    },
+    {
+      "_id": "63c9ac7110ec43b471b90a06",
+      "index": 3,
+      "balance": "$ 20,999",
+      "picture": "./assets/huaweiLaptop.png",
+      "title": "Huawei Matebook X 13"
+    },
+    {
+      "_id": "63c9ac71313602df512d8db6",
+      "index": 4,
+      "balance": "$ 999 ",
+      "picture": "./assets/soundBox.png",
+      "title": "Alexa Home"
+    }
+  ]

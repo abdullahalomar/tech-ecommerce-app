@@ -22,7 +22,7 @@ const navigator = createStackNavigator(
     Wishlist: wishlistScreen
   },
   {
-    initialRouteName: "Wishlist",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

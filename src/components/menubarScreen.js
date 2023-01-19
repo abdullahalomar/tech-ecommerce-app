@@ -54,19 +54,20 @@ export default function MenubarScreen({children, navigation}) {
 
 const styles = StyleSheet.create({
     lastSection:{
-        width: 390,
-        height: 100,
+        width: 373,
+        height: 80,
         backgroundColor: 'white',
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
+        // borderTopLeftRadius: 40,
+        // borderTopRightRadius: 40,
         position: 'absolute',
-        marginTop: 666,
-        
+        marginTop: 672,
+        borderRadius: 30,
+        marginHorizontal: 10
      },
      last:{
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 30
+        marginTop: 20
      },
      homeIcon:{
         flexDirection: 'row',

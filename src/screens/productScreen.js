@@ -24,6 +24,8 @@ export default function productScreen({navigation}) {
         }
     }
 
+    const [circle, setCircle] = useState(0)
+
   return (
     <View style={styles.background}>
       <View style={styles.body}>
@@ -102,11 +104,20 @@ export default function productScreen({navigation}) {
             <Text style={styles.sevenNumber}>$ 4.999</Text>
            
             <View style={styles.sevenFlex}>
-                <TouchableOpacity style={styles.firstBox}>
-                    <View style={styles.uperCircle}></View>
+                <TouchableOpacity 
+                style={styles.firstBox}
+                onPress={()=> setCircle(0)}
+                >
+                    <View style={circle == 0 ? styles.uperCircle : styles.firstBox}></View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.secBox}></TouchableOpacity>
-                <TouchableOpacity style={styles.thirdBox}></TouchableOpacity>
+                <TouchableOpacity 
+                style={circle == 1 ? styles.firstBox : styles.secBox}
+                onPress={()=> setCircle(1)}
+                ></TouchableOpacity>
+                <TouchableOpacity 
+                style={circle < 1 ? styles.thirdBox : styles.uperCircle}
+                onPress={()=>setCircle(1)}
+                ></TouchableOpacity>
             </View>
         </View>
 
@@ -313,7 +324,6 @@ const styles = StyleSheet.create({
         width: 24,
         height: 24,
         backgroundColor: '#3F4343',
-        borderWidth: 1,
         borderRadius: 50,
         marginLeft: 2,
         marginTop: 2,

@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -34,6 +34,14 @@ export default function homeScreen({navigation}) {
           title: "Home",
         },
       ];
+
+      const [product, setProduct] = useState([]);
+
+      useEffect( ()=> {
+         fetch('data.json')
+         .then(response => response.json())
+         .then(data => setProduct(data))
+      }, [])
 
   return (
    <MenubarScreen navigation={navigation}>
