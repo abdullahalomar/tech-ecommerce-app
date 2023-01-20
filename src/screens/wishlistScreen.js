@@ -5,7 +5,6 @@ import laptop from '../../assets/laptop.png'
 import { LinearGradient } from 'expo-linear-gradient';
 import MenubarScreen from '../components/MenubarScreen';
 
-
 export default function wishlistScreen({navigation}) {
   return (
     <MenubarScreen navigation={navigation}>

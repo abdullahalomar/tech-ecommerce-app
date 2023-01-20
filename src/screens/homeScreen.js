@@ -15,6 +15,10 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
 import { FontAwesome } from '@expo/vector-icons';
 import MenubarScreen from '../components/MenubarScreen'
+import Product from '../components/Product';
+import datas from '../data.json';
+import SearchBar from '../components/SearchBar';
+import yelp from '../api/yelp';
 
 
 
@@ -35,7 +39,22 @@ export default function homeScreen({navigation}) {
         },
       ];
 
-      const [product, setProduct] = useState([]);
+      const [term, setTerm] = useState('');
+      const [results, setResults] = useState([]);
+
+      const searchApi = async () => {
+         
+         const response = await yelp.get('/search', {
+            params: {
+               Limit: 50,
+               term,
+               location: 'san jose'
+            }
+         });
+         setResults(response.data.businesses);
+      };
+
+      const [products, setProducts] = useState([]);
 
       useEffect( ()=> {
          fetch('data.json')
@@ -51,19 +70,12 @@ export default function homeScreen({navigation}) {
       <ScrollView>
       <View style={styles.body}>
 
-      <View style={styles.firstFlex}>
-<View style={styles.inputBox}>
-<Feather style={styles.search} name="search" size={24} color="#CFCFCF" />
-<TextInput style={styles.input}
-  placeholder="Search Products"
-  placeholderTextColor={'#CFCFCF'}
-  ></TextInput>
-</View>
-  <View style={styles.bell}>
-      <View style={styles.bulletPoint}></View>
-  <SimpleLineIcons style={styles.bellIcon} name="bell" size={20} color="#CFCFCF" />
-  </View>
-</View>
+      <SearchBar 
+      term={term} 
+      onTermChange={setTerm}
+      onTermSubmit={searchApi}
+      />
+     <Text>{results.length}</Text>
 
 <View>
    <Image
@@ -73,35 +85,6 @@ export default function homeScreen({navigation}) {
    </Image>
    <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
 </View>
-
-{/* <View style={styles.gradientBox}>
-<LinearGradient
-  style={styles.background}
-  colors={['#CE048C','#4D0A8E' ]}
-  start={{ x: 0, y: 0.5 }}
-  end={{ x: 1, y: 0.5 }}
->
-  <View style={styles.sectionTwo}>
-  <View style={styles.textBox}>
-      <Text style={styles.cyber}>CYBER</Text>
-      <Text style={styles.linio}>LINIO</Text>
-      
-      <Text style={styles.forty}>40% <Text style={styles.discount}>DSCNT</Text> </Text>
-      
-      <Text style={styles.technology}>in technology</Text>
-      
-      <Text style={styles.shipping}>FREE SHIPPING</Text> 
-  </View>
-  <View style={styles.gadgetBox}>
-      <Image
-      style={styles.gadget}
-      source={Gadget}
-      ></Image>
-  </View>
-  </View>
-  
-</LinearGradient>
-</View> */}
 
 
   <View style={styles.flat}>
@@ -129,28 +112,24 @@ export default function homeScreen({navigation}) {
           </View>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView 
+      horizontal 
+      showsHorizontalScrollIndicator={false}
+      >
       <View style={styles.forthSection}>
-          <LinearGradient 
-          style={styles.laptopBox}
-          colors={[ '#c1dae8', '#7db3d1', ]}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 0, y: 0 }}
-          >
-              <View style={styles.badge}>
-              <Text style={styles.badgeText}>Free shipping</Text>
-              </View>
-              <Image
-              style={styles.laptop}
-              source={Laptop}
-              ></Image>
-              <View style={styles.titleHeader}>
-              <Text style={styles.nameTitle}>Macbook Air M1</Text>
-              <Text style={styles.priceTitle}>$ 29,999</Text>
-              </View>
-      
-          </LinearGradient>
-          <LinearGradient 
+         {
+            datas.map((product, index)=>{
+               return(
+               <Product 
+               key={index}
+               product={product}
+               />
+               )
+            })
+         }
+         
+          
+          {/* <LinearGradient 
           style={styles.laptopBox}
           colors={[ '#BCDCEC', '#8aa6eb', ]}
           start={{ x: 0, y: 1 }}
@@ -167,8 +146,8 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
               <Text style={styles.priceTitle}>$ 4,999</Text>
               </View>
-          </LinearGradient>
-          <LinearGradient 
+          </LinearGradient> */}
+          {/* <LinearGradient 
           style={styles.laptopBox}
           colors={['#cbb9ed', '#a083d6' ]}
           start={{ x: 0, y: 1 }}
@@ -185,7 +164,7 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>FreeBuds Huawei</Text>
               <Text style={styles.priceTitle}>$ 1,499</Text>
               </View>
-          </LinearGradient>
+          </LinearGradient> */}
       </View>
       </ScrollView>
   </View>
@@ -296,7 +275,6 @@ const styles = StyleSheet.create({
      },
      firstFlex:{
          flexDirection: 'row',
-         
      },
      bell:{
          marginLeft: 10,

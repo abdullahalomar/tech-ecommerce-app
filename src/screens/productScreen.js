@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableHighlight } from 'react-native'
 import React, { useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -24,7 +24,9 @@ export default function productScreen({navigation}) {
         }
     }
 
-    const [circle, setCircle] = useState(0)
+    const [circle, setCircle] = useState('')
+
+    const colors = ['#f55b5b','#3355B1','#A833B0']
 
   return (
     <View style={styles.background}>
@@ -104,20 +106,19 @@ export default function productScreen({navigation}) {
             <Text style={styles.sevenNumber}>$ 4.999</Text>
            
             <View style={styles.sevenFlex}>
-                <TouchableOpacity 
-                style={styles.firstBox}
-                onPress={()=> setCircle(0)}
-                >
-                    <View style={circle == 0 ? styles.uperCircle : styles.firstBox}></View>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                style={circle == 1 ? styles.firstBox : styles.secBox}
-                onPress={()=> setCircle(1)}
-                ></TouchableOpacity>
-                <TouchableOpacity 
-                style={circle < 1 ? styles.thirdBox : styles.uperCircle}
-                onPress={()=>setCircle(1)}
-                ></TouchableOpacity>
+               {
+                colors.map((color)=>{
+                    return (
+                        <TouchableOpacity style={circle == color && styles.firstBox} onPress={()=>{
+                            setCircle(color)
+                        }}>
+                            <View style={{...styles.circle,backgroundColor: color}}></View>
+                        </TouchableOpacity>
+                    )
+                })
+               }
+               
+               
             </View>
         </View>
 
@@ -305,7 +306,7 @@ const styles = StyleSheet.create({
     seven:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 25
+        marginHorizontal: 25,
     },
     sevenNumber:{
         fontSize: 20,
@@ -313,38 +314,27 @@ const styles = StyleSheet.create({
         color: '#ef9534'
     },
     firstBox:{
-        width: 30,
-        height: 30,
-        backgroundColor: 'white',
+        width: 28,
+        height: 28,
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
         borderRadius: 50,
-        borderWidth: 1,
-        borderColor: '#3F4343'
+        borderWidth: 2,
+        borderColor: 'red'
     },
-    uperCircle:{
+    circle:{
         width: 24,
         height: 24,
-        backgroundColor: '#3F4343',
         borderRadius: 50,
-        marginLeft: 2,
-        marginTop: 2,
+        
     },
-    secBox:{
-        width: 24,
-        height: 24,
-        backgroundColor: '#3355B1',
-        borderRadius: 50,
-        marginHorizontal: 8,
-        marginTop: 4
-    },
-    thirdBox:{
-        width: 24,
-        height: 24,
-        backgroundColor: '#A833B0',
-        borderRadius: 50,
-        marginTop: 4
-    },
+    
     sevenFlex:{
+        width:'30%',
         flexDirection: 'row',
+        justifyContent:'space-evenly',
+        alignItems:'center'
     },
     firstF:{
         width: 94,
