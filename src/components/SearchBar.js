@@ -31,6 +31,8 @@ export default function Searchbar({ term, onTermChange, onTermSubmit }) {
 const styles = StyleSheet.create({
     firstFlex:{
         flexDirection: 'row',
+        marginHorizontal: 20,
+        marginTop: 15
     },
     inputBox:{
         backgroundColor: 'white',

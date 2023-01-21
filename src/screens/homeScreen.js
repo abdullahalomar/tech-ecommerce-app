@@ -10,15 +10,14 @@ import airPod from '../../assets/airpod.png'
 import huaweiLaptop from '../../assets/huaweiLaptop.png'
 import soundBox from '../../assets/soundBox.png'
 import { Entypo } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
-import { FontAwesome } from '@expo/vector-icons';
 import MenubarScreen from '../components/MenubarScreen'
 import Product from '../components/Product';
 import datas from '../data.json';
 import SearchBar from '../components/SearchBar';
-import yelp from '../api/yelp';
+import useResults from '../hooks/useResults';
+import ResultsList from '../components/ResultsList';
+
 
 
 
@@ -40,20 +39,15 @@ export default function homeScreen({navigation}) {
       ];
 
       const [term, setTerm] = useState('');
-      const [results, setResults] = useState([]);
+      const [searchApi, results, errorMessage] = useResults();
 
-      const searchApi = async () => {
-         
-         const response = await yelp.get('/search', {
-            params: {
-               Limit: 50,
-               term,
-               location: 'san jose'
-            }
-         });
-         setResults(response.data.businesses);
+      console.log(results);
+      const filterResultByPrice = (price) => {
+            return results.filter(result => {
+               return result.price === price;
+            })
       };
-
+     
       const [products, setProducts] = useState([]);
 
       useEffect( ()=> {
@@ -66,16 +60,17 @@ export default function homeScreen({navigation}) {
    <MenubarScreen navigation={navigation}>
     <View style={styles.bg}>
       
-      
+    <SearchBar 
+      term={term} 
+      onTermChange={setTerm}
+      onTermSubmit={()=> searchApi(term)}
+      />
       <ScrollView>
       <View style={styles.body}>
 
-      <SearchBar 
-      term={term} 
-      onTermChange={setTerm}
-      onTermSubmit={searchApi}
-      />
-     <Text>{results.length}</Text>
+      
+     
+     {/* {errorMessage ? <Text>{errorMessage}</Text> : null} */}
 
 <View>
    <Image
@@ -166,8 +161,24 @@ export default function homeScreen({navigation}) {
               </View>
           </LinearGradient> */}
       </View>
+      
       </ScrollView>
+      
   </View>
+
+  <ResultsList 
+  title='Hot Sales'
+  results={filterResultByPrice('$$')}
+  />
+  <ResultsList 
+  title='Recently Viewed'
+  results={filterResultByPrice('$')}
+  />
+  <ResultsList 
+  title='Hot Sales'
+  results={filterResultByPrice('$$$')}
+  />
+
   <Text style={styles.recentViewed}>Recently viewed</Text>
   <ScrollView 
   horizontal 
@@ -253,13 +264,13 @@ export default function homeScreen({navigation}) {
 
 const styles = StyleSheet.create({
    bg:{
-      width: 408,
-      height: 766,
+      width: '100%',
+      height: '100%',
       backgroundColor: '#E5E5E5'
    },
     body:{
         marginHorizontal: 17,
-        marginTop: 10
+        marginTop: 10,
      },
      search:{
          marginTop: 14,

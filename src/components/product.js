@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
+
 export default function Product({product}) {
   const {title, picture, balance} = product;
   return (
