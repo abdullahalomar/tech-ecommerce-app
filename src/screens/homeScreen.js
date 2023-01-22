@@ -23,6 +23,13 @@ import ResultsList from '../components/ResultsList';
 
 export default function homeScreen({navigation}) {
 
+   const [apidata,setApiData] = useState([]);
+   useEffect(()=>{
+      fetch('https://api.escuelajs.co/api/v1/products')
+      .then(response=>response.json())
+      .then(data =>setApiData(data))
+   },[])
+   console.log(apidata)
     const DATA = [
         {
           title: "Technology",
@@ -168,15 +175,15 @@ export default function homeScreen({navigation}) {
 
   <ResultsList 
   title='Hot Sales'
-  results={filterResultByPrice('$$')}
+  results={apidata}
   />
   <ResultsList 
   title='Recently Viewed'
-  results={filterResultByPrice('$')}
+  results={apidata}
   />
   <ResultsList 
   title='Hot Sales'
-  results={filterResultByPrice('$$$')}
+  results={apidata}
   />
 
   <Text style={styles.recentViewed}>Recently viewed</Text>
