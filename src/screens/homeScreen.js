@@ -21,7 +21,8 @@ import ResultsList from '../components/ResultsList';
 
 
 
-export default function homeScreen({navigation}) {
+
+export default function homeScreen({navigation, result}) {
 
    const [apidata,setApiData] = useState([]);
    useEffect(()=>{
@@ -131,7 +132,7 @@ export default function homeScreen({navigation}) {
          }
          
           
-          {/* <LinearGradient 
+          <LinearGradient 
           style={styles.laptopBox}
           colors={[ '#BCDCEC', '#8aa6eb', ]}
           start={{ x: 0, y: 1 }}
@@ -148,25 +149,8 @@ export default function homeScreen({navigation}) {
               <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
               <Text style={styles.priceTitle}>$ 4,999</Text>
               </View>
-          </LinearGradient> */}
-          {/* <LinearGradient 
-          style={styles.laptopBox}
-          colors={['#cbb9ed', '#a083d6' ]}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 0, y: 0 }}
-          >
-          <View style={styles.badge}>
-              <Text style={styles.badgeText}>Free shipping</Text>
-              </View>
-              <Image
-              style={styles.airPod}
-              source={airPod}
-              ></Image>
-              <View style={styles.titleHeader}>
-              <Text style={styles.nameTitle}>FreeBuds Huawei</Text>
-              <Text style={styles.priceTitle}>$ 1,499</Text>
-              </View>
-          </LinearGradient> */}
+          </LinearGradient>
+          
       </View>
       
       </ScrollView>
@@ -174,20 +158,17 @@ export default function homeScreen({navigation}) {
   </View>
 
   <ResultsList 
-  title='Hot Sales'
+  
   results={apidata}
   />
   <ResultsList 
   title='Recently Viewed'
   results={apidata}
   />
-  <ResultsList 
-  title='Hot Sales'
-  results={apidata}
-  />
+  
 
   <Text style={styles.recentViewed}>Recently viewed</Text>
-  <ScrollView 
+  {/* <ScrollView 
   horizontal 
   showsHorizontalScrollIndicator={false}
   style={styles.fifthSection}>
@@ -254,7 +235,7 @@ export default function homeScreen({navigation}) {
           </View>
       </LinearGradient>
       </View>
-  </ScrollView>
+  </ScrollView> */}
   {/* <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View> */}
 </View>
       </ScrollView>

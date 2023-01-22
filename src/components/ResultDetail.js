@@ -1,14 +1,18 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
+import Badge from './Badge'
 
 export default function ({result}) {
   return (
-    <View style={{marginRight: 10}}>
+    <TouchableOpacity style={{marginRight: 10}}>
+      <Badge/>
         <Image style={styles.image} source={{ uri: result.images[0]}} />
-      <Text>{result.title}</Text>
-      <Text>{result.price}</Text>
+      <View style={styles.text}>
+      <Text style={styles.font}>{result.title}</Text>
+      <Text style={styles.font}>$ {result.price}</Text>
+      </View>
       {/* <Text>{result.rating}</Text> */}
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -16,6 +20,15 @@ const styles = StyleSheet.create({
     image:{
         width: 150,
         height: 120,
-        borderRadius: 8
+        borderRadius: 8,
+        marginTop: 5
+    },
+    text:{
+        alignItems: 'center',
+        marginTop: 5
+    },
+    font: {
+      fontSize: 15,
+      fontWeight: '600'
     }
 })
