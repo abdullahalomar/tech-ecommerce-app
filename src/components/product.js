@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
+import Badge from './Badge';
 
 export default function Product({product}) {
   const {title, picture, balance} = product;
@@ -12,9 +13,7 @@ export default function Product({product}) {
           start={{ x: 0, y: 1 }}
           end={{ x: 0, y: 0 }}
           >
-              <View style={styles.badge}>
-              <Text style={styles.badgeText}>Free shipping</Text>
-              </View>
+              <Badge/>
               <Image
               style={styles.laptop}
               source={picture}

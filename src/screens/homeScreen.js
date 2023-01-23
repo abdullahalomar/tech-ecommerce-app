@@ -21,7 +21,6 @@ import ResultsList from '../components/ResultsList';
 
 
 
-
 export default function homeScreen({navigation, result}) {
 
    const [apidata,setApiData] = useState([]);
@@ -59,9 +58,9 @@ export default function homeScreen({navigation, result}) {
       const [products, setProducts] = useState([]);
 
       useEffect( ()=> {
-         fetch('data.json')
+         fetch('https://api.escuelajs.co/api/v1/products')
          .then(response => response.json())
-         .then(data => setProduct(data))
+         .then(data => setProducts(data))
       }, [])
 
   return (
@@ -130,27 +129,6 @@ export default function homeScreen({navigation, result}) {
                )
             })
          }
-         
-          
-          <LinearGradient 
-          style={styles.laptopBox}
-          colors={[ '#BCDCEC', '#8aa6eb', ]}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 0, y: 0 }}
-          >
-          <View style={styles.badge}>
-              <Text style={styles.badgeText}>Free shipping</Text>
-              </View>
-              <Image
-              style={styles.headphone}
-              source={Headphone}
-              ></Image>
-              <View style={styles.titleHeader}>
-              <Text style={styles.nameTitle}>Sony WH/1000XM4</Text>
-              <Text style={styles.priceTitle}>$ 4,999</Text>
-              </View>
-          </LinearGradient>
-          
       </View>
       
       </ScrollView>
@@ -167,7 +145,7 @@ export default function homeScreen({navigation, result}) {
   />
   
 
-  <Text style={styles.recentViewed}>Recently viewed</Text>
+  {/* <Text style={styles.recentViewed}>Recently viewed</Text> */}
   {/* <ScrollView 
   horizontal 
   showsHorizontalScrollIndicator={false}
