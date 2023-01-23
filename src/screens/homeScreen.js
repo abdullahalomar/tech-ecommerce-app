@@ -12,8 +12,6 @@ import soundBox from '../../assets/soundBox.png'
 import { Entypo } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
 import MenubarScreen from '../components/MenubarScreen'
-import Product from '../components/Product';
-import datas from '../data.json';
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
@@ -55,13 +53,7 @@ export default function homeScreen({navigation, result}) {
             })
       };
      
-      const [products, setProducts] = useState([]);
-
-      useEffect( ()=> {
-         fetch('https://api.escuelajs.co/api/v1/products')
-         .then(response => response.json())
-         .then(data => setProducts(data))
-      }, [])
+      
 
   return (
    <MenubarScreen navigation={navigation}>
@@ -74,9 +66,6 @@ export default function homeScreen({navigation, result}) {
       />
       <ScrollView>
       <View style={styles.body}>
-
-      
-     
      {/* {errorMessage ? <Text>{errorMessage}</Text> : null} */}
 
 <View>
@@ -119,18 +108,7 @@ export default function homeScreen({navigation, result}) {
       showsHorizontalScrollIndicator={false}
       >
       <View style={styles.forthSection}>
-         {
-            datas.map((product, index)=>{
-               return(
-               <Product 
-               key={index}
-               product={product}
-               />
-               )
-            })
-         }
       </View>
-      
       </ScrollView>
       
   </View>
@@ -138,90 +116,14 @@ export default function homeScreen({navigation, result}) {
   <ResultsList 
   
   results={apidata}
+  navigation={navigation}
   />
   <ResultsList 
   title='Recently Viewed'
   results={apidata}
   />
-  
-
-  {/* <Text style={styles.recentViewed}>Recently viewed</Text> */}
-  {/* <ScrollView 
-  horizontal 
-  showsHorizontalScrollIndicator={false}
-  style={styles.fifthSection}>
-      
-      <View style={styles.recent}>
-      <LinearGradient
-       style={styles.huawei}
-       colors={['#f0bbeb', '#94AEE0' ]}
-       start={{ x: 1, y: 0.5 }}
-       end={{ x: 0, y: 0.5 }}
-       >
-          <View style={styles.huaweiFlex}>
-          <Image
-          style={styles.huaLap}
-          source={huaweiLaptop}
-          ></Image>
-          <View style={styles.heartBox}>
-      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
-      </View>
-          </View>
-          <View style={styles.textMain}>
-          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
-          <Text style={styles.textTitlePrice}>$ 20,999</Text>
-          </View>
-      </LinearGradient>
-      <LinearGradient
-      style={styles.sound}
-      colors={['#c1abc9', '#9CC9E2' ]}
-      start={{ x: 1, y: 0.5 }}
-      end={{ x: 0, y: 0.5 }}
-      >
-          <View style={styles.huaweiFlex}>
-          <Image
-          style={styles.soundBoxHua}
-          source={soundBox}
-          ></Image>
-          <View style={styles.heartBoxSound}>
-      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
-      </View>
-          </View>
-          <View style={styles.textMain}>
-          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
-          <Text style={styles.textTitlePrice}>$ 20,999</Text>
-          </View>
-      </LinearGradient>
-      <LinearGradient
-      style={styles.sound}
-      colors={['#c1abc9', '#9CC9E2' ]}
-      start={{ x: 1, y: 0.5 }}
-      end={{ x: 0, y: 0.5 }}
-      >
-          <View style={styles.huaweiFlex}>
-          <Image
-          style={styles.soundBoxHua}
-          source={soundBox}
-          ></Image>
-          <View style={styles.heartBoxSound}>
-      <Entypo style={styles.heart} name="heart-outlined" size={15} color="#FF5500" />
-      </View>
-          </View>
-          <View style={styles.textMain}>
-          <Text style={styles.textTitleHuawei}>Huawei Matebook X 13</Text>
-          <Text style={styles.textTitlePrice}>$ 20,999</Text>
-          </View>
-      </LinearGradient>
-      </View>
-  </ScrollView> */}
-  {/* <View style={{width: 200, height: 400, backgroundColor: 'red'}}></View> */}
 </View>
       </ScrollView>
-
-
-      {/* menubar */}
-
-      {/* menubar */}
 
     </View>
     </MenubarScreen>

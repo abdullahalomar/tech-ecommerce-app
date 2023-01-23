@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import ResultDetail from './ResultDetail'
 
-export default function ResultsList({title, results}) {
+export default function ResultsList({navigation,title, results}) {
   return (
     <View>
         <Text style={styles.title}>{title}</Text>
@@ -12,7 +12,7 @@ export default function ResultsList({title, results}) {
       data={results}
       keyExtractor={(result)=> result.id}
       renderItem={({ item }) => {
-        return <ResultDetail result={item} />
+        return <ResultDetail navigation={navigation} result={item} />
       }}
       />
     </View>

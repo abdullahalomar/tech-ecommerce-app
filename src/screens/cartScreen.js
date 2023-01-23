@@ -33,7 +33,6 @@ export default function cartScreen({navigation}) {
     
         </View>
         </ScrollView>
-
         
         <View style={{marginTop: 475, position: 'absolute', marginHorizontal: 22,}}>
         <Promo/>
@@ -102,16 +101,11 @@ const styles = StyleSheet.create({
         color: '#3d3d3d',
         marginLeft: 5
     },
-    
-    
-    
-    
     quantity:{
         fontSize: 15,
         fontWeight: '500',
         marginRight: 13
     },
-    
     button:{
         width: 307,
         height: 60,
@@ -126,6 +120,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     },
-    
-    
 })

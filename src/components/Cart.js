@@ -29,15 +29,15 @@ export default function Cart() {
             source={laptop}
             ></Image>
         </View>
+        
         <View style={{}}>
             <Text style={styles.mack}>Macbook Air M1</Text>
             <Text style={styles.price}>$ 29,999</Text>
+            <TouchableOpacity>
+                <AntDesign name="delete" size={20} color="red" />
+            </TouchableOpacity>
         </View>
         <View style={{}}>
-            <TouchableOpacity>
-            <AntDesign name="delete" size={20} color="red" />
-            </TouchableOpacity>
-
             <View style={styles.btnIcon}>
             <TouchableOpacity 
             style={styles.iconBox}
@@ -52,12 +52,12 @@ export default function Cart() {
             >
             <FontAwesome style={styles.icon} name="plus" size={18} color="white" />
             </TouchableOpacity>
-            
             </View>
             </View>
         
+        
       </View>
-      
+            
       </View>
     </View>
   )
@@ -79,11 +79,11 @@ const styles = StyleSheet.create({
         marginTop: 28
     },
     mack:{
-        fontSize: 19,
-        fontWeight: '700',
+        fontSize: 17,
+        fontWeight: '600',
     },
     price:{
-        fontSize: 17,
+        fontSize: 15,
         fontWeight: '600',
         marginBottom: 5
     },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 5
     },
     btnIcon:{
-        flexDirection: 'row',
-        marginTop: 30 
+        
+        
     },
 })

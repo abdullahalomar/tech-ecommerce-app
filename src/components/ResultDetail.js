@@ -2,9 +2,15 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Badge from './Badge'
 
-export default function ({result}) {
+
+
+export default function ({result, navigation}) {
+   
   return (
-    <TouchableOpacity style={{marginRight: 10}}>
+    <TouchableOpacity 
+    style={{marginRight: 10}}
+    onPress={()=> {navigation.navigate('Product', {product: result}); console.log(result);}}
+    >
       <Badge/>
         <Image style={styles.image} source={{ uri: result.images[0]}} />
       <View style={styles.text}>

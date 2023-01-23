@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableHighlight } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -11,7 +11,8 @@ import Third from '../../assets/third.png'
 
 
 
-export default function productScreen({navigation}) {
+export default function productScreen({ navigation, result}) {
+    const {product} = navigation.state.params;
 
     const [counter, setCounter] = useState(1);
 
@@ -53,7 +54,7 @@ export default function productScreen({navigation}) {
       >
         <Image
         style={styles.head}
-        source={Headphones}
+        source={{uri: product.images[0]}}
         ></Image>
       </LinearGradient>
 
@@ -98,12 +99,12 @@ export default function productScreen({navigation}) {
            </View>
 
            <View style={styles.six}>
-            <Text style={styles.sony}>Sony WH-1000XM4</Text>
+            <Text style={styles.sony}>{product.title}</Text>
             <Text style={styles.long}>The intuitive and intelligent WH-1000XM4 headphones bring you new improvements in industry-leading    noise cancelling technology.</Text>
         </View>
 
         <View style={styles.seven}>
-            <Text style={styles.sevenNumber}>$ 4.999</Text>
+            <Text style={styles.sevenNumber}>$ {product.price}</Text>
            
             <View style={styles.sevenFlex}>
                {
