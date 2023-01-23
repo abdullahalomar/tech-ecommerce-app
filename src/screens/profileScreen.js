@@ -1,22 +1,22 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import man from '../../assets/menavater.png'
 import { Feather } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import airpod from '../../assets/airpod.png'
-import laptop from '../../assets/laptop.png'
-import airpodTwo from '../../assets/onboardairpod.png'
-import head from '../../assets/second.png'
-import sound from '../../assets/soundBox.png'
+import MenubarScreen from '../components/MenubarScreen';
+import NotifyIcon from '../components/NotifyIcon';
+import PopUp from '../components/PopUp';
 
-import { Entypo } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
+
+
 
 
 export default function profileScreen({navigation}) {
+
+  
+
   return (
+      <MenubarScreen navigation={navigation}>
     <View style={{width: 408, height: 762}}>
       <View style={styles.firstSection}>
         <View style={styles.firstContent}>
@@ -32,34 +32,17 @@ export default function profileScreen({navigation}) {
           <Text style={styles.mail}>example@gmail.com</Text>
           </View>
           {/* </View> */}
-          <TouchableOpacity style={{marginTop: 40}}>
-          <Feather name="settings" size={28} color="white" />
-          </TouchableOpacity>
+
+          {/* modal */}
+          <PopUp/>
+          {/* modal */}
+
         </View>
 
-        <View style={styles.notification}>
-        <TouchableOpacity 
-        style={styles.iconBox}
-        >
-        <AntDesign name="hearto" size={24} color="#757678" />
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-        <Feather name="bell" size={24} color="#757678" />
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-  
-        <Feather name="message-circle" size={24} color="#757678" />
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-        <Feather name="star" size={24} color="#757678" />
-        </TouchableOpacity>
-        </View>
+        {/* notification */}
+        <NotifyIcon/>
+        {/* notification */}
+        
       </View>
       <View style={styles.titleBox}>
       <Text style={styles.title}>Notifications</Text>
@@ -191,55 +174,10 @@ export default function profileScreen({navigation}) {
           </View>
       </View>
       </View>
-      
-
     </View>
     </ScrollView>
-
-    {/* menubar */}
-
-    <LinearGradient
-       style={styles.lastSection}
-       colors={['#9CBCE4','#ffffff',  ]}
-       start={{ x: 1, y: 0 }}
-       end={{ x: 1, y: 1 }}
-       >
-            <View style={styles.last}>
-            <TouchableOpacity style={{marginTop: 7,}}>
-            <Entypo name="shop" size={24} color="#8B8B8B" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-            onPress={()=> navigation.navigate('Product')}
-            >
-            <MaterialCommunityIcons style={{marginTop: 5}} name="shopping-outline" size={28} color="#8B8B8B" />
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            style={styles.homeIcon}
-            onPress={()=> navigation.navigate('Home')}
-            >
-            <Text style={styles.home}><Octicons style={{}} name="home" size={35} color="#5351db" /></Text>
-            </TouchableOpacity>
-            
-            
-            <TouchableOpacity
-            onPress={()=> navigation.navigate('Wishlist')}
-            >
-            <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#8B8B8B" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-            onPress={()=> navigation.navigate('Profile')}
-            >
-            <MaterialCommunityIcons style={{marginTop: 3}} name="account-outline" size={30} color="#8B8B8B" />
-            </TouchableOpacity>
-            </View>
-        </LinearGradient>
-
-    {/* menubar */}
-
     </View>
+      </MenubarScreen>
   )
 }
 
@@ -265,23 +203,6 @@ const styles = StyleSheet.create({
       fontWeight: '500',
       color: 'white',
       lineHeight: 20
-  },
-  notification:{
-      flexDirection: 'row',
-      position: 'absolute',
-      marginLeft: 30,
-      marginTop: 165
-  },
-  iconBox:{
-      paddingVertical: 20,
-      paddingHorizontal: 20,
-      backgroundColor: 'white',
-      borderRadius: 15,
-      marginRight: 26.5,
-      elevation: 4
-  },
-  getSection:{
-      
   },
   titleBox:{
     marginBottom: 10,

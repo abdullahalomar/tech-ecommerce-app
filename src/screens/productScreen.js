@@ -11,7 +11,7 @@ import Third from '../../assets/third.png'
 
 
 
-export default function productScreen({ navigation, result}) {
+export default function productScreen({ navigation }) {
     const {product} = navigation.state.params;
 
     const [counter, setCounter] = useState(1);
@@ -33,9 +33,15 @@ export default function productScreen({ navigation, result}) {
     <View style={styles.background}>
       <View style={styles.body}>
       <View style={styles.IconFlex}>
-        <View style={styles.firstIcon}>
-        <MaterialIcons style={styles.arrow} name="keyboard-arrow-left" size={24} color="#CFCFCF" />
-        </View>
+        <TouchableOpacity style={styles.firstIcon}>
+        <MaterialIcons 
+        style={styles.arrow} 
+        name="keyboard-arrow-left" 
+        size={24} 
+        color="#CFCFCF" 
+        onPress={()=> navigation.navigate('Home')}
+        />
+        </TouchableOpacity>
         <View style={styles.secondIcon}>
         <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#CFCFCF" />
         </View>
@@ -100,7 +106,7 @@ export default function productScreen({ navigation, result}) {
 
            <View style={styles.six}>
             <Text style={styles.sony}>{product.title}</Text>
-            <Text style={styles.long}>The intuitive and intelligent WH-1000XM4 headphones bring you new improvements in industry-leading    noise cancelling technology.</Text>
+            <Text style={styles.long}>{product.description}</Text>
         </View>
 
         <View style={styles.seven}>

@@ -6,18 +6,20 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function MenubarScreen({children, navigation}) {
-  
   return (
     <View>
       {children}
       <LinearGradient
        style={styles.lastSection}
-       colors={['#ffffff', '#9CBCE4', ]}
-       start={{ x: 1, y: 0 }}
+       colors={['#ffffff', '#c4d1f5',]}
+       start={{ x: 0, y: 1 }}
        end={{ x: 1, y: 1 }}
        >
             <View style={styles.last}>
-            <TouchableOpacity style={{marginTop: 7,}}>
+            <TouchableOpacity 
+            style={{marginTop: 7,}}
+            onPress={()=> navigation.navigate('Shop')}
+            >
             <Entypo name="shop" size={24} color="#8B8B8B" />
             </TouchableOpacity>
 
@@ -62,7 +64,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         marginTop: 672,
         borderRadius: 30,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        elevation: 4
      },
      last:{
         flexDirection: 'row',
