@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function MenubarScreen({children, navigation}) {
+  
   return (
     <View>
       {children}
@@ -56,15 +57,15 @@ export default function MenubarScreen({children, navigation}) {
 
 const styles = StyleSheet.create({
     lastSection:{
-        width: 373,
+        width: '100%',
         height: 80,
         backgroundColor: 'white',
-        // borderTopLeftRadius: 40,
-        // borderTopRightRadius: 40,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
         position: 'absolute',
-        marginTop: 672,
-        borderRadius: 30,
-        marginHorizontal: 10,
+        marginTop: '175%',
+        // borderRadius: 30,
+        // marginHorizontal: 10,
         elevation: 4
      },
      last:{

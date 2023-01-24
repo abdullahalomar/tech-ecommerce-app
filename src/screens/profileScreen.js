@@ -6,6 +6,7 @@ import airpod from '../../assets/airpod.png'
 import MenubarScreen from '../components/MenubarScreen';
 import NotifyIcon from '../components/NotifyIcon';
 import PopUp from '../components/PopUp';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
@@ -18,7 +19,12 @@ export default function profileScreen({navigation}) {
   return (
       <MenubarScreen navigation={navigation}>
     <View style={{width: 408, height: 762}}>
-      <View style={styles.firstSection}>
+      <LinearGradient 
+            style={styles.firstSection}
+            colors={['#8ba3c9', '#2c5eb0']}
+            start={{ x: 1, y: 0 }}
+            end={{ x: 1, y: 1 }}
+      >
         <View style={styles.firstContent}>
           <View style={{marginTop: 30}}>
           <Image
@@ -27,22 +33,20 @@ export default function profileScreen({navigation}) {
           ></Image>
           </View>
           <View style={{marginLeft: 30, marginRight: 70, marginTop: 35}}>
-          <Text style={styles.profile}>Profile</Text>
+          <Text style={styles.profile}>Tom Cruise</Text>
           <Text style={styles.mail}>example@gmail.com</Text>
           </View>
-         
 
           {/* modal */}
           <PopUp/>
           {/* modal */}
-
         </View>
 
         {/* notification */}
         <NotifyIcon/>
         {/* notification */}
         
-      </View>
+      </LinearGradient>
       <View style={styles.titleBox}>
       <Text style={styles.title}>Notifications</Text>
       <TouchableOpacity>
@@ -193,12 +197,12 @@ const styles = StyleSheet.create({
       marginHorizontal: 30,
   },
   profile:{
-      fontSize: 30,
+      fontSize: 25,
       fontWeight: 'bold',
       color: 'white'
   },
   mail:{
-      fontSize: 18,
+      fontSize: 17,
       fontWeight: '500',
       color: 'white',
       lineHeight: 20

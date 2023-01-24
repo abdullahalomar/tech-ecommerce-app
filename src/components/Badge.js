@@ -15,14 +15,12 @@ export default function Badge() {
 const styles = StyleSheet.create({
     badge:{
         backgroundColor: 'white',
-        marginTop: 10,
-        marginRight: 66,
+        marginRight: 75,
         marginLeft: 5,
         borderRadius: 10,
-        
      },
      badgeText:{
-        paddingLeft: 10,
+        textAlign: 'center',
         paddingBottom: 3,
         color: '#FF5500',
         fontSize: 10,

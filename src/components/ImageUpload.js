@@ -41,7 +41,7 @@ export default function ImageUpload() {
     <View>
       <View style={{marginHorizontal: 93, marginBottom: 9}}>
         <TouchableHighlight
-        onPress={()=> uploadImage()}
+        onPress={()=> alert('Success')}
         underlayColor="125, 164, 227"
         >
          <Avatar.Image
@@ -50,23 +50,18 @@ export default function ImageUpload() {
          />   
             
         </TouchableHighlight>
+        <TouchableOpacity
+        style={styles.editIcon}
+        mode="contained"
+        onPress={()=> alert('Success')}
+        >
         <MaterialCommunityIcons 
         name="account-edit" 
-        size={35} 
-        color="black" 
-        style={styles.editIcon}
-        />
-      </View>
-
-      <View style={styles.UploadButtons}>
-        <TouchableOpacity
-        style={styles.button}
-        mode="contained"
-        onPress={()=> uploadImage()}
-        >
-            <Text style={styles.buttonText}>Upload Photo</Text>
-        </TouchableOpacity>
+        size={30} 
+        color="white" 
         
+        />
+        </TouchableOpacity>
       </View>
 
       <View>
@@ -114,6 +109,9 @@ const styles = StyleSheet.create({
     editIcon:{
         position: 'absolute',
         marginTop: 80,
-        marginLeft: 70
+        marginLeft: 70,
+        backgroundColor: '#7ba3e3',
+        borderRadius: 30,
+        padding: 4
     }
 })

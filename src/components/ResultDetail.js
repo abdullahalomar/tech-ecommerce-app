@@ -9,10 +9,10 @@ export default function ({result, navigation}) {
   return (
     <TouchableOpacity 
     style={{marginRight: 10}}
-    onPress={()=> {navigation.navigate('Product', {product: result}); console.log(result);}}
+    onPress={()=> {navigation.navigate('Product', {product: result})}}
     >
       <Badge/>
-        <Image style={styles.image} source={{ uri: result.images[0]}} />
+        <Image style={styles.image} source={{ uri: result.category.image}} />
       <View style={styles.text}>
       <Text style={styles.font}>{result.title}</Text>
       <Text style={styles.font}>$ {result.price}</Text>

@@ -1,22 +1,10 @@
 import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { SimpleLineIcons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import Gadget from '../../assets/gadget.png'
-import Laptop from '../../assets/laptop.png'
-import Headphone from '../../assets/headphone.png'
-import airPod from '../../assets/airpod.png'
-import huaweiLaptop from '../../assets/huaweiLaptop.png'
-import soundBox from '../../assets/soundBox.png'
-import { Entypo } from '@expo/vector-icons';
 import homebg from '../../assets/homebg.png'
 import MenubarScreen from '../components/MenubarScreen'
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
-
-
 
 
 export default function homeScreen({navigation, result}) {
@@ -95,32 +83,25 @@ export default function homeScreen({navigation, result}) {
   <View>
       <View style={styles.thirdSection}>
           <Text style={styles.sale}>Hot Sales</Text>
-          <View style={styles.dotFlex}>
-              <View style={styles.firstDot}></View>
-              <View style={styles.dot}></View>
-              <View style={styles.dot}></View>
-              <View style={styles.dot}></View>
-          </View>
+          <TouchableOpacity 
+          style={styles.dotFlex}
+          onPress={()=> navigation.navigate('Shop')}
+          >
+              <Text style={styles.seeMore}>See more</Text>
+          </TouchableOpacity>
       </View>
-
-      <ScrollView 
-      horizontal 
-      showsHorizontalScrollIndicator={false}
-      >
-      <View style={styles.forthSection}>
-      </View>
-      </ScrollView>
-      
   </View>
 
   <ResultsList 
-  
   results={apidata}
   navigation={navigation}
   />
+  <View style={{marginTop: 10}}>
+          <Text style={styles.sale}>Recently Viewed</Text>
+      </View>
   <ResultsList 
-  title='Recently Viewed'
   results={apidata}
+  navigation={navigation}
   />
 </View>
       </ScrollView>
@@ -133,7 +114,7 @@ export default function homeScreen({navigation, result}) {
 const styles = StyleSheet.create({
    bg:{
       width: '100%',
-      height: '100%',
+      height: '97%',
       backgroundColor: '#E5E5E5'
    },
     body:{
@@ -162,15 +143,15 @@ const styles = StyleSheet.create({
         letterSpacing: 1
      },
      sale:{
-        fontSize:18,
-        fontWeight: '800',
+        fontSize:19,
+        fontWeight: '700',
         color: '#343A40'
      },
      thirdSection:{
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 3,
-        marginBottom: 5
+        marginTop: 5
      },
      firstDot:{
         width:20,
@@ -185,13 +166,9 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         borderRadius: 10
      },
-     dotFlex:{
-        flexDirection: 'row',
-        marginTop: 10,
-        marginRight: 25
-     },
-     forthSection:{
-        flexDirection: 'row', 
-     },
-     
+     seeMore:{
+         fontSize: 16,
+         fontWeight: '600',
+         color: '#464747'
+     }
 })

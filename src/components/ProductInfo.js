@@ -1,16 +1,14 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text } from 'react-native'
 import React, { useState } from 'react'
-import { MaterialIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
+import { TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'
-import First from '../../assets/first.png'
-import Second from '../../assets/second.png'
-import Third from '../../assets/third.png'
+import { AntDesign } from '@expo/vector-icons';
 
+export default function ProductInfo({ navigation }) {
 
-
-export default function productScreen({ navigation }) {
+    
     const {product} = navigation.state.params;
 
     const [counter, setCounter] = useState(1);
@@ -29,71 +27,8 @@ export default function productScreen({ navigation }) {
     const colors = ['#f55b5b','#3355B1','#A833B0']
 
   return (
-    <View style={styles.background}>
-      <View style={styles.body}>
-      <View style={styles.IconFlex}>
-        <TouchableOpacity style={styles.firstIcon}>
-        <MaterialIcons 
-        style={styles.arrow} 
-        name="keyboard-arrow-left" 
-        size={24} 
-        color="#CFCFCF" 
-        onPress={()=> navigation.navigate('Home')}
-        />
-        </TouchableOpacity>
-        <View style={styles.secondIcon}>
-        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#CFCFCF" />
-        </View>
-        
-        <View style={styles.shareIcon}>
-        <AntDesign style={styles.arrow} name="sharealt" size={24} color="#CFCFCF" />
-        </View>
-      </View>
-
-      
-      <LinearGradient
-        colors={['#fcfcfc', '#E5E5E5']}
-        style={styles.container}
-        start={{ x: 1, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      >
-        <Image
-        style={styles.head}
-        source={{uri: product.category.image}}
-        ></Image>
-      </LinearGradient>
-
-      <View style={styles.dotLineBox}>
-        <View style={styles.dotLineOne}></View>
-        <View style={styles.dotLineTwo}></View>
-        <View style={styles.dotLineOne}></View>
-      </View>
-
-        <View>
-        <View style={styles.featured}>
-            <View>
-                <Image
-                    style={styles.headSet}
-                source={{uri: product.images[0]}}
-                ></Image>
-            </View>
-            <View>
-            <Image
-                style={styles.headSet}
-                source={{uri: product.images[1]}}
-                ></Image>
-            </View>
-            <View>
-            <Image
-                style={styles.headSet}
-                source={{uri: product.images[2]}}
-                ></Image>
-            </View>
-        </View>
-        </View>
-
-        {/* product details */}
-        <LinearGradient 
+    <View>
+      <LinearGradient 
         style={styles.fifthSection}
         colors={[ '#C4ECFC', '#FFFFFF', ]}
         start={{ x: 0, y: 1 }}
@@ -160,129 +95,11 @@ export default function productScreen({ navigation }) {
         </View>
 
         </LinearGradient>
-        {/* product details */}
-        
-      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    background:{
-        backgroundColor: '#E5E5E5'
-    },
-    
-    firstIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        
-    },
-    secondIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        marginLeft: 218,
-        marginRight: 10
-    },
-    arrow:{
-        marginLeft: 10,
-        marginTop: 11
-    },
-    secondArrow:{
-        marginLeft: 12,
-        marginTop: 13
-    },
-    shareIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        
-    },
-    IconFlex:{
-        flexDirection: 'row',
-        marginTop: 10,
-        marginLeft: 15
-    },
-    container:{
-        width: 200,
-        height: 260,
-        borderRadius: 10,
-        marginLeft: 95,
-        marginTop: 30,
-        position: 'relative'
-    },
-    
-    head:{
-        width: 200,
-        height: 280,
-        position: 'absolute'
-    },
-    dotLineOne:{
-        width: 8,
-        height: 8,
-        backgroundColor: '#CFCFCF',
-    },
-    dotLineTwo:{
-        width: 30,
-        height: 8,
-        backgroundColor: '#729bd6',
-        borderRadius: 10,
-        marginRight: 10,
-        marginLeft: 10
-    },
-    dotLineOne:{
-        width: 8,
-        height: 8,
-        backgroundColor: '#CFCFCF',
-        borderRadius: 10
-    },
-    dotLineBox:{
-        flexDirection: 'row',
-        marginTop: 30,
-        marginLeft: 160
-    },
-    featured:{
-        flexDirection: 'row',
-        marginVertical: 20,
-        marginHorizontal: 55
-    },
-    headSet:{
-        marginTop: 10,
-        marginLeft: 10,
-        width: 80,
-        height: 60,
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: '#1862db',
-    },
-    point:{
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#3F4343',
-    },
-    firstBox:{
-        width: 28,
-        height: 28,
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius: 50,
-        borderWidth: 3,
-        borderColor: 'Black'
-    },
-    circle:{
-        width: 24,
-        height: 24,
-        borderRadius: 50,
-    },
-    
-
-    
-    // productInformation
     fifthSection:{
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
