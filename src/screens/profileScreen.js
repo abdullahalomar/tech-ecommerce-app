@@ -20,7 +20,6 @@ export default function profileScreen({navigation}) {
     <View style={{width: 408, height: 762}}>
       <View style={styles.firstSection}>
         <View style={styles.firstContent}>
-          {/* <View style={{flexDirection: 'row', marginRight: 40}}> */}
           <View style={{marginTop: 30}}>
           <Image
           style={{width: 80, height: 80, borderRadius: 100, backgroundColor: 'white'}}
@@ -31,7 +30,7 @@ export default function profileScreen({navigation}) {
           <Text style={styles.profile}>Profile</Text>
           <Text style={styles.mail}>example@gmail.com</Text>
           </View>
-          {/* </View> */}
+         
 
           {/* modal */}
           <PopUp/>
