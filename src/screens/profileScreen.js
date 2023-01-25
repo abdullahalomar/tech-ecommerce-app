@@ -8,13 +8,7 @@ import NotifyIcon from '../components/NotifyIcon';
 import PopUp from '../components/PopUp';
 import { LinearGradient } from 'expo-linear-gradient';
 
-
-
-
-
 export default function profileScreen({navigation}) {
-
-  
 
   return (
       <MenubarScreen navigation={navigation}>

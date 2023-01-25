@@ -42,7 +42,6 @@ export default function homeScreen({navigation, result}) {
       };
      
       
-
   return (
    <MenubarScreen navigation={navigation}>
     <View style={styles.bg}>

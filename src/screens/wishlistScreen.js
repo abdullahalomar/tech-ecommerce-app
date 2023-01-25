@@ -22,7 +22,9 @@ export default function wishlistScreen({ navigation }) {
             <Entypo name="share" size={24} color="black" />
           </TouchableOpacity>
           <Text style={styles.wish}>wishlist</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={()=> navigation.navigate('Cart')}
+          >
             <Entypo name="shopping-cart" size={24} color="black" />
           </TouchableOpacity>
         </View>

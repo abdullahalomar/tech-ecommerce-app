@@ -4,6 +4,7 @@ import { Entypo } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function MenubarScreen({children, navigation}) {
   
@@ -18,6 +19,13 @@ export default function MenubarScreen({children, navigation}) {
        >
             <View style={styles.last}>
             <TouchableOpacity 
+            style={styles.homeIcon}
+            onPress={()=> navigation.navigate('Home')}
+            >
+            <Text style={styles.home}><Octicons style={{}} name="home" size={35} color="#5351db" /></Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
             style={{marginTop: 7,}}
             onPress={()=> navigation.navigate('Shop')}
             >
@@ -25,23 +33,15 @@ export default function MenubarScreen({children, navigation}) {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> navigation.navigate('Product')}
-            >
-            <MaterialCommunityIcons style={{marginTop: 5}} name="shopping-outline" size={28} color="#8B8B8B" />
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            style={styles.homeIcon}
-            onPress={()=> navigation.navigate('Home')}
-            >
-            <Text style={styles.home}><Octicons style={{}} name="home" size={35} color="#5351db" /></Text>
-            </TouchableOpacity>
-            
-            
-            <TouchableOpacity
             onPress={()=> navigation.navigate('Wishlist')}
             >
             <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#8B8B8B" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> navigation.navigate('Cart')}
+            >
+            <AntDesign style={{marginTop: 6}} name="shoppingcart" size={28} color="#8B8B8B" />
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -64,8 +64,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 40,
         position: 'absolute',
         marginTop: '175%',
-        // borderRadius: 30,
-        // marginHorizontal: 10,
         elevation: 4
      },
      last:{
