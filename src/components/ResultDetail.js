@@ -14,7 +14,7 @@ export default function ({result, navigation}) {
       <Badge/>
         <Image style={styles.image} source={{ uri: result.category.image}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{result.title}</Text>
+      <Text style={styles.font}>{result.title.length > 10 ? result.title.slice(0, 20) : result.title }</Text>
       <Text style={styles.font}>$ {result.price}</Text>
       </View>
       {/* <Text>{result.rating}</Text> */}

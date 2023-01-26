@@ -5,17 +5,19 @@ import MenubarScreen from '../components/MenubarScreen'
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
+import Category from '../components/Category';
 
 
-export default function homeScreen({navigation, result}) {
+export default function homeScreen({navigation}) {
 
-   const [apidata,setApiData] = useState([]);
+   const [apidata, setApiData] = useState([]);
+
    useEffect(()=>{
       fetch('https://api.escuelajs.co/api/v1/products')
       .then(response=>response.json())
       .then(data =>setApiData(data))
    },[])
-   console.log(apidata)
+   
     const DATA = [
         {
           title: "Technology",
@@ -65,19 +67,18 @@ export default function homeScreen({navigation, result}) {
 </View>
 
 
-  <View style={styles.flat}>
-      <FlatList
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={DATA => DATA.title}
-      data={DATA}
-      renderItem={({ item }) => {
-          return (
-          <Text style={styles.listItem}>{item.title}</Text>
-          )
-      }}
-      ></FlatList>
-  </View>
+  <ScrollView 
+  horizontal 
+  style={styles.flat}
+  showsHorizontalScrollIndicator={false}
+  >
+   {
+      apidata.map(category => <Category
+      key={category.id}
+      category={category}
+      ></Category>)
+   }
+  </ScrollView>
   
   <View>
       <View style={styles.thirdSection}>
@@ -169,5 +170,9 @@ const styles = StyleSheet.create({
          fontSize: 16,
          fontWeight: '600',
          color: '#464747'
+     },
+     flat:{
+         marginTop: 20,
+         marginBottom: 10,
      }
 })

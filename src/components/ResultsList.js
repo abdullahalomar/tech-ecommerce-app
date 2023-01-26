@@ -6,7 +6,6 @@ export default function ResultsList({navigation,title, results}) {
   return (
     <View>
         <Text style={styles.title}>{title}</Text>
-      {/* <Text>{results.length}</Text> */}
       <FlatList
       horizontal
       data={results}
