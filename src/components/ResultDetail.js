@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Badge from './Badge'
-import { LinearGradient } from 'expo-linear-gradient'
+import { AntDesign } from '@expo/vector-icons';
 
 
 
@@ -22,7 +22,10 @@ export default function ({result, navigation}) {
         <Image style={styles.image} source={{ uri: result.image}} />
       <View style={styles.text}>
       <Text style={styles.font}>{result.title.length > 10 ? result.title.slice(0, 20) : result.title }</Text>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <Text style={styles.priceFont}>$ {result.price}</Text>
+      <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.rating.rate}</Text>
+      </View>
       </View>
       {/* <Text>{result.rating}</Text> */}
     </TouchableOpacity>
@@ -38,7 +41,6 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     text:{
-        alignItems: 'center',
         marginTop: 5
     },
     font: {

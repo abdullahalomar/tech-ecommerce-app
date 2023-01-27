@@ -1,16 +1,13 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons'
-import First from '../../assets/first.png'
-import Second from '../../assets/second.png'
-import Third from '../../assets/third.png'
+import ProductHerder from '../components/productHerder';
 
 
 
-export default function productScreen({ navigation}) {
+export default function productScreen({ navigation, result}) {
     
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([])
@@ -37,25 +34,9 @@ export default function productScreen({ navigation}) {
   return (
     <View style={styles.background}>
       <View style={styles.body}>
-      <View style={styles.IconFlex}>
-        <TouchableOpacity style={styles.firstIcon}>
-        <MaterialIcons 
-        style={styles.arrow} 
-        name="keyboard-arrow-left" 
-        size={24} 
-        color="#CFCFCF" 
-        onPress={()=> navigation.navigate('Home')}
-        />
-        </TouchableOpacity>
-        <View style={styles.secondIcon}>
-        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#CFCFCF" />
-        </View>
-        
-        <View style={styles.shareIcon}>
-        <AntDesign style={styles.arrow} name="sharealt" size={24} color="#CFCFCF" />
-        </View>
-      </View>
-
+      
+        {/* menu */}
+        <ProductHerder/>
       
       <LinearGradient
         colors={['#fcfcfc', '#E5E5E5']}
@@ -107,15 +88,21 @@ export default function productScreen({ navigation}) {
         >
            <View style={styles.fifth}>
             <Text style={styles.free}>FREE SHIPPING</Text>
-            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>4.8</Text> (231)</Text>
+            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>{singleProducts?.rating?.rate}</Text>({singleProducts?.rating?.count})</Text>
            </View>
 
            <View style={styles.six}>
             <Text style={styles.sony}>{singleProducts.title}</Text>
-            <Text style={styles.long}>{singleProducts.description}</Text>
+            <Text 
+            style={styles.long}>
+                {singleProducts.description}
+                </Text>
         </View>
+        </LinearGradient>
 
-        <View style={styles.seven}>
+       <View style={styles.productCounting}>
+       <View style={{paddingVertical: 16}}>
+       <View style={styles.seven}>
             <Text style={styles.sevenNumber}>$ {singleProducts.price}</Text>
            
             <View style={styles.sevenFlex}>
@@ -134,8 +121,7 @@ export default function productScreen({ navigation}) {
                
             </View>
         </View>
-
-        <View style={styles.lastSection}>
+       <View style={styles.lastSection}>
             <View style={styles.firstF}>
                 <TouchableOpacity
                 style={styles.decreaseBtn}
@@ -164,8 +150,10 @@ export default function productScreen({ navigation}) {
                 <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>
         </View>
+       </View>
+       </View>
 
-        </LinearGradient>
+        
         {/* product details */}
         
       </View>
@@ -177,49 +165,12 @@ const styles = StyleSheet.create({
     background:{
         backgroundColor: '#E5E5E5'
     },
-    
-    firstIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        
-    },
-    secondIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        marginLeft: 218,
-        marginRight: 10
-    },
-    arrow:{
-        marginLeft: 10,
-        marginTop: 11
-    },
-    secondArrow:{
-        marginLeft: 12,
-        marginTop: 13
-    },
-    shareIcon:{
-        width: 45,
-        height: 45,
-        backgroundColor: 'white',
-        borderRadius: 30,
-        
-    },
-    IconFlex:{
-        flexDirection: 'row',
-        marginTop: 10,
-        marginLeft: 15
-    },
     container:{
         width: 200,
         height: 260,
         borderRadius: 10,
-        marginLeft: 95,
-        marginTop: 30,
-        position: 'relative'
+        marginHorizontal: 95,
+        marginTop: 80
     },
     
     head:{
@@ -253,7 +204,7 @@ const styles = StyleSheet.create({
     },
     featured:{
         flexDirection: 'row',
-        marginVertical: 20,
+        marginBottom: 20,
         marginHorizontal: 55
     },
     headSet:{
@@ -293,7 +244,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         backgroundColor: 'white',
-        height: 270
+        height: 270,
     },
     fifth:{
         flexDirection: 'row',
@@ -329,7 +280,7 @@ const styles = StyleSheet.create({
     sevenNumber:{
         fontSize: 20,
         fontWeight: '600',
-        color: '#ef9534'
+        color: '#252526'
     },
     sevenFlex:{
         width:'30%',
@@ -341,7 +292,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 25,
-        marginTop: 20
+        marginTop: 20,
     },
     firstF:{
         width: 94,
@@ -365,7 +316,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginTop: 2.5,
         paddingHorizontal: 5,
-        color: '#909090'
+        color: '#252526'
     },
     secF:{
         width: 100,
@@ -386,4 +337,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#70d491',
         borderRadius: 55,
     },
+    productCounting:{
+        position: 'absolute',
+        marginTop: '163%',
+        backgroundColor: '#8ca3db',
+        width: '100%',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30
+    }
 })
