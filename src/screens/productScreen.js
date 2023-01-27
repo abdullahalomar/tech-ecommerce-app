@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -10,10 +10,16 @@ import Third from '../../assets/third.png'
 
 
 
-export default function productScreen({ navigation }) {
-    const {product} = navigation.state.params;
-
+export default function productScreen({ navigation}) {
+    
     const [counter, setCounter] = useState(1);
+    const [singleProducts, setSingleProducts] = useState([])
+
+    useEffect(()=>{
+        fetch(`https://fakestoreapi.com/products/${navigation.state.params.id}`)
+        .then(Response => Response.json())
+        .then(data => setSingleProducts(data))
+    },[])
 
     const increment = () => {
         setCounter(counter + 1)
@@ -59,7 +65,7 @@ export default function productScreen({ navigation }) {
       >
         <Image
         style={styles.head}
-        source={{uri: product.category.image}}
+        source={{uri: singleProducts.image}}
         ></Image>
       </LinearGradient>
 
@@ -74,19 +80,19 @@ export default function productScreen({ navigation }) {
             <View>
                 <Image
                     style={styles.headSet}
-                source={{uri: product.images[0]}}
+                source={{uri: singleProducts.image}}
                 ></Image>
             </View>
             <View>
             <Image
                 style={styles.headSet}
-                source={{uri: product.images[1]}}
+                source={{uri: singleProducts.image}}
                 ></Image>
             </View>
             <View>
             <Image
                 style={styles.headSet}
-                source={{uri: product.images[2]}}
+                source={{uri: singleProducts.image}}
                 ></Image>
             </View>
         </View>
@@ -105,12 +111,12 @@ export default function productScreen({ navigation }) {
            </View>
 
            <View style={styles.six}>
-            <Text style={styles.sony}>{product.title}</Text>
-            <Text style={styles.long}>{product.description}</Text>
+            <Text style={styles.sony}>{singleProducts.title}</Text>
+            <Text style={styles.long}>{singleProducts.description}</Text>
         </View>
 
         <View style={styles.seven}>
-            <Text style={styles.sevenNumber}>$ {product.price}</Text>
+            <Text style={styles.sevenNumber}>$ {singleProducts.price}</Text>
            
             <View style={styles.sevenFlex}>
                {
@@ -253,8 +259,8 @@ const styles = StyleSheet.create({
     headSet:{
         marginTop: 10,
         marginLeft: 10,
-        width: 80,
-        height: 60,
+        width: 70,
+        height: 50,
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#1862db',

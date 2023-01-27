@@ -1,23 +1,23 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 export default function Item({item}) {
-    const {category, title, price} = item;
+    const {image, title, price} = item;
   return (
-    <View>
-       <Image style={styles.image} source={{ uri: category.image}} />
+    <TouchableOpacity style={{width:'30%'}}>
+       <Image style={styles.image} source={{ uri: image}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{title}</Text>
+      <Text style={styles.font}>{title.length < 10 ? title : title.substring(0, 10)}</Text>
       <Text style={styles.font}>$ {price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
     image:{
-        width: 130,
-        height: 120,
+        width: 80,
+        height: 60,
         borderRadius: 8,
         marginTop: 5
     },
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     font: {
-      fontSize: 15,
-      fontWeight: '600'
+      
     }
 })

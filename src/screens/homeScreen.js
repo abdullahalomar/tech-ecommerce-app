@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import homebg from '../../assets/homebg.png'
 import MenubarScreen from '../components/MenubarScreen'
@@ -6,32 +6,21 @@ import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 import Category from '../components/Category';
+import useCategory from '../hooks/useCategory';
 
 
 export default function homeScreen({navigation}) {
 
    const [apidata, setApiData] = useState([]);
+   const [categories] = useCategory();
 
    useEffect(()=>{
-      fetch('https://api.escuelajs.co/api/v1/products')
+      fetch('https://fakestoreapi.com/products')
       .then(response=>response.json())
       .then(data =>setApiData(data))
    },[])
    
-    const DATA = [
-        {
-          title: "Technology",
-        },
-        {
-          title: "Fashion",
-        },
-        {
-          title: "Sports",
-        },
-        {
-          title: "Home",
-        },
-      ];
+   
 
       const [term, setTerm] = useState('');
       const [searchApi, results, errorMessage] = useResults();
@@ -73,10 +62,10 @@ export default function homeScreen({navigation}) {
   showsHorizontalScrollIndicator={false}
   >
    {
-      apidata.map(category => <Category
+      categories.map(category => <Category
       key={category.id}
       category={category}
-      ></Category>)
+      />)
    }
   </ScrollView>
   

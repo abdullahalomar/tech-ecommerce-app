@@ -2,18 +2,21 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import React, { useEffect, useState } from 'react'
 import Item from '../components/Item';
 import MenubarScreen from '../components/MenubarScreen';
+import Category from '../components/Category';
+import useCategory from '../hooks/useCategory';
 
 
 export default function shopScreen({navigation}) {
 
-  const [items,setItems] = useState([]);
+  const [items, setItems] = useState([]);
+  const [categories] = useCategory();
 
   useEffect(()=>{
-     fetch('https://api.escuelajs.co/api/v1/products')
+     fetch('https://fakestoreapi.com/products')
      .then(response=>response.json())
-     .then(data =>setItems(data))
+     .then(data => setItems(data))
   },[])
-
+  
   return (
     <MenubarScreen navigation={navigation}>
       <View>
@@ -21,8 +24,13 @@ export default function shopScreen({navigation}) {
         <View style={styles.category}>
             <Text style={styles.categoryText}>Categories</Text>
             <TouchableOpacity>
-            <Text style={styles.categoryTitle}>dfg</Text>
             </TouchableOpacity>
+            {
+              categories.map(category => <Category
+              key={category.id}
+              category={category}
+              ></Category>)
+            }
         </View>
         <ScrollView
         showsVerticalScrollIndicator={false}
@@ -36,16 +44,9 @@ export default function shopScreen({navigation}) {
         }
         </View>
         </ScrollView>
-        <ScrollView>
-          <View style={styles.cartBox}>
-        {
-          items.map(item => <Item
-          key={item.id}
-          item={item}
-          ></Item>)
-        }
-        </View>
-        </ScrollView>
+      
+          
+      
        </View>
     </View>
     </MenubarScreen>
@@ -56,11 +57,13 @@ const styles = StyleSheet.create({
   flexBox:{
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginRight: 15
+    marginRight: 15,
   },
   cartBox: {
-    marginHorizontal: 20,
-    marginVertical: 20
+    padding:10,
+    flexDirection:'row',
+    flexWrap:'wrap',
+    justifyContent:'space-between'
   },
   category:{
     backgroundColor: '#a9c2d9',

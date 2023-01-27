@@ -14,16 +14,19 @@ export default function Badge() {
 
 const styles = StyleSheet.create({
     badge:{
-        backgroundColor: 'white',
-        marginRight: 75,
-        marginLeft: 5,
+        flexDirection: 'row',
         borderRadius: 10,
+        
      },
      badgeText:{
-        textAlign: 'center',
+        paddingHorizontal: 9,
         paddingBottom: 3,
-        color: '#FF5500',
+        color: 'white',
         fontSize: 10,
-        fontWeight: '400'
+        fontWeight: '400',
+        borderRadius: 20,
+        backgroundColor: '#f0651f',
      },
 })
+
+// #FF5500
