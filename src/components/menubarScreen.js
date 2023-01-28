@@ -22,32 +22,35 @@ export default function MenubarScreen({children, navigation}) {
             style={styles.homeIcon}
             onPress={()=> navigation.navigate('Home')}
             >
-            <Text style={styles.home}><Octicons style={{}} name="home" size={35} color="#5351db" /></Text>
+            <Octicons style={navigation.state.routeName == 'Home'? styles.active : {color:'#8B8B8B'}} name="home" size={24} color="#5351db" />
             </TouchableOpacity>
 
             <TouchableOpacity 
             style={{marginTop: 7,}}
             onPress={()=> navigation.navigate('Shop')}
             >
-            <Entypo name="shop" size={24} color="#8B8B8B" />
+            <Entypo style={navigation.state.routeName == 'Shop'? styles.active :{color:'#8B8B8B'}} name="shop" size={24} />
             </TouchableOpacity>
 
             <TouchableOpacity
+            style={{marginTop: 6}}
             onPress={()=> navigation.navigate('Wishlist')}
             >
-            <Entypo style={{marginTop: 6}} name="heart-outlined" size={28} color="#8B8B8B" />
+            <Entypo style={navigation.state.routeName == 'Wishlist'? styles.active :{color:'#8B8B8B'}} name="heart-outlined" size={28}/>
             </TouchableOpacity>
 
             <TouchableOpacity
+            style={{marginTop: 6}}
             onPress={()=> navigation.navigate('Cart')}
             >
-            <AntDesign style={{marginTop: 6}} name="shoppingcart" size={28} color="#8B8B8B" />
+            <AntDesign style={navigation.state.routeName == 'Cart'? styles.active :{color:'#8B8B8B'}} name="shoppingcart" size={28}/>
             </TouchableOpacity>
 
             <TouchableOpacity
+            style={{marginTop: 3}}
             onPress={()=> navigation.navigate('Profile')}
             >
-            <MaterialCommunityIcons style={{marginTop: 3}} name="account-outline" size={30} color="#8B8B8B" />
+            <MaterialCommunityIcons style={navigation.state.routeName == 'Profile'? styles.active :{color:'#8B8B8B'}} name="account-outline" size={28}/>
             </TouchableOpacity>
             </View>
         </LinearGradient>
@@ -72,6 +75,10 @@ const styles = StyleSheet.create({
         marginTop: 20
      },
      homeIcon:{
-        flexDirection: 'row',
+        marginTop: 7,
      },
+     active:{
+        color: '#5351db',
+        
+     }
 })

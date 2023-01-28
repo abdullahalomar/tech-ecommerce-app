@@ -45,8 +45,6 @@ export default function shopScreen({navigation}) {
         </View>
         </ScrollView>
       
-          
-      
        </View>
     </View>
     </MenubarScreen>

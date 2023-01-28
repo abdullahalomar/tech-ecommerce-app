@@ -20,20 +20,18 @@ export default function profileScreen({navigation}) {
             end={{ x: 1, y: 1 }}
       >
         <View style={styles.firstContent}>
-          <View style={{marginTop: 30}}>
+          {/* <View></View> */}
+          
           <Image
-          style={{width: 80, height: 80, borderRadius: 100, backgroundColor: 'white'}}
+          style={{width: 80, height: 80, borderRadius: 100, backgroundColor: 'white',}}
           source={man}
           ></Image>
-          </View>
-          <View style={{marginLeft: 30, marginRight: 70, marginTop: 35}}>
-          <Text style={styles.profile}>Tom Cruise</Text>
+         <View style={{marginTop: 10}}>
+         <Text style={styles.profile}>Tom Cruise</Text>
           <Text style={styles.mail}>example@gmail.com</Text>
-          </View>
-
-          {/* modal */}
-          <PopUp/>
-          {/* modal */}
+         </View>
+        
+          {/* <View></View> */}
         </View>
 
         {/* notification */}
@@ -180,23 +178,28 @@ export default function profileScreen({navigation}) {
 
 const styles = StyleSheet.create({
   firstSection:{
-      width: 393,
-      height: 200,
+      width: '100%',
+      height: '26.5%',
       backgroundColor: '#5956E9',
       borderBottomRightRadius: 50,
       borderBottomLeftRadius: 50
   },
   firstContent:{
       flexDirection: 'row',
-      marginHorizontal: 30,
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      marginTop: 30
   },
   profile:{
-      fontSize: 25,
+      textAlign: 'center',
+      fontSize: 15,
       fontWeight: 'bold',
-      color: 'white'
+      color: 'white',
+     
   },
   mail:{
-      fontSize: 17,
+      textAlign: 'center',
+      fontSize: 12,
       fontWeight: '500',
       color: 'white',
       lineHeight: 20

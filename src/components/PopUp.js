@@ -20,10 +20,10 @@ export default function PopUp() {
   return (
     <View>
       <TouchableOpacity 
-          style={{marginTop: 40}}
+          style={styles.profileIcon}
           onPress={toggleModal}
           >
-          <FontAwesome5 name="user-edit" size={26} color="white" />
+          <Feather name="settings" size={26} color="#757678" />
           </TouchableOpacity>
 
           <Modal 
@@ -74,5 +74,8 @@ const styles = StyleSheet.create({
         color: '#5585d4',
         textAlign: 'center',
         marginBottom: 20 
+    },
+    profileIcon:{
+        
     }
 })

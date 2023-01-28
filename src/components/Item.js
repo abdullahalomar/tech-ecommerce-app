@@ -4,7 +4,7 @@ import React from 'react'
 export default function Item({item}) {
     const {image, title, price} = item;
   return (
-    <TouchableOpacity style={{width:'30%'}}>
+    <TouchableOpacity style={{width:'50%', marginBottom: 15, paddingLeft: 20}}>
        <Image style={styles.image} source={{ uri: image}} />
       <View style={styles.text}>
       <Text style={styles.font}>{title.length < 10 ? title : title.substring(0, 10)}</Text>

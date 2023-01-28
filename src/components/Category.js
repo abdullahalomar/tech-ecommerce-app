@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     marginVertical: 5,
-    elevation: 0.5
+    elevation: 0.5,
+    marginLeft: 5
   }
 })
 

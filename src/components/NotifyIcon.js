@@ -4,8 +4,10 @@ import { StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import PopUp from './PopUp';
 
 export default function NotifyIcon({navigation}) {
+
   return (
     <View>
       <View style={styles.notification}>
@@ -15,22 +17,11 @@ export default function NotifyIcon({navigation}) {
         >
         <AntDesign name="hearto" size={24} color="#757678" />
         </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-        <Feather name="bell" size={24} color="#757678" />
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-  
-        <Feather name="message-circle" size={24} color="#757678" />
-        </TouchableOpacity>
-        <TouchableOpacity
-        style={styles.iconBox}
-        >
-        <Feather name="star" size={24} color="#757678" />
-        </TouchableOpacity>
+        <View style={styles.iconBox}>
+        <PopUp/>
+        </View>
+        
+        
         </View>
     </View>
   )
@@ -39,9 +30,8 @@ export default function NotifyIcon({navigation}) {
 const styles = StyleSheet.create({
     notification:{
         flexDirection: 'row',
-        position: 'absolute',
-        marginLeft: 30,
-        marginTop: 55
+        marginHorizontal: '30%',
+        marginTop: '13%'
     },
     iconBox:{
         paddingVertical: 20,

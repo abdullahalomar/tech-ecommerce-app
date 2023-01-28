@@ -6,7 +6,6 @@ import headP from '../../assets/headPhonep.png'
 import googlePay from '../../assets/google-pay.png'
 import applePay from '../../assets/apple-pay.png'
 import payPal from '../../assets/paypal.png'
-import Visa from '../components/Visa';
 import visaImg from '../../assets/visa.png'
 import { AntDesign } from '@expo/vector-icons';
 import Vector from '../../assets/Vector.png'
@@ -72,9 +71,9 @@ export default function checkoutScreen({navigation}) {
         horizontal 
         style={styles.forthSection}>
             <View style={styles.visaSecMain}>
-            <View 
+            <TouchableOpacity
             style={styles.main}
-            onPress
+            
             >
             <View style={{}}>
             <View style={styles.visaSection}>
@@ -94,8 +93,8 @@ export default function checkoutScreen({navigation}) {
                 <Text style={styles.num}>07/25</Text>
             </View>
             </View>
-            </View>
-            <View style={styles.visaSecTwo}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.visaSecTwo}>
                 <Image
                 style={styles.visaTwo}
                 source={visaImg}
@@ -105,7 +104,7 @@ export default function checkoutScreen({navigation}) {
                 style={styles.vecTwo}
                 source={Vector}
                 ></Image>
-            </View>
+            </TouchableOpacity>
             </View>
         </ScrollView>
         {/* visa */}
