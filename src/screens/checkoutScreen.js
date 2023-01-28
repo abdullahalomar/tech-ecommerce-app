@@ -6,9 +6,8 @@ import headP from '../../assets/headPhonep.png'
 import googlePay from '../../assets/google-pay.png'
 import applePay from '../../assets/apple-pay.png'
 import payPal from '../../assets/paypal.png'
-import visaImg from '../../assets/visa.png'
-import { AntDesign } from '@expo/vector-icons';
-import Vector from '../../assets/Vector.png'
+
+import VisaCard from '../components/VisaCard';
 
 
 
@@ -70,42 +69,7 @@ export default function checkoutScreen({navigation}) {
         showsHorizontalScrollIndicator={false}
         horizontal 
         style={styles.forthSection}>
-            <View style={styles.visaSecMain}>
-            <TouchableOpacity
-            style={styles.main}
-            
-            >
-            <View style={{}}>
-            <View style={styles.visaSection}>
-            <Image
-            style={styles.visa}
-            source={visaImg}
-            ></Image>
-            <AntDesign style={styles.check} name="checkcircle" size={24} color="white" />
-            </View>
-            
-            <Text style={styles.number}>**** **** **** 1921</Text>
-            <View style={styles.vectorSec}>
-                <Image
-                style={styles.vec}
-                source={Vector}
-                ></Image>
-                <Text style={styles.num}>07/25</Text>
-            </View>
-            </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.visaSecTwo}>
-                <Image
-                style={styles.visaTwo}
-                source={visaImg}
-                ></Image>
-                <Text style={styles.numberTwo}>**** **** **** 1921</Text>
-                <Image
-                style={styles.vecTwo}
-                source={Vector}
-                ></Image>
-            </TouchableOpacity>
-            </View>
+            <VisaCard/>
         </ScrollView>
         {/* visa */}
 
@@ -331,73 +295,6 @@ const styles = StyleSheet.create({
 
 
     // visa
-    visaSecMain:{
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    main:{
-        width: 213,
-        height: 135,
-        borderRadius: 20,
-        backgroundColor: '#E27BC1',
-        opacity: 0.7,
-    },
-    visaSection:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        
-    },
-    visa:{
-        marginLeft: 16,
-        marginTop: 10
-    },
-    check:{
-        marginRight: 14,
-        marginTop: 17
-    },
-    number:{
-        fontWeight: '500',
-        color: 'white',
-        marginLeft: 16,
-        marginVertical: 8
-    },
-    numberTwo:{
-        fontWeight: '500',
-        color: 'white',
-        marginLeft: 16,
-        marginVertical: 1
-    },
-    vectorSec:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    vec:{
-        marginTop: 19,
-        marginLeft: 16
-    },
-    num:{
-        marginTop: 19,
-        marginRight: 16,
-        fontWeight: '500',
-        color: 'white'
-    },
-    visaSecTwo:{
-        width: 213,
-        height: 132,
-        backgroundColor: '#A280C1',
-        borderRadius: 20,
-        opacity: 0.7,
-        marginLeft: 13
-    },
-   
-    visaTwo:{
-        marginLeft: 16,
-        marginTop: 10
-    },
-    vecTwo:{
-        marginTop: 19,
-        marginLeft: 16
-    },
     forthSection:{
         marginHorizontal: 16,
         marginTop: 15,

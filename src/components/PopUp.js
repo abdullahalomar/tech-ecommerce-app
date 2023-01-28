@@ -5,7 +5,6 @@ import { Feather } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { StyleSheet } from 'react-native';
 import ImageUpload from './ImageUpload';
-import { FontAwesome5 } from '@expo/vector-icons';
 
 
 export default function PopUp() {
