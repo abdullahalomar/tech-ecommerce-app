@@ -102,7 +102,7 @@ export default function loginScreen({navigation}) {
 const styles = StyleSheet.create({
      firstSection:{
         width: 394,
-        height: 766,
+        height: '90%',
      },
      halfCircle:{
         width: 110,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         height: 502,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
-        marginTop: 66
+        marginTop: 90
      },
      email:{
         borderBottomWidth: 0.5,

@@ -103,8 +103,8 @@ export default function homeScreen({navigation}) {
 const styles = StyleSheet.create({
    bg:{
       width: '100%',
-      height: '97%',
-      backgroundColor: '#E5E5E5'
+      height: '95%',
+      // backgroundColor: '#E5E5E5'
    },
     body:{
         marginHorizontal: 17,

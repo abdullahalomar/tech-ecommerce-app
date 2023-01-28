@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     backgroundColor: 'white',
     borderRadius: 10,
-    marginVertical: 5
+    marginVertical: 5,
+    elevation: 0.5
   }
 })
 

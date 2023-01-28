@@ -3,21 +3,21 @@ import React, { useState } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import headP from '../../assets/headPhonep.png'
-import { AntDesign } from '@expo/vector-icons';
-import Vector from '../../assets/Vector.png'
-import Visa from '../../assets/visa.png'
-import { color } from 'react-native-reanimated';
 import googlePay from '../../assets/google-pay.png'
 import applePay from '../../assets/apple-pay.png'
 import payPal from '../../assets/paypal.png'
+import Visa from '../components/Visa';
+import visaImg from '../../assets/visa.png'
+import { AntDesign } from '@expo/vector-icons';
+import Vector from '../../assets/Vector.png'
+
 
 
 export default function checkoutScreen({navigation}) {
 
     const [delivery, setDelivery] = useState(0)
 
-    const [visa, setVisa] = useState(0)
-
+    
   return (
     <View style={styles.background}>
         <View style={styles.firstSection}>
@@ -66,21 +66,21 @@ export default function checkoutScreen({navigation}) {
 
 
         <Text style={styles.payment}>Select your payment method</Text>
+        {/* visa */}
         <ScrollView 
         showsHorizontalScrollIndicator={false}
         horizontal 
         style={styles.forthSection}>
-            
-            
             <View style={styles.visaSecMain}>
             <View 
             style={styles.main}
             onPress
             >
+            <View style={{}}>
             <View style={styles.visaSection}>
             <Image
             style={styles.visa}
-            source={Visa}
+            source={visaImg}
             ></Image>
             <AntDesign style={styles.check} name="checkcircle" size={24} color="white" />
             </View>
@@ -94,10 +94,11 @@ export default function checkoutScreen({navigation}) {
                 <Text style={styles.num}>07/25</Text>
             </View>
             </View>
+            </View>
             <View style={styles.visaSecTwo}>
                 <Image
                 style={styles.visaTwo}
-                source={Visa}
+                source={visaImg}
                 ></Image>
                 <Text style={styles.numberTwo}>**** **** **** 1921</Text>
                 <Image
@@ -107,6 +108,7 @@ export default function checkoutScreen({navigation}) {
             </View>
             </View>
         </ScrollView>
+        {/* visa */}
 
         <View style={styles.fifthSection}>
             <Text style={styles.add}>+ Add new</Text>
@@ -261,85 +263,6 @@ const styles = StyleSheet.create({
         marginLeft: 50,
         marginTop: 7
     },
-    forthSection:{
-        marginHorizontal: 16,
-        marginTop: 15,
-        
-    },
-    payment:{
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#343A40',
-        marginBottom: 1,
-        marginTop: 10,
-        marginHorizontal: 18
-    },
-    main:{
-        width: 213,
-        height: 148,
-        borderRadius: 20,
-        backgroundColor: '#E27BC1',
-        opacity: 0.7,
-    },
-    visaSection:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        
-    },
-    visa:{
-        marginLeft: 16,
-        marginTop: 10
-    },
-    check:{
-        marginRight: 14,
-        marginTop: 17
-    },
-    number:{
-        fontWeight: '500',
-        color: 'white',
-        marginLeft: 16,
-        marginVertical: 8
-    },
-    vectorSec:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    vec:{
-        marginTop: 19,
-        marginLeft: 16
-    },
-    num:{
-        marginTop: 19,
-        marginRight: 16,
-        fontWeight: '500',
-        color: 'white'
-    },
-    visaSecTwo:{
-        width: 213,
-        height: 132,
-        backgroundColor: '#A280C1',
-        borderRadius: 20,
-        opacity: 0.7,
-        marginLeft: 13
-    },
-    visaSecMain:{
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    visaTwo:{
-        marginLeft: 16,
-        marginTop: 10
-    },
-    vecTwo:{
-        marginTop: 19,
-        marginLeft: 16
-    },
-    numberTwo:{
-        fontWeight: '500',
-        color: 'white',
-        marginLeft: 16,
-        marginVertical: 1
-    },
     add:{
         fontSize: 18,
         fontWeight: 'bold',
@@ -405,5 +328,88 @@ const styles = StyleSheet.create({
         color: 'white',
         marginLeft: 108,
         marginTop: 9
-    }
+    },
+
+
+    // visa
+    visaSecMain:{
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    main:{
+        width: 213,
+        height: 135,
+        borderRadius: 20,
+        backgroundColor: '#E27BC1',
+        opacity: 0.7,
+    },
+    visaSection:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        
+    },
+    visa:{
+        marginLeft: 16,
+        marginTop: 10
+    },
+    check:{
+        marginRight: 14,
+        marginTop: 17
+    },
+    number:{
+        fontWeight: '500',
+        color: 'white',
+        marginLeft: 16,
+        marginVertical: 8
+    },
+    numberTwo:{
+        fontWeight: '500',
+        color: 'white',
+        marginLeft: 16,
+        marginVertical: 1
+    },
+    vectorSec:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    vec:{
+        marginTop: 19,
+        marginLeft: 16
+    },
+    num:{
+        marginTop: 19,
+        marginRight: 16,
+        fontWeight: '500',
+        color: 'white'
+    },
+    visaSecTwo:{
+        width: 213,
+        height: 132,
+        backgroundColor: '#A280C1',
+        borderRadius: 20,
+        opacity: 0.7,
+        marginLeft: 13
+    },
+   
+    visaTwo:{
+        marginLeft: 16,
+        marginTop: 10
+    },
+    vecTwo:{
+        marginTop: 19,
+        marginLeft: 16
+    },
+    forthSection:{
+        marginHorizontal: 16,
+        marginTop: 15,
+        
+    },
+    payment:{
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#343A40',
+        marginBottom: 1,
+        marginTop: 10,
+        marginHorizontal: 18
+    },
 })

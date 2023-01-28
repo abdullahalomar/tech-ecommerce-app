@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
    container:{
       width: 394,
-      height: 766,
+      height: '100%',
    },
    first:{
       flexDirection: 'row',
@@ -116,11 +116,11 @@ const styles = StyleSheet.create({
       letterSpacing: 1
    },
    valid:{
-      fontSize: 12,
-      fontWeight: '500',
+      fontSize: 10,
+      fontWeight: '300',
       color: 'white',
       marginTop: 18,
-      marginHorizontal: 90
+      marginHorizontal: 80
    },
    button:{
       width: 292,

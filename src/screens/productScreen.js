@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons'
-import ProductHerder from '../components/productHerder';
+import ProductHeader from '../components/ProductHerder'
 
 
 
-export default function productScreen({ navigation, result}) {
+export default function productScreen({ navigation }) {
     
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([])
@@ -36,7 +36,7 @@ export default function productScreen({ navigation, result}) {
       <View style={styles.body}>
       
         {/* menu */}
-        <ProductHerder/>
+        <ProductHeader></ProductHeader>
       
       <LinearGradient
         colors={['#fcfcfc', '#E5E5E5']}
@@ -122,6 +122,10 @@ export default function productScreen({ navigation, result}) {
             </View>
         </View>
        <View style={styles.lastSection}>
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between'
+                }}>
             <View style={styles.firstF}>
                 <TouchableOpacity
                 style={styles.decreaseBtn}
@@ -149,6 +153,7 @@ export default function productScreen({ navigation, result}) {
             >
                 <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>
+            </View>
         </View>
        </View>
        </View>
@@ -238,7 +243,6 @@ const styles = StyleSheet.create({
     },
     
 
-    
     // productInformation
     fifthSection:{
         borderTopLeftRadius: 40,
@@ -289,10 +293,8 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     lastSection:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         marginHorizontal: 25,
-        marginTop: 20,
+        marginTop: 22,
     },
     firstF:{
         width: 94,

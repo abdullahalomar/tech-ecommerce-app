@@ -13,7 +13,7 @@ export default function ProductHerder({ navigation }) {
         name="keyboard-arrow-left" 
         size={24} 
         color="#CFCFCF" 
-        onPress={()=> navigation?.navigate('Home')}
+        onPress={()=> navigation.navigate('Home')}
         />
         </TouchableOpacity>
         <View style={styles.secondIcon}>

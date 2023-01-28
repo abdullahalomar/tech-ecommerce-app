@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     firstFlex:{
         flexDirection: 'row',
         marginHorizontal: 20,
-        marginTop: 15
+        marginTop: 15,
+        
     },
     inputBox:{
         backgroundColor: 'white',
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
         width: 300,
         height: 50,
         flexDirection: 'row',
+        elevation: 1
     },
     search:{
         marginTop: 14,
