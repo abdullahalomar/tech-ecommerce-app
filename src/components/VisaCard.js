@@ -17,8 +17,8 @@ import { CheckBox } from 'react-native-elements'
 export default function VisaCard() {
 
     const [isModalVisible, setModalVisible] = useState(false);
-    const [isCheck, setIsCheck] = useState(false)
-    const [isCheckTwo, setIsCheckTwo] = useState(false)
+    const [isCheck, setIsCheck] = useState({google:true, payPal:false})
+
 
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
@@ -127,18 +127,21 @@ export default function VisaCard() {
                 <Text>Card Number</Text> 
                 <TextInput
                 style={styles.inputLine}
+                placeholder='Enter number'
                 />
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 20}}>
                 <View>
                 <Text>Security Code</Text> 
                 <TextInput
                 style={styles.inputLine}
+                placeholder='CVV'
                 />
                 </View>
                 <View>
                 <Text>Expire Date</Text> 
                 <TextInput
                 style={styles.inputLine}
+                placeholder='DD/MM/YY'
                 />
                 </View>
                 </View>
@@ -151,10 +154,10 @@ export default function VisaCard() {
                 style={styles.checkBox}
                     center
                     uncheckedIcon='square'
-                    checked = {isCheck}
+                    checked = {isCheck.google}
                     onPress={()=>{
                         alert
-                        setIsCheck(!isCheck)
+                        setIsCheck({google:!isCheck.google,payPal:!isCheck.payPal})
                     }}
                 />
                     <Text>Google Pay</Text>
@@ -169,10 +172,10 @@ export default function VisaCard() {
                 style={styles.checkBox}
                     center
                     uncheckedIcon='square'
-                    checked = {isCheckTwo}
+                    checked = {isCheck.payPal}
                     onPress={()=>{
                         alert
-                        setIsCheckTwo(!isCheckTwo)
+                        setIsCheck({google:!isCheck.google,payPal:!isCheck.payPal})
                     }}
                 />
                     <Text>Paypal</Text>
@@ -201,7 +204,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginHorizontal: 21,
         borderRadius: 20,
-        marginVertical: 70
+        marginVertical: 70,
+        position: 'absolute'
     },
     closeButton:{
         fontSize: 20,
