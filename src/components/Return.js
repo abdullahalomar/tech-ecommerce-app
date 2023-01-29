@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native';
 
 export default function Return() {
   return (
-    <View style={{marginTop: 30}}>
+    <View style={{marginVertical: 40}}>
       <View style={styles.section}>
         <TouchableOpacity style={styles.flex}>
         <MaterialIcons name="assignment-return" size={24} color="#567189" />

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
@@ -6,30 +6,29 @@ import { Fontisto } from '@expo/vector-icons';
 
 export default function Services() {
   return (
-    <View style={{marginHorizontal: 20, marginTop: 30}}>
+    <View style={{marginHorizontal: 20}}>
       <Text style={{fontSize: 20, fontWeight: '700'}}>My Services</Text>
       <View style={styles.section}>
-      <View style={styles.option}>
-      <MaterialIcons name="message" size={30} color="black" />
+      <TouchableOpacity style={styles.option}>
+      <MaterialIcons name="message" size={30} color="#567189" />
       <Text style={styles.title}>My Messages</Text>
-      </View>
-      <View style={styles.option}>
-      <MaterialIcons name="payment" size={30} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+      <MaterialIcons name="payment" size={30} color="#567189" />
       <Text style={styles.title}>Payment</Text>
-      <Text style={styles.title}>Options</Text>
-      </View>
-      <View style={styles.option}>
-      <Feather name="help-circle" size={30} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+      <Feather name="help-circle" size={30} color="#567189" />
       <Text style={styles.title}>Help Center</Text>
-      </View>
-      <View style={styles.option}>
-      <Fontisto name="hipchat" size={30} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+      <Fontisto name="hipchat" size={30} color="#567189" />
       <Text style={styles.title}>Chat with us</Text>
-      </View>
-      <View style={styles.option}>
-      <MaterialIcons name="rate-review" size={30} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+      <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>My Reviews</Text>
-      </View>
+      </TouchableOpacity>
       </View>
     </View>
   )
@@ -38,12 +37,15 @@ export default function Services() {
 const styles = StyleSheet.create({
     section:{
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        marginTop: 15
     },
     option:{
         justifyContent: 'center',
         alignItems: 'center',
         paddingRight: 25,
+        paddingBottom: 15
     },
     title: {
         fontSize: 13,

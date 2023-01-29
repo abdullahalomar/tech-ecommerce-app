@@ -4,13 +4,16 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function MyOrders() {
+export default function MyOrders({ navigation }) {
   return (
     <View style={styles.OrderContainer}>
         <View style={styles.header}>
-        <Text style={{fontWeight: '700', fontSize: 20}}>MY Orders</Text>
+        <Text style={{fontWeight: '700', fontSize: 20}}>My Orders</Text>
 
-        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
+        <TouchableOpacity 
+        style={{flexDirection: 'row', alignItems: 'center'}}
+        onPress={()=> navigation.navigate('Order')}
+        >
         <Text style={{fontWeight: '300', fontSize: 15}}>View All</Text>
         <MaterialIcons name="keyboard-arrow-right" size={24} color="#2172db" />
         </TouchableOpacity>

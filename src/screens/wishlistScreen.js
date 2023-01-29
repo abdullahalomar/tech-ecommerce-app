@@ -45,279 +45,11 @@ export default function wishlistScreen({ navigation }) {
                     size={14}
                     color="#FF0032"
                   />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
+                  <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <View></View>
+                    <Image style={styles.image} source={laptop}></Image>
+                    <View></View>
                   </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
-                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
-                  <View style={styles.priceReview}>
-                    <Text style={styles.productPrice}>$ 20,999</Text>
-                    <View style={{ flexDirection: "row" }}>
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                      <AntDesign name="star" size={11} color="#FFB200" />
-                    </View>
-                    
-                  </View>
-                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Add to cart</Text>
-                  </TouchableOpacity>
-                </View>
-              </LinearGradient>
-            </View>
-            <View>
-              <LinearGradient
-                style={styles.wishCart}
-                colors={["#FFCFD5", "#DFDFFB"]}
-                start={{ x: 1.5, y: 0.5 }}
-                end={{ x: 0, y: 0.5 }}
-              >
-                <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
-                  />
-                  <Image source={laptop}></Image>
                   <Text style={styles.productName}>Huawei Matebook X 13</Text>
                   <View style={styles.priceReview}>
                     <Text style={styles.productPrice}>$ 20,999</Text>
@@ -338,6 +70,46 @@ export default function wishlistScreen({ navigation }) {
               </LinearGradient>
             </View>
             
+            <View>
+              <LinearGradient
+                style={styles.wishCart}
+                colors={["#FFCFD5", "#DFDFFB"]}
+                start={{ x: 1.5, y: 0.5 }}
+                end={{ x: 0, y: 0.5 }}
+              >
+                <View style={styles.cartContent}>
+                  <AntDesign
+                    style={styles.heart}
+                    name="heart"
+                    size={14}
+                    color="#FF0032"
+                  />
+                  <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                    <View></View>
+                    <Image style={styles.image} source={laptop}></Image>
+                    <View></View>
+                  </View>
+                  <Text style={styles.productName}>Huawei Matebook X 13</Text>
+                  <View style={styles.priceReview}>
+                    <Text style={styles.productPrice}>$ 20,999</Text>
+                    <View style={{ flexDirection: "row" }}>
+                      <AntDesign name="star" size={11} color="#FFB200" />
+                      <AntDesign name="star" size={11} color="#FFB200" />
+                      <AntDesign name="star" size={11} color="#FFB200" />
+                      <AntDesign name="star" size={11} color="#FFB200" />
+                      <AntDesign name="star" size={11} color="#FFB200" />
+                    </View>
+                    
+                  </View>
+                  {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
+                  <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Add to cart</Text>
+                  </TouchableOpacity>
+                </View>
+              </LinearGradient>
+            </View>
+            
+            
           </View>
         </ScrollView>
       </View>
@@ -357,16 +129,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 25,
   },
-  // button:{
-  //   borderRadius: 20,
-  //   backgroundColor: '#6d6bed'
-  // },
-  // btnText:{
-  //   textAlign: 'center',
-  //   paddingHorizontal: 20,
-  //   paddingVertical: 7,
-
-  // },
   wishCart: {
     elevation: 10,
     borderRadius: 20,
@@ -374,7 +136,7 @@ const styles = StyleSheet.create({
   },
   cartContent: {
     paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
   },
   productName: {
     fontSize: 16,
@@ -406,15 +168,20 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   button:{
+    width: '60%',
     marginTop: 5,
     backgroundColor: '#abbcf5',
-    borderRadius: 10,
+    borderRadius: 8,
   },
   buttonText:{
     fontWeight: '600',
     color: '#ffff',
     textAlign: 'center',
-    paddingVertical: 2,
+    paddingVertical: 3,
+    paddingHorizontal: 5,
     lineHeight: 16
+  },
+  image:{
+     paddingLeft: 90
   }
 });

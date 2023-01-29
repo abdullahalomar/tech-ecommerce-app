@@ -13,44 +13,44 @@ export default function MenubarScreen({children, navigation}) {
       {children}
       <LinearGradient
        style={styles.lastSection}
-       colors={['#ffffff', '#c4d1f5',]}
+       colors={['#aac3e3', '#d1d9e3', '#aac3e3', ]}
        start={{ x: 0, y: 1 }}
        end={{ x: 1, y: 1 }}
        >
             <View style={styles.last}>
             <TouchableOpacity 
-            style={styles.homeIcon}
-            onPress={()=> navigation.navigate('Home')}
-            >
-            <Octicons style={navigation.state.routeName == 'Home'? styles.active : {color:'#8B8B8B'}} name="home" size={24} color="#5351db" />
-            </TouchableOpacity>
-
-            <TouchableOpacity 
             style={{marginTop: 7,}}
             onPress={()=> navigation.navigate('Shop')}
             >
-            <Entypo style={navigation.state.routeName == 'Shop'? styles.active :{color:'#8B8B8B'}} name="shop" size={24} />
+            <Entypo style={navigation.state.routeName == 'Shop'? styles.active :{color:'#696b6e'}} name="shop" size={24} />
             </TouchableOpacity>
 
             <TouchableOpacity
             style={{marginTop: 6}}
             onPress={()=> navigation.navigate('Wishlist')}
             >
-            <Entypo style={navigation.state.routeName == 'Wishlist'? styles.active :{color:'#8B8B8B'}} name="heart-outlined" size={28}/>
+            <Entypo style={navigation.state.routeName == 'Wishlist'? styles.active :{color:'#696b6e'}} name="heart-outlined" size={28}/>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+            style={styles.homeIcon}
+            onPress={()=> navigation.navigate('Home')}
+            >
+            <Octicons style={navigation.state.routeName == 'Home'? styles.active : {color:'#5a5d61'}} name="home" size={30}/>
             </TouchableOpacity>
 
             <TouchableOpacity
             style={{marginTop: 6}}
             onPress={()=> navigation.navigate('Cart')}
             >
-            <AntDesign style={navigation.state.routeName == 'Cart'? styles.active :{color:'#8B8B8B'}} name="shoppingcart" size={28}/>
+            <AntDesign style={navigation.state.routeName == 'Cart'? styles.active :{color:'#696b6e'}} name="shoppingcart" size={28}/>
             </TouchableOpacity>
 
             <TouchableOpacity
             style={{marginTop: 3}}
             onPress={()=> navigation.navigate('Profile')}
             >
-            <MaterialCommunityIcons style={navigation.state.routeName == 'Profile'? styles.active :{color:'#8B8B8B'}} name="account-outline" size={28}/>
+            <MaterialCommunityIcons style={navigation.state.routeName == 'Profile'? styles.active :{color:'#696b6e'}} name="account-outline" size={28}/>
             </TouchableOpacity>
             </View>
         </LinearGradient>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         marginTop: 20
      },
      homeIcon:{
-        marginTop: 7,
+        marginTop: 4,
      },
      active:{
         color: '#5351db',

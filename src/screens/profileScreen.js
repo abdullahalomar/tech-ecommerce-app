@@ -1,11 +1,7 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import man from '../../assets/menavater.png'
-import { Feather } from '@expo/vector-icons';
-import airpod from '../../assets/airpod.png'
 import MenubarScreen from '../components/MenubarScreen';
 import NotifyIcon from '../components/NotifyIcon';
-import PopUp from '../components/PopUp';
 import { LinearGradient } from 'expo-linear-gradient';
 import MyOrders from '../components/MyOrders';
 import Return from '../components/Return';
@@ -18,7 +14,7 @@ export default function profileScreen({navigation}) {
       <View style={{width: '100%', height: 762}}>
       <LinearGradient 
             style={styles.firstSection}
-            colors={['#8ba3c9', '#2c5eb0']}
+            colors={['#95acc9', '#4482d4']}
             start={{ x: 1, y: 0 }}
             end={{ x: 1, y: 1 }}
       >
