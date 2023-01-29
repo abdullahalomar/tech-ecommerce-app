@@ -1,16 +1,22 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons'
 import ProductHeader from '../components/ProductHerder'
-
+import Modal from "react-native-modal";
+import { Entypo } from '@expo/vector-icons';
 
 
 export default function productScreen({ navigation }) {
     
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([])
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+      };
 
     useEffect(()=>{
         fetch(`https://fakestoreapi.com/products/${navigation.state.params.id}`)
@@ -29,7 +35,7 @@ export default function productScreen({ navigation }) {
 
     const [circle, setCircle] = useState('')
 
-    const colors = ['#f55b5b','#3355B1','#A833B0']
+    const colors = ['#645CBB','#D9ACF5','#CF4DCE']
 
   return (
     <View style={styles.background}>
@@ -38,51 +44,86 @@ export default function productScreen({ navigation }) {
         {/* menu */}
         <ProductHeader></ProductHeader>
       
-      <LinearGradient
+      <ScrollView>
+        <View style={styles.productBody}>
+        <LinearGradient
         colors={['#fcfcfc', '#E5E5E5']}
         style={styles.container}
         start={{ x: 1, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
+        <TouchableOpacity
+        onPress={toggleModal}
+        >
         <Image
         style={styles.head}
         source={{uri: singleProducts.image}}
         ></Image>
+        </TouchableOpacity>
+        
       </LinearGradient>
 
       <View style={styles.dotLineBox}>
-        <View style={styles.dotLineOne}></View>
+        {/* <View style={styles.dotLineOne}></View>
         <View style={styles.dotLineTwo}></View>
-        <View style={styles.dotLineOne}></View>
+        <View style={styles.dotLineOne}></View> */}
       </View>
 
+        {/* Featured */}
         <View>
         <View style={styles.featured}>
-            <View>
+            <TouchableOpacity
+            onPress={toggleModal}
+            >
                 <Image
                     style={styles.headSet}
-                source={{uri: singleProducts.image}}
+                    source={{uri: singleProducts.image}}
+                    resizeMode='contain'
                 ></Image>
-            </View>
-            <View>
+            </TouchableOpacity>
+            <TouchableOpacity
+            onPress={toggleModal}
+            >
             <Image
                 style={styles.headSet}
                 source={{uri: singleProducts.image}}
+                resizeMode='contain'
                 ></Image>
-            </View>
-            <View>
+            </TouchableOpacity>
+            <TouchableOpacity
+            onPress={toggleModal}
+            >
             <Image
                 style={styles.headSet}
                 source={{uri: singleProducts.image}}
+                resizeMode='contain'
                 ></Image>
-            </View>
+            </TouchableOpacity>
         </View>
         </View>
+        <Modal 
+          style={styles.modalBody}
+          isVisible={isModalVisible}
+          >
+            <Image
+                style={styles.headSetModal}
+                source={{uri: singleProducts.image}}
+                ></Image>
+          <View style={{}}>
+          
+        </View>
+        <TouchableOpacity
+          onPress={toggleModal}
+          >
+            <Entypo style={styles.okBox} name="circle-with-cross" size={28} color="white" />
+          </TouchableOpacity>
+      </Modal>
+        {/* Featured */}
 
         {/* product details */}
         <LinearGradient 
         style={styles.fifthSection}
-        colors={[ '#C4ECFC', '#FFFFFF', ]}
+        colors={[ '#C4ECFC', '#ebeced', ]}
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: 0 }}
         >
@@ -99,6 +140,9 @@ export default function productScreen({ navigation }) {
                 </Text>
         </View>
         </LinearGradient>
+        </View>
+      </ScrollView>
+      
 
        <View style={styles.productCounting}>
        <View style={{paddingVertical: 16}}>
@@ -131,14 +175,14 @@ export default function productScreen({ navigation }) {
                 style={styles.decreaseBtn}
                 onPress={decrement}
                 >
-                <FontAwesome style={styles.decrease} name="minus" size={17} color="#f55b5b" />
+                <FontAwesome style={styles.decrease} name="minus" size={17} color="#4b85e3" />
                 </TouchableOpacity>
                 <Text style={styles.iCNumber}>{counter}</Text>
                 <TouchableOpacity
                 style={styles.increaseBtn}
                 onPress={increment}
                 >
-                <FontAwesome style={styles.increase} name="plus" size={17} color="#02e346" />
+                <FontAwesome style={styles.increase} name="plus" size={17} color="#4b85e3" />
                 </TouchableOpacity>
             </View>
             <TouchableOpacity 
@@ -168,7 +212,9 @@ export default function productScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor: '#E5E5E5'
+        backgroundColor: '#ffff',
+        width: '100%',
+        height: '85%'
     },
     container:{
         width: 200,
@@ -210,7 +256,7 @@ const styles = StyleSheet.create({
     featured:{
         flexDirection: 'row',
         marginBottom: 20,
-        marginHorizontal: 55
+        marginHorizontal: 70
     },
     headSet:{
         marginTop: 10,
@@ -249,6 +295,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 40,
         backgroundColor: 'white',
         height: 270,
+        elevation: 10
     },
     fifth:{
         flexDirection: 'row',
@@ -346,5 +393,44 @@ const styles = StyleSheet.create({
         width: '100%',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30
-    }
+    },
+    // productBody:{
+    //     height: 640,
+    // },
+    // modal
+    modalBody:{
+        width: '75%',
+        marginHorizontal: 40,
+        borderRadius: 20,
+        marginVertical: 100,
+        position: 'absolute'
+    },
+    closeButton:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginVertical: 4,
+        color: 'white'
+    },
+    okBox: {
+        position: 'absolute',
+        marginLeft: 265
+    },
+    editProfile:{
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#5585d4',
+        textAlign: 'center',
+        marginBottom: 20,
+        marginTop: 25 
+    },
+    headSetModal:{
+        marginTop: 10,
+        marginLeft: 10,
+        width: '100%',
+        height: 400,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: '#1862db',
+    },
 })

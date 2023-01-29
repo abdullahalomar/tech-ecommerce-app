@@ -11,7 +11,7 @@ export default function ProductHerder({ navigation }) {
         <MaterialIcons 
         style={styles.arrow} 
         name="keyboard-arrow-left" 
-        size={24} 
+        size={35} 
         color="#CFCFCF" 
         onPress={()=> navigation.navigate('Home')}
         />
@@ -44,12 +44,12 @@ const styles = StyleSheet.create({
     },
     arrow:{
         marginLeft: 10,
-        marginTop: 11
+        marginTop: 11,
     },
     secondIcon:{
         width: 45,
         height: 45,
-        backgroundColor: 'white',
+        backgroundColor: '#e8e9eb',
         borderRadius: 30,
         marginLeft: 218,
         marginRight: 10
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     shareIcon:{
         width: 45,
         height: 45,
-        backgroundColor: 'white',
+        backgroundColor: '#e8e9eb',
         borderRadius: 30,
         
     },
