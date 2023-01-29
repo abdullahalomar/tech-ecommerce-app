@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
      },
      valid:{
-        paddingLeft: 75,
+        paddingLeft: 60,
         fontSize: 10,
         fontWeight: '400',
         position: 'absolute',

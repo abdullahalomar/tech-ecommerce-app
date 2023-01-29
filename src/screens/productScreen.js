@@ -105,6 +105,12 @@ export default function productScreen({ navigation }) {
           style={styles.modalBody}
           isVisible={isModalVisible}
           >
+         <TouchableOpacity
+            style={styles.okBox}
+            onPress={toggleModal}
+          >
+            <Entypo  name="circle-with-cross" size={28} color="white" />
+          </TouchableOpacity>
             <Image
                 style={styles.headSetModal}
                 source={{uri: singleProducts.image}}
@@ -112,11 +118,7 @@ export default function productScreen({ navigation }) {
           <View style={{}}>
           
         </View>
-        <TouchableOpacity
-          onPress={toggleModal}
-          >
-            <Entypo style={styles.okBox} name="circle-with-cross" size={28} color="white" />
-          </TouchableOpacity>
+        
       </Modal>
         {/* Featured */}
 
@@ -413,8 +415,7 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     okBox: {
-        position: 'absolute',
-        marginLeft: 265
+        marginLeft: '90%'
     },
     editProfile:{
         fontSize: 25,

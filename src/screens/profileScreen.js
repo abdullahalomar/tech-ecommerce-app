@@ -7,12 +7,15 @@ import MenubarScreen from '../components/MenubarScreen';
 import NotifyIcon from '../components/NotifyIcon';
 import PopUp from '../components/PopUp';
 import { LinearGradient } from 'expo-linear-gradient';
+import MyOrders from '../components/MyOrders';
+import Return from '../components/Return';
+import Services from '../components/Services';
 
 export default function profileScreen({navigation}) {
 
   return (
       <MenubarScreen navigation={navigation}>
-      <View style={{width: 408, height: 762}}>
+      <View style={{width: '100%', height: 762}}>
       <LinearGradient 
             style={styles.firstSection}
             colors={['#8ba3c9', '#2c5eb0']}
@@ -39,13 +42,23 @@ export default function profileScreen({navigation}) {
         {/* notification */}
         
       </LinearGradient>
-      <View style={styles.titleBox}>
+
+      {/* orders */}
+      <MyOrders/>
+
+      {/* return & cancel */}
+      <Return/>
+ 
+      {/* services */}
+      <Services/>
+      
+      {/* <View style={styles.titleBox}>
       <Text style={styles.title}>Notifications</Text>
       <TouchableOpacity>
       <Text style={styles.titleView}>View all</Text>
       </TouchableOpacity>
-      </View>
-    <ScrollView>
+      </View> */}
+    {/* <ScrollView>
       
       <View>
       
@@ -170,7 +183,7 @@ export default function profileScreen({navigation}) {
       </View>
       </View>
     </View>
-    </ScrollView>
+    </ScrollView> */}
     </View>
       </MenubarScreen>
   )
