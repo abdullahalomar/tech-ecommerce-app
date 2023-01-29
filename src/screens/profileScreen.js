@@ -12,7 +12,7 @@ export default function profileScreen({navigation}) {
 
   return (
       <MenubarScreen navigation={navigation}>
-    <View style={{width: 408, height: 762}}>
+      <View style={{width: 408, height: 762}}>
       <LinearGradient 
             style={styles.firstSection}
             colors={['#8ba3c9', '#2c5eb0']}

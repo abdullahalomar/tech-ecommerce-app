@@ -17,7 +17,7 @@ export default function PopUp() {
 
 
   return (
-    <View>
+    <View style={styles.body}>
       <TouchableOpacity 
           style={styles.profileIcon}
           onPress={toggleModal}
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginHorizontal: 50,
         borderRadius: 20,
-        marginVertical: 200
+        marginVertical: 200,
+        position: 'absolute'
     },
     closeButton:{
         fontSize: 20,
@@ -65,14 +66,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#7da4e3',
         marginTop: 30,
         marginHorizontal: 60,
-        borderRadius: 20
+        borderRadius: 20,
+        marginBottom: 25
     },
     editProfile:{
         fontSize: 25,
         fontWeight: 'bold',
         color: '#5585d4',
         textAlign: 'center',
-        marginBottom: 20 
+        marginBottom: 20,
+        marginTop: 25 
     },
     profileIcon:{
         

@@ -9,18 +9,20 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Master from '../../assets/icons/icons8-mastercard-48.png'
 import visa from '../../assets/icons/icons8-visa-48.png'
-import { CheckBox } from '@rneui/base';
 import gPay from '../../assets/icons/google-pay.png'
 import payPal from '../../assets/icons/paypal.png'
 import { Feather } from '@expo/vector-icons';
+import { CheckBox } from 'react-native-elements'
 
 export default function VisaCard() {
 
     const [isModalVisible, setModalVisible] = useState(false);
+    const [isCheck, setIsCheck] = useState(false)
+    const [isCheckTwo, setIsCheckTwo] = useState(false)
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
 
   return (
     <View>
@@ -121,12 +123,12 @@ export default function VisaCard() {
             </View> 
             </View> 
 
-            <View style={{marginHorizontal: 15}}>
+            <View style={{marginHorizontal: 15, marginBottom: 30}}>
                 <Text>Card Number</Text> 
                 <TextInput
                 style={styles.inputLine}
                 />
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 10}}>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 20}}>
                 <View>
                 <Text>Security Code</Text> 
                 <TextInput
@@ -142,10 +144,19 @@ export default function VisaCard() {
                 </View>
             </View>
 
+            <View style={{marginTop: 5}}>
             <View style={styles.payContainer}>
                 <View style={styles.checkBoxContainer}>
-                    <CheckBox
-                    />
+                <CheckBox
+                style={styles.checkBox}
+                    center
+                    uncheckedIcon='square'
+                    checked = {isCheck}
+                    onPress={()=>{
+                        alert
+                        setIsCheck(!isCheck)
+                    }}
+                />
                     <Text>Google Pay</Text>
                 </View>
                 <Image
@@ -154,17 +165,26 @@ export default function VisaCard() {
             </View>
             <View style={styles.payContainer}>
                 <View style={styles.checkBoxContainer}>
-                    <CheckBox
-                    />
+                <CheckBox
+                style={styles.checkBox}
+                    center
+                    uncheckedIcon='square'
+                    checked = {isCheckTwo}
+                    onPress={()=>{
+                        alert
+                        setIsCheckTwo(!isCheckTwo)
+                    }}
+                />
                     <Text>Paypal</Text>
                 </View>
                 <Image
                 source={payPal}
                 />
             </View>
+            </View>
 
         <TouchableOpacity
-        style={styles.okBox}
+        style={styles.conformButton}
           onPress={toggleModal}
           >
             <Text style={styles.closeButton}>CONFIRM PAYMENT</Text>
@@ -181,21 +201,21 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginHorizontal: 21,
         borderRadius: 20,
-        marginVertical: 105
+        marginVertical: 70
     },
     closeButton:{
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginVertical: 6,
+        marginVertical: 15,
         color: 'white'
     },
-    okBox: {
-        width: '70%',
-        height: 40,
+    conformButton: {
+        width: '80%',
+        height: '8%',
         backgroundColor: '#7da4e3',
-        marginBottom: 20,
-        marginHorizontal: 60,
+        marginBottom: 30,
+        marginHorizontal: 35,
         borderRadius: 20
     },
     editProfile:{
@@ -240,7 +260,9 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         marginBottom: 31
     },
-    
+    checkBox:{
+        color: 'red'
+    },
 
 //    modal
 
