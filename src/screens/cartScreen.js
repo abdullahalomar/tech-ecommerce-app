@@ -1,30 +1,13 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native'
-import React, { useState } from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import laptop from '../../assets/laptop.png'
-import head from '../../assets/soundBox.png'
-import pod from '../../assets/onboardairpod.png'
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
-import { Feather } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import Cart from '../components/Cart';
 import Promo from '../components/Promo';
 
 export default function cartScreen({navigation}) {
 
     
-
   return (
     <View style={styles.background}>
-     {/* <View style={styles.main}>
-      <View style={styles.first}>
-      <MaterialCommunityIcons name="bell-ring-outline" size={24} color="#3d3d3d" />
-      <Text style={styles.firstText}>
-         Delivery for FREE until the end of the month
-         </Text>
-      </View>
-      </View> */}
      <ScrollView>
         <View style={styles.body}>
       {/* cart   */}
@@ -48,16 +31,16 @@ export default function cartScreen({navigation}) {
       end={{ x: 1, y: 1 }}
       >
       <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Total items(3)</Text>
-        <Text style={{fontSize: 17,}}>$ 4000</Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold', color:'#414345'}}>Total items(3)</Text>
+        <Text style={{fontSize: 17, color:'#414345'}}>$ 4000</Text>
       </View>
       <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
-        <Text style={{fontSize: 17, fontWeight: 'bold'}}>Delivery</Text>
-        <Text style={{fontSize: 17,}}>$ 8000</Text>
+        <Text style={{fontSize: 17, fontWeight: 'bold', color:'#414345'}}>Delivery</Text>
+        <Text style={{fontSize: 17, color:'#414345'}}>$ 8000</Text>
       </View>
       <View style={{flexDirection: 'row', justifyContent:'space-between', marginTop: 8}}>
-        <Text style={{fontSize: 17, fontWeight: 'bold'}}>Total</Text>
-        <Text style={{fontSize: 17,}}>$ 12000</Text>
+        <Text style={{fontSize: 17, fontWeight: 'bold', color:'#414345'}}>Total</Text>
+        <Text style={{fontSize: 17, }}>$ 12000</Text>
       </View>
       <TouchableOpacity 
       style={styles.button}

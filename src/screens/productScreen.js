@@ -6,10 +6,11 @@ import { FontAwesome } from '@expo/vector-icons'
 import ProductHeader from '../components/ProductHerder'
 import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
+import { CartProvider, useCart } from "react-use-cart";
 
 
 export default function productScreen({ navigation }) {
-    
+    const { addItem } = useCart();
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([])
     const [isModalVisible, setModalVisible] = useState(false);
@@ -42,7 +43,7 @@ export default function productScreen({ navigation }) {
       <View style={styles.body}>
       
         {/* menu */}
-        <ProductHeader></ProductHeader>
+        <ProductHeader navigation={navigation}/>
       
       <ScrollView>
         <View style={styles.productBody}>
@@ -195,7 +196,7 @@ export default function productScreen({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity 
             style={styles.secFCart}
-            onPress={()=> navigation.navigate('Cart')}
+            onPress={() => addItem(singleProducts)}
             >
                 <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>

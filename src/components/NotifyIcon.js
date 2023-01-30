@@ -12,7 +12,7 @@ export default function NotifyIcon({ navigation }) {
       <View style={styles.notification}>
         <TouchableOpacity 
         style={styles.iconBox}
-        onPress={()=> navigation.navigate('Cart')}
+        onPress={()=> navigation.navigate('Wishlist')}
         >
         <AntDesign name="hearto" size={24} color="#757678" />
         </TouchableOpacity>

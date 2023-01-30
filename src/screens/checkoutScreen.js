@@ -129,59 +129,7 @@ export default function checkoutScreen({navigation}) {
             </View>
 
            {/* modal */}
-           <TouchableOpacity 
-           style={styles.button}
-           onPress={toggleModal}
-           >
-                <View></View>
-                <Text style={styles.btnTExt}>Finalize Purchase</Text>
-                <View></View>
-           </TouchableOpacity>
-        <View style={{}}>
-        <Modal 
-          style={styles.modalBody}
-          isVisible={isModalVisible}
-          >
-          <View style={{marginTop: 35}}>
-            <Image style={{width: 200, height: 240, marginTop: 30, marginBottom: 15, marginHorizontal: 75}} source={{uri: 'https://cdn.dribbble.com/users/2185205/screenshots/7886140/02-lottie-tick-01-instant-2.gif'}}/>
-            <Text style={{textAlign: 'center', fontSize: 20, fontWeight: '700'}}>Order Placed!!</Text>
-            <Text style={{textAlign: 'center', marginVertical: 15}}>Your order has been successfully placed!</Text>
-
-        <TouchableOpacity 
-            style={{}}
-            onPress={()=> navigation.navigate('Shop')}>
-      <Text style={{
-          textAlign: 'center',
-          marginHorizontal: 85,
-          paddingVertical: 10,
-          backgroundColor: '#6895cc',
-          borderRadius: 20,
-          marginVertical: 10,
-          fontSize: 17,
-          fontWeight: '700',
-          color: 'white'
-      }}>CONTINUE SHOPPING</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity 
-        style={{}}>
-      <Text style={{
-          textAlign: 'center',
-          marginHorizontal: 85,
-          paddingVertical: 10,
-          backgroundColor: '#6895cc',
-          borderRadius: 20,
-          marginTop: 10,
-          marginBottom: 60,
-          fontSize: 17,
-          fontWeight: '700',
-          color: 'white'
-      }}>VIEW ALL ORDERS</Text>
-</TouchableOpacity>
-</View> 
-       
-      </Modal>
-        </View>
+            <Success navigation={navigation}/>
            {/* modal */}
 
         </LinearGradient>

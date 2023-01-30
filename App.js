@@ -2,6 +2,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import All from "./src/components/All";
 import allOrder from "./src/components/allOrder";
+import MyOrders from "./src/components/MyOrders";
 import ReturnDetails from "./src/components/ReturnDetails";
 import Success from "./src/components/Success";
 import cartScreen from "./src/screens/cartScreen";
@@ -26,13 +27,14 @@ const navigator = createStackNavigator(
     Profile: profileScreen,
     Wishlist: wishlistScreen,
     Shop: shopScreen,
+    MyOrder: MyOrders,
     Order: allOrder,
     AllOrder: All,
     Return: ReturnDetails,
     Success: Success,
   },
   {
-    initialRouteName: "Checkout",
+    initialRouteName: "Shop",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

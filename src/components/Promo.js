@@ -23,7 +23,7 @@ export default function Promo() {
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0 }}
             >
-                <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', marginLeft: 17, marginTop: 5}}>USE</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white', textAlign: 'center', paddingTop: 8}}>USE</Text>
             </LinearGradient>
             </TouchableOpacity>
             </View>

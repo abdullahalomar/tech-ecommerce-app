@@ -6,11 +6,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import MyOrders from '../components/MyOrders';
 import Return from '../components/Return';
 import Services from '../components/Services';
-
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
+
 
 export default function profileScreen({ navigation }) {
 
@@ -39,7 +39,7 @@ export default function profileScreen({ navigation }) {
         </View>
 
         {/* notification */}
-        <NotifyIcon/>
+        <NotifyIcon navigation={navigation}/>
         {/* notification */}
         
       </LinearGradient>
@@ -90,7 +90,7 @@ export default function profileScreen({ navigation }) {
     {/* order */}
 
       {/* return & cancel */}
-      <Return/>
+      <Return navigation={navigation}/>
  
       {/* services */}
       <Services/>

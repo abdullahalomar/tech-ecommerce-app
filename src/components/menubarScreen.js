@@ -5,6 +5,7 @@ import { Octicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
+import Coupon from './Coupon';
 
 export default function MenubarScreen({children, navigation}) {
   

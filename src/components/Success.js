@@ -47,7 +47,9 @@ export default function Success({navigation}) {
     </TouchableOpacity>
 
     <TouchableOpacity 
-        style={{}}>
+        style={{}}
+        onPress={()=> navigation.navigate('Order')}
+        >
       <Text style={{
           textAlign: 'center',
           marginHorizontal: 85,

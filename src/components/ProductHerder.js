@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Pressable } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -22,9 +22,9 @@ export default function ProductHerder({ navigation }) {
         <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#86878a" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.shareIcon}>
+        <Pressable style={styles.shareIcon}>
         <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" />
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   )
@@ -65,6 +65,5 @@ const styles = StyleSheet.create({
         height: 45,
         backgroundColor: '#e8e9eb',
         borderRadius: 30,
-        
     },
 })
