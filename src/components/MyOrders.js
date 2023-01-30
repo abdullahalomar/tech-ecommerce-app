@@ -19,22 +19,24 @@ export default function MyOrders({ navigation }) {
         </TouchableOpacity>
         </View>
       <View style={styles.order}>
-      <View style={styles.subSection}>
+      <TouchableOpacity style={styles.subSection}
+      onPress={()=> navigation.navigate('Order')}
+      >
       <MaterialIcons name="payments" size={30} color="#567189" />
       <Text style={styles.title}>To Pay</Text>
-      </View>
-      <View style={styles.subSection}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subSection}>
       <MaterialCommunityIcons name="wallet-membership" size={30} color="#567189" />
       <Text style={styles.title}>To Ship</Text>
-      </View>
-      <View style={styles.subSection}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subSection}>
       <FontAwesome5 name="shipping-fast" size={30} color="#567189" />
       <Text style={styles.title}>To Receive</Text>
-      </View>
-      <View style={styles.subSection}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subSection}>
       <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>To Review</Text>
-      </View>
+      </TouchableOpacity>
       </View>
     </View>
   )

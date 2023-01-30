@@ -5,14 +5,14 @@ import { TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import PopUp from './PopUp';
 
-export default function NotifyIcon({navigation}) {
+export default function NotifyIcon({ navigation }) {
 
   return (
     <View>
       <View style={styles.notification}>
         <TouchableOpacity 
         style={styles.iconBox}
-        onPress={()=> navigation.navigate('Wishlist')}
+        onPress={()=> navigation.navigate('Cart')}
         >
         <AntDesign name="hearto" size={24} color="#757678" />
         </TouchableOpacity>

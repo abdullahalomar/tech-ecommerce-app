@@ -7,7 +7,7 @@ import MyOrders from '../components/MyOrders';
 import Return from '../components/Return';
 import Services from '../components/Services';
 
-export default function profileScreen({navigation}) {
+export default function profileScreen({ navigation }) {
 
   return (
       <MenubarScreen navigation={navigation}>
