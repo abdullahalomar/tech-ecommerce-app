@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
-import All from '../components/All'
+import All from './All'
 
 
 export default function allOrder({navigation}) {

@@ -4,11 +4,18 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 
-export default function Return() {
+
+export default function Return({ }) {
+
+ 
+
   return (
     <View style={{marginVertical: 40}}>
       <View style={styles.section}>
-        <TouchableOpacity style={styles.flex}>
+        <TouchableOpacity 
+        style={styles.flex}
+        onPress={()=> this.props.navigation.navigate('Return')}
+        >
         <MaterialIcons name="assignment-return" size={24} color="#567189" />
         <Text style={styles.title}>My Return</Text>
         </TouchableOpacity>

@@ -43,26 +43,5 @@ export default function MyOrders({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    OrderContainer:{
-        marginTop: 45
-    },
-    header:{
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        marginHorizontal: 20,
-        marginBottom: 12
-    },
-    order:{
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-    },
-    title:{
-        paddingTop: 8,
-        color: '#5d6063',
-        fontSize: 13
-    },
-    subSection:{
-      justifyContent:'center', 
-      alignItems: 'center'
-    }
+   
 })

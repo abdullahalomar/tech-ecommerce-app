@@ -7,6 +7,11 @@ import MyOrders from '../components/MyOrders';
 import Return from '../components/Return';
 import Services from '../components/Services';
 
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
+
 export default function profileScreen({ navigation }) {
 
   return (
@@ -40,7 +45,49 @@ export default function profileScreen({ navigation }) {
       </LinearGradient>
 
       {/* orders */}
-      <MyOrders/>
+      <View style={styles.OrderContainer}>
+        <View style={styles.header}>
+        <Text style={{fontWeight: '700', fontSize: 20}}>My Orders</Text>
+
+        <TouchableOpacity 
+        style={{flexDirection: 'row', alignItems: 'center'}}
+        onPress={()=> navigation.navigate('Order')}
+        >
+        <Text style={{fontWeight: '300', fontSize: 15}}>View All</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#2172db" />
+        </TouchableOpacity>
+        </View>
+      <View style={styles.order}>
+      <TouchableOpacity style={styles.subSection}
+      onPress={()=> navigation.navigate('Order')}
+      >
+      <MaterialIcons name="payments" size={30} color="#567189" />
+      <Text style={styles.title}>To Pay</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+      style={styles.subSection}
+      onPress={()=> navigation.navigate('Order')}
+      >
+      <MaterialCommunityIcons name="wallet-membership" size={30} color="#567189" />
+      <Text style={styles.title}>To Ship</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+      style={styles.subSection}
+      onPress={()=> navigation.navigate('Order')}
+      >
+      <FontAwesome5 name="shipping-fast" size={30} color="#567189" />
+      <Text style={styles.title}>To Receive</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+      style={styles.subSection}
+      onPress={()=> navigation.navigate('Order')}
+      >
+      <MaterialIcons name="rate-review" size={30} color="#567189" />
+      <Text style={styles.title}>To Review</Text>
+      </TouchableOpacity>
+      </View>
+    </View>
+    {/* order */}
 
       {/* return & cancel */}
       <Return/>
@@ -278,4 +325,30 @@ const styles = StyleSheet.create({
  homeIcon:{
     flexDirection: 'row',
  },
+
+
+
+//  order
+OrderContainer:{
+  marginTop: 45
+},
+header:{
+  flexDirection: 'row', 
+  justifyContent: 'space-between', 
+  marginHorizontal: 20,
+  marginBottom: 12
+},
+order:{
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+},
+title:{
+  paddingTop: 8,
+  color: '#5d6063',
+  fontSize: 13
+},
+subSection:{
+justifyContent:'center', 
+alignItems: 'center'
+}
 })

@@ -6,22 +6,31 @@ import headP from '../../assets/headPhonep.png'
 import googlePay from '../../assets/google-pay.png'
 import applePay from '../../assets/apple-pay.png'
 import payPal from '../../assets/paypal.png'
-
+import Modal from "react-native-modal";
 import VisaCard from '../components/VisaCard';
+import Success from '../components/Success';
 
 
 
 export default function checkoutScreen({navigation}) {
 
     const [delivery, setDelivery] = useState(0)
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+      setModalVisible(!isModalVisible);
+    };
 
     
   return (
     <View style={styles.background}>
         <View style={styles.firstSection}>
-        <View style={styles.firstIcon}>
+        <TouchableOpacity 
+        style={styles.firstIcon}
+        onPress={()=> navigation.navigate('Cart')}
+        >
         <MaterialIcons style={styles.arrow} name="keyboard-arrow-left" size={25} color="#CFCFCF" />
-        </View>
+        </TouchableOpacity>
         <Text style={styles.firstText}>Checkout</Text>
         </View>
 
@@ -118,12 +127,63 @@ export default function checkoutScreen({navigation}) {
                 <Text style={styles.lstTextB}>Total</Text>
                 <Text style={styles.lstTextB}>$ 4.999</Text>
             </View>
+
+           {/* modal */}
            <TouchableOpacity 
            style={styles.button}
-           onPress={()=> navigation.navigate('Home')}
+           onPress={toggleModal}
            >
+                <View></View>
                 <Text style={styles.btnTExt}>Finalize Purchase</Text>
+                <View></View>
            </TouchableOpacity>
+        <View style={{}}>
+        <Modal 
+          style={styles.modalBody}
+          isVisible={isModalVisible}
+          >
+          <View style={{marginTop: 35}}>
+            <Image style={{width: 200, height: 240, marginTop: 30, marginBottom: 15, marginHorizontal: 75}} source={{uri: 'https://cdn.dribbble.com/users/2185205/screenshots/7886140/02-lottie-tick-01-instant-2.gif'}}/>
+            <Text style={{textAlign: 'center', fontSize: 20, fontWeight: '700'}}>Order Placed!!</Text>
+            <Text style={{textAlign: 'center', marginVertical: 15}}>Your order has been successfully placed!</Text>
+
+        <TouchableOpacity 
+            style={{}}
+            onPress={()=> navigation.navigate('Shop')}>
+      <Text style={{
+          textAlign: 'center',
+          marginHorizontal: 85,
+          paddingVertical: 10,
+          backgroundColor: '#6895cc',
+          borderRadius: 20,
+          marginVertical: 10,
+          fontSize: 17,
+          fontWeight: '700',
+          color: 'white'
+      }}>CONTINUE SHOPPING</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity 
+        style={{}}>
+      <Text style={{
+          textAlign: 'center',
+          marginHorizontal: 85,
+          paddingVertical: 10,
+          backgroundColor: '#6895cc',
+          borderRadius: 20,
+          marginTop: 10,
+          marginBottom: 60,
+          fontSize: 17,
+          fontWeight: '700',
+          color: 'white'
+      }}>VIEW ALL ORDERS</Text>
+</TouchableOpacity>
+</View> 
+       
+      </Modal>
+        </View>
+           {/* modal */}
+
         </LinearGradient>
 
     </View>
@@ -196,7 +256,7 @@ const styles = StyleSheet.create({
     shippingBox:{
         width: 358,
         height: 37,
-        backgroundColor: '#3F4343',
+        backgroundColor: '#6e90ba',
         borderRadius: 21.5,
         opacity: 0.8,
         flexDirection: 'row',
@@ -217,14 +277,14 @@ const styles = StyleSheet.create({
     homeText:{
         fontWeight: '400',
         color: '#3F4343',
-        marginLeft: 50,
-        marginTop: 4.5
+        textAlign: 'center',
+        paddingTop: 6.5
     },
     pickText:{
         fontWeight: '400',
         color: 'white',
-        marginLeft: 50,
-        marginTop: 7
+        textAlign: 'center',
+        paddingTop: 8
     },
     add:{
         fontSize: 18,
@@ -281,16 +341,17 @@ const styles = StyleSheet.create({
     button:{
         width: 321,
         height: 48,
-        backgroundColor: '#6d6bed',
+        backgroundColor: '#6895cc',
         borderRadius: 80,
         marginLeft: 33,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     btnTExt:{
         fontSize: 18,
         fontWeight: '600',
         color: 'white',
-        marginLeft: 108,
-        marginTop: 9
     },
 
 
@@ -308,4 +369,40 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginHorizontal: 18
     },
+
+
+    // modal
+    modalBody:{
+        width: '90%',
+        backgroundColor: 'white',
+        marginHorizontal: 20,
+        borderRadius: 20,
+        marginVertical: 90,
+        position: 'absolute'
+    },
+    closeButton:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginVertical: 4,
+        color: 'white'
+    },
+    okBox: {
+        width: 176,
+        height: 40,
+        backgroundColor: '#7da4e3',
+        marginTop: 30,
+        marginHorizontal: 60,
+        borderRadius: 20,
+        marginBottom: 25
+    },
+    editProfile:{
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#5585d4',
+        textAlign: 'center',
+        marginBottom: 20,
+        marginTop: 25 
+    },
+    // modal
 })

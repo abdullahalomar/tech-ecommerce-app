@@ -13,7 +13,7 @@ export default function productScreen({ navigation }) {
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([])
     const [isModalVisible, setModalVisible] = useState(false);
-
+    
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
       };
@@ -147,7 +147,7 @@ export default function productScreen({ navigation }) {
       
 
        <View style={styles.productCounting}>
-       <View style={{paddingVertical: 16}}>
+       <View style={{paddingVertical: 25}}>
        <View style={styles.seven}>
             <Text style={styles.sevenNumber}>$ {singleProducts.price}</Text>
            
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     },
     free:{
         fontSize: 15,
-        color: '#909090'
+        color: '#F2921D'
     },
     six:{
         marginHorizontal: 25
@@ -376,10 +376,10 @@ const styles = StyleSheet.create({
         borderRadius: 55,
     },
     buttonText:{
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: '600',
         color: 'white',
-        marginTop: 10,
+        marginTop: 13,
         textAlign: 'center'
     },
     secFCart:{
@@ -390,9 +390,10 @@ const styles = StyleSheet.create({
     },
     productCounting:{
         position: 'absolute',
-        marginTop: '163%',
+        marginTop: '156%',
         backgroundColor: '#8ca3db',
         width: '100%',
+        height: '24%',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30
     },

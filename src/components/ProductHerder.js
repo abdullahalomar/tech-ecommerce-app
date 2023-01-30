@@ -16,13 +16,15 @@ export default function ProductHerder({ navigation }) {
         onPress={()=> navigation.navigate('Home')}
         />
         </TouchableOpacity>
-        <View style={styles.secondIcon}>
-        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#CFCFCF" />
-        </View>
+        <TouchableOpacity 
+        style={styles.secondIcon}
+        >
+        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#86878a" />
+        </TouchableOpacity>
         
-        <View style={styles.shareIcon}>
-        <AntDesign style={styles.arrow} name="sharealt" size={24} color="#CFCFCF" />
-        </View>
+        <TouchableOpacity style={styles.shareIcon}>
+        <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" />
+        </TouchableOpacity>
       </View>
     </View>
   )
