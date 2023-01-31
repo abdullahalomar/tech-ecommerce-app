@@ -55,7 +55,7 @@ export default function shopScreen({navigation}) {
           <View style={styles.iconBox}>
           <TouchableOpacity 
           style={styles.ship}
-          
+          onPress={()=> navigation.navigate('Order')}
           >
           <MaterialIcons name="local-shipping" size={24} color="#6d7c8f" />
           </TouchableOpacity>
@@ -69,21 +69,7 @@ export default function shopScreen({navigation}) {
           </View>
           
         </View>
-
-       
-
        <View style={styles.flexBox}>
-        {/* <View style={styles.category}>
-            <Text style={styles.categoryText}>Categories</Text>
-            <TouchableOpacity>
-            </TouchableOpacity>
-            {
-              categories.map(category => <Category
-              key={category.id}
-              category={category}
-              ></Category>)
-            }
-        </View> */}
         <ScrollView
         showsVerticalScrollIndicator={false}
         >
@@ -116,17 +102,7 @@ const styles = StyleSheet.create({
     flexWrap:'wrap',
     justifyContent:'center'
   },
-  category:{
-    backgroundColor: '#a9c2d9',
-    
-  },
-  categoryText: {
-    marginHorizontal: 10, 
-    marginVertical: 20, 
-    fontSize: 15, 
-    fontWeight: '600', 
-    color: 'white'
-  },
+  
   categoryTitle:{
     color: 'white',
     marginHorizontal: 10
