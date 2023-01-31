@@ -8,6 +8,7 @@ import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
 import { CartProvider, useCart } from "react-use-cart";
 import { MaterialIcons } from '@expo/vector-icons';
+import Review from '../components/Review';
 
 
 export default function productScreen({ navigation }) {
@@ -43,6 +44,10 @@ export default function productScreen({ navigation }) {
   return (
     <CartProvider>
     <View style={styles.background}>
+        
+      <View style={styles.body}>
+      
+        {/* menu */}
         <View style={styles.IconFlex}>
         <TouchableOpacity style={styles.firstIcon}>
         <MaterialIcons 
@@ -63,10 +68,6 @@ export default function productScreen({ navigation }) {
         <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" />
         </TouchableOpacity>
       </View>
-      <View style={styles.body}>
-      
-        {/* menu */}
-        
         {/* menu */}
       
       <ScrollView>
@@ -165,9 +166,15 @@ export default function productScreen({ navigation }) {
             style={styles.long}>
                 {singleProducts.description}
                 </Text>
+                
         </View>
+        
         </LinearGradient>
+
+        
         </View>
+
+        
       </ScrollView>
       
 
@@ -468,7 +475,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 10,
         marginLeft: 15,
-        position: 'absolute'
+        
     },
     firstIcon:{
         width: 45,

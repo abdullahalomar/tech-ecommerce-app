@@ -14,7 +14,7 @@ import productScreen from "./src/screens/productScreen";
 import profileScreen from "./src/screens/profileScreen";
 import shopScreen from "./src/screens/shopScreen";
 import wishlistScreen from "./src/screens/wishlistScreen";
-import Drower from './src/components/Drower';
+import Review from "./src/components/Review";
 
 
 const navigator = createStackNavigator(
@@ -33,10 +33,10 @@ const navigator = createStackNavigator(
     AllOrder: All,
     Return: ReturnDetails,
     Success: Success,
-    Drower: Drower,
+    Review: Review,
   },
   {
-    initialRouteName: "Shop",
+    initialRouteName: "Profile",
     defaultNavigationOptions: {
       title: "Tech ecommerce",
     },

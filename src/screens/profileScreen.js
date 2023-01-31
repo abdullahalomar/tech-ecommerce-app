@@ -26,10 +26,14 @@ export default function profileScreen({ navigation }) {
         <View style={styles.firstContent}>
           {/* <View></View> */}
           
+          <TouchableOpacity
+          onPress={()=> alert('Upload Image')}
+          >
           <Image
           style={{width: 80, height: 80, borderRadius: 100, backgroundColor: 'white',}}
           source={man}
           ></Image>
+          </TouchableOpacity>
          <View style={{marginTop: 10}}>
          <Text style={styles.profile}>Tom Cruise</Text>
           <Text style={styles.mail}>example@gmail.com</Text>
@@ -80,7 +84,7 @@ export default function profileScreen({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity 
       style={styles.subSection}
-      onPress={()=> navigation.navigate('Order')}
+      onPress={()=> navigation.navigate('Review')}
       >
       <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>To Review</Text>

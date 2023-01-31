@@ -43,6 +43,7 @@ export default function ProductInfo({ navigation }) {
             <Text style={styles.sony}>{product.title}</Text>
             <Text style={styles.long}>{product.description}</Text>
         </View>
+        
 
         <View style={styles.seven}>
             <Text style={styles.sevenNumber}>$ {product.price}</Text>
