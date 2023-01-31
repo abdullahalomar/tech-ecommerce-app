@@ -12,8 +12,8 @@ export default function Item({item}) {
       <Text style={styles.font}>{title.length < 20 ? title : title.substring(0, 20)}</Text>
       <Text style={styles.font}>$ {price}</Text>
       <View style={{flexDirection: 'row'}}>
-      <Text style={styles.font}><AntDesign name="staro" size={16} color="#F2921D" /> {rating.rate}</Text>
-      <Text style={[styles.font, {paddingLeft: 7}]}>({rating.count})</Text>
+      <Text style={styles.fontRate}><AntDesign name="staro" size={14} color="#F2921D" /> {rating.rate}</Text>
+      <Text style={[styles.fontRate, {paddingLeft: 7}]}>({rating.count})</Text>
       </View>
       </View>
        </View>
@@ -29,11 +29,10 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     text:{
-        
         marginTop: 5
     },
-    font: {
-      
+    fontRate: {
+       fontSize: 12
     },
     card:{
       width:'46%', 

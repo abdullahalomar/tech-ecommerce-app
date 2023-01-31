@@ -19,9 +19,9 @@ export default function ({result, navigation}) {
     onPress={()=> {navigation.navigate('Product', {id:result.id})}}
     >
       <Badge/>
-        <Image style={styles.image} source={{ uri: result.image}} />
+        <Image style={styles.image} resizeMode='contain' source={{ uri: result.image}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{result.title.length > 10 ? result.title.slice(0, 20) : result.title }</Text>
+      <Text style={styles.font}>{result.title.length > 17 ? result.title.slice(0, 17) : result.title }</Text>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <Text style={styles.priceFont}>$ {result.price}</Text>
       <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.rating.rate}</Text>
@@ -38,26 +38,29 @@ const styles = StyleSheet.create({
         width: 120,
         height: 100,
         borderRadius: 8,
-        marginTop: 5
+        marginTop: 7
     },
     text:{
-        marginTop: 5
+        marginTop: 7
     },
     font: {
       fontSize: 15,
       fontWeight: '600'
     },
     priceFont: {
-      fontSize: 15,
+      fontSize: 14,
       fontWeight: '600',
-      color: '#5a5e61'
+      color: '#5a5e61',
+      marginTop: 3
     },
     cart:{
       marginRight: 10,
       borderTopLeftRadius: 20,
       borderBottomRightRadius: 20,
+      borderTopRightRadius: 5,
+      borderBottomLeftRadius: 5,
       paddingHorizontal: 10,
-      paddingVertical: 5,
+      paddingVertical: 10,
       backgroundColor: 'white',
       elevation: 1,
     }

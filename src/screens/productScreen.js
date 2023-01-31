@@ -7,12 +7,14 @@ import ProductHeader from '../components/ProductHerder'
 import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
 import { CartProvider, useCart } from "react-use-cart";
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 export default function productScreen({ navigation }) {
-    const { addItem } = useCart();
+   const cart = useCart();
+    console.log(cart.setItems)
     const [counter, setCounter] = useState(1);
-    const [singleProducts, setSingleProducts] = useState([])
+    const [singleProducts, setSingleProducts] = useState([]);
     const [isModalVisible, setModalVisible] = useState(false);
     
     const toggleModal = () => {
@@ -39,11 +41,33 @@ export default function productScreen({ navigation }) {
     const colors = ['#645CBB','#D9ACF5','#CF4DCE']
 
   return (
+    <CartProvider>
     <View style={styles.background}>
+        <View style={styles.IconFlex}>
+        <TouchableOpacity style={styles.firstIcon}>
+        <MaterialIcons 
+        style={styles.arrow} 
+        name="keyboard-arrow-left" 
+        size={35} 
+        color="#CFCFCF" 
+        onPress={()=> navigation.navigate('Home')}
+        />
+        </TouchableOpacity>
+        <TouchableOpacity 
+        style={styles.secondIcon}
+        >
+        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#86878a" />
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.shareIcon}>
+        <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" />
+        </TouchableOpacity>
+      </View>
       <View style={styles.body}>
       
         {/* menu */}
-        <ProductHeader navigation={navigation}/>
+        
+        {/* menu */}
       
       <ScrollView>
         <View style={styles.productBody}>
@@ -210,6 +234,7 @@ export default function productScreen({ navigation }) {
         
       </View>
     </View>
+    </CartProvider>
   )
 }
 
@@ -435,5 +460,43 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#1862db',
+    },
+
+
+    // menu
+    IconFlex:{
+        flexDirection: 'row',
+        marginTop: 10,
+        marginLeft: 15,
+        position: 'absolute'
+    },
+    firstIcon:{
+        width: 45,
+        height: 45,
+        backgroundColor: 'white',
+        borderRadius: 30,
+        
+    },
+    arrow:{
+        marginLeft: 10,
+        marginTop: 11,
+    },
+    secondIcon:{
+        width: 45,
+        height: 45,
+        backgroundColor: '#e8e9eb',
+        borderRadius: 30,
+        marginLeft: 218,
+        marginRight: 10
+    },
+    secondArrow:{
+        marginLeft: 12,
+        marginTop: 13
+    },
+    shareIcon:{
+        width: 45,
+        height: 45,
+        backgroundColor: '#e8e9eb',
+        borderRadius: 30,
     },
 })

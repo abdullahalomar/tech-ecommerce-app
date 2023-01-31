@@ -1,12 +1,17 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Item from '../components/Item';
 import MenubarScreen from '../components/MenubarScreen';
-import Category from '../components/Category';
 import useCategory from '../hooks/useCategory';
 import Searchbar from '../components/SearchBar';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+
+import {
+  Button,
+  DrawerLayoutAndroid,
+  
+} from 'react-native';
+import Filter from '../components/Filter';
 
 export default function shopScreen({navigation}) {
  
@@ -18,20 +23,43 @@ export default function shopScreen({navigation}) {
      .then(response=>response.json())
      .then(data => setItems(data))
   },[])
+
+  const drawer = useRef(null);
+  const [drawerPosition, setDrawerPosition] = useState('left');
+  const changeDrawerPosition = () => {
+    if (drawerPosition === 'left') {
+      setDrawerPosition('right');
+    } else {
+      setDrawerPosition('left');
+    }
+  };
+
+  const navigationView = () => (
+    <View style={[styles.container, styles.navigationContainer]}>
+      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
+      <Button
+        title="Close drawer"
+        onPress={() => drawer.current.closeDrawer()}
+      />
+    </View>
+  );
   
   return (
     <MenubarScreen navigation={navigation}>
       <View>
-        <Searchbar/>
+        {/* <Searchbar/> */}
+        
+        
         <View style={styles.filterBox}>
             <Text style={{paddingHorizontal: 10, fontSize: 14, fontWeight: '600', color: '#6d7c8f'}}>All</Text>
           <View style={styles.iconBox}>
-          <TouchableOpacity style={styles.ship}>
+          <TouchableOpacity 
+          style={styles.ship}
+          
+          >
           <MaterialIcons name="local-shipping" size={24} color="#6d7c8f" />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.filter}>
-          <Feather name="filter" size={24} color="#6d7c8f" />
-          </TouchableOpacity>
+          <Filter/>
           <TouchableOpacity style={styles.grid}>
           <MaterialIcons name="view-list" size={24} color="#6d7c8f" />
           </TouchableOpacity>
@@ -41,6 +69,9 @@ export default function shopScreen({navigation}) {
           </View>
           
         </View>
+
+       
+
        <View style={styles.flexBox}>
         {/* <View style={styles.category}>
             <Text style={styles.categoryText}>Categories</Text>
@@ -79,10 +110,11 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   cartBox: {
-    padding:10,
+    marginVertical: 15,
+    marginLeft: 15,
     flexDirection:'row',
     flexWrap:'wrap',
-    justifyContent:'space-between'
+    justifyContent:'center'
   },
   category:{
     backgroundColor: '#a9c2d9',
@@ -113,13 +145,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     
   },
-  filter:{
-    borderLeftWidth: 0.7,
-    borderRightWidth: 0.7,
-    borderRightColor: '#87888a',
-    borderLeftColor: '#87888a',
-    paddingHorizontal: 10,
-  },
+  
   ship:{
     paddingHorizontal: 10
   },
@@ -128,5 +154,23 @@ const styles = StyleSheet.create({
   },
   gridFull:{
     paddingHorizontal: 10
-  }
+  },
+
+
+
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  navigationContainer: {
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    padding: 16,
+    fontSize: 15,
+    textAlign: 'center',
+  },
 })

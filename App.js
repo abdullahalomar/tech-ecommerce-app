@@ -14,6 +14,7 @@ import productScreen from "./src/screens/productScreen";
 import profileScreen from "./src/screens/profileScreen";
 import shopScreen from "./src/screens/shopScreen";
 import wishlistScreen from "./src/screens/wishlistScreen";
+import Drower from './src/components/Drower';
 
 
 const navigator = createStackNavigator(
@@ -32,6 +33,7 @@ const navigator = createStackNavigator(
     AllOrder: All,
     Return: ReturnDetails,
     Success: Success,
+    Drower: Drower,
   },
   {
     initialRouteName: "Shop",

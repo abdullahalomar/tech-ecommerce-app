@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
         
      },
      badgeText:{
-        paddingHorizontal: 9,
-        paddingBottom: 3,
+        paddingHorizontal: 7,
+        paddingBottom: 2,
         color: 'white',
-        fontSize: 10,
+        fontSize: 9,
         fontWeight: '400',
         borderRadius: 20,
         backgroundColor: '#f0651f',
