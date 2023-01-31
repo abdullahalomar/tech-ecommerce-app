@@ -30,7 +30,7 @@ export default function Cart() {
       console.log(items);
   return (
     <View>
-        <Text>Cart ({totalUniqueItems})</Text>
+        {/* <Text>Cart ({totalUniqueItems})</Text> */}
       <View style={styles.secondMain}>
       <View style={styles.secSec}>
         <View style={{}}>

@@ -6,7 +6,7 @@ export default function Category({ category }) {
   return (
     <View style={styles.categoryBox}>
       <TouchableOpacity>
-      <Text style={{lineHeight: 15}}>{category}</Text>
+      <Text style={{lineHeight: 15, textAlign: 'center', paddingVertical: 8}}>{category}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -14,14 +14,11 @@ export default function Category({ category }) {
 
 const styles = StyleSheet.create({
   categoryBox:{
+    width: '45%',
     marginRight: 10,
-    paddingHorizontal: 8,
-    paddingVertical: 5,
-    backgroundColor: 'white',
-    borderRadius: 10,
+    backgroundColor: '#d5deeb',
+    borderRadius: 3,
     marginVertical: 5,
-    elevation: 0.5,
-    marginLeft: 5
   }
 })
 
