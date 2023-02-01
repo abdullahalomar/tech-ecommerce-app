@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { Octicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,7 +11,10 @@ export default function CancelDetail() {
         <Octicons name="chevron-left" size={24} color="black" />
         <Text style={styles.heading}>CancelDetail</Text>
         </View>
-        <LinearGradient  
+        
+        <ScrollView>
+            <View>
+            <LinearGradient  
         style={styles.notify}
         colors={['#8493dc', '#A084DC' ]}
         start={{ x: 1, y: 0 }}
@@ -80,12 +83,34 @@ export default function CancelDetail() {
             </View>
         </View>
 
-        <View>
-            <Text>Cancelled Item</Text>
-            <View>
+        <View style={styles.item}>
+            <Text style={styles.itemTitle}>Cancelled Item</Text>
+            <View style={styles.itemCard}>
                 <Image style={styles.img} source={image}/>
+                <View style={{marginLeft: 20}}>
+                    <Text style={styles.itemText}>Samsung Galaxy Buds2 Pro True </Text>
+                    <Text style={styles.itemText}>Wireless Earbuds</Text>
+                    <Text style={{fontSize: 14, fontWeight: '400', paddingTop: 5}}>Color Family: Black</Text>
+                    <View style={styles.flex}>
+                        <Text style={styles.itemPrice}>$ 3,099</Text>
+                        <Text>x1</Text>
+                </View>
+                </View>
             </View>
         </View>
+
+        <View style={styles.info}>
+            <Text style={styles.infoText}>Cancellation Information</Text>
+            <View style={{marginTop: 10}}>
+            <Text style={styles.infoOrder}>Order Number: 867349832</Text>
+            <Text style={styles.infoOrder}>Requested on: 31 Jan 2023</Text>
+            <Text style={styles.infoOrder}>Sold by: Sohoj it</Text>
+            </View>
+        </View>
+
+            </View>
+        </ScrollView>
+
        
     </View>
   )
@@ -95,12 +120,13 @@ const styles = StyleSheet.create({
     header:{
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 13
+        marginVertical: 13,
+        marginHorizontal: 20
     },
     heading:{
         fontSize: 17,
         fontWeight: '500',
-        paddingLeft: 5
+        paddingLeft: 8
     },
     notify:{
         backgroundColor: '#A084DC',
@@ -119,7 +145,7 @@ const styles = StyleSheet.create({
     },
     reason:{
         backgroundColor: 'white',
-        marginVertical: 12
+        marginVertical: 15
     },
     reasonTitle:{
         fontSize: 16,
@@ -152,7 +178,53 @@ const styles = StyleSheet.create({
 
     },
     img:{
-        width: 70,
-        height: 70,
+        width: 65,
+        height: 65,
+        borderRadius: 15
+    },
+    item:{
+        marginTop: 15,
+        backgroundColor: 'white',
+        paddingHorizontal: 20,
+        paddingVertical: 15
+    },
+    itemTitle:{
+        fontSize: 17,
+        fontWeight: '600',
+        borderBottomWidth: 0.5,
+        paddingVertical: 10,
+        borderColor: '#828385'
+    },
+    itemCard:{
+        flexDirection: 'row',
+        marginTop: 16
+    },
+    itemText:{
+        fontSize: 15,
+        fontWeight: '500'
+    },
+    itemPrice: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: '#FC7300'
+    },
+    flex:{
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    info:{
+        backgroundColor: 'white',
+        marginVertical: 15,
+        paddingHorizontal: 20,
+        paddingVertical: 20
+    },
+    infoText:{
+        fontSize: 16,
+        fontWeight: '700'
+    },
+    infoOrder:{
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#7d7e80'
     }
 })
