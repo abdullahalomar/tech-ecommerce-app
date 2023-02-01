@@ -17,6 +17,7 @@ import wishlistScreen from "./src/screens/wishlistScreen";
 import Review from "./src/components/Review";
 import Notification from "./src/components/Notification";
 import Cancel from "./src/components/Cancel";
+import CancelDetail from "./src/components/CancelDetail";
 
 
 const navigator = createStackNavigator(
@@ -38,6 +39,7 @@ const navigator = createStackNavigator(
     Review: Review,
     Notification: Notification,
     Cancel: Cancel,
+    CancelDetail: CancelDetail,
   },
   {
     initialRouteName: "Home",

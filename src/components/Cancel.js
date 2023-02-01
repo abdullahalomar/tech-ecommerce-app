@@ -1,11 +1,12 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import laptop from '../../assets/laptop.png'
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Cancel({navigation}) {
   return (
-    <View style={{marginHorizontal: 20}}>
+    <View style={{marginHorizontal: 20, marginTop: 20}}>
         <View style={styles.header}>
       <TouchableOpacity
       onPress={()=>navigation.navigate('Profile')}
@@ -14,11 +15,14 @@ export default function Cancel({navigation}) {
       </TouchableOpacity>
       <Text style={styles.heading}>My Cancellations</Text>
       </View>
-      <View>
-      <View style={{marginVertical: 10}}>
+      <ScrollView>
+        <View>
+            <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
+      <View style={{marginVertical: 5}}>
         <Text style={styles.orderNo}>Order No.69900349034034</Text>
         <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
       </View>
+      <View style={{marginTop: 10}}>
       <View style={styles.product}>
       <Image source={laptop}/>
       <View>
@@ -27,14 +31,145 @@ export default function Cancel({navigation}) {
         <Text>Color Family: Black</Text>
         </View>
         <View style={styles.price}>
-        <Text>$ 3,089</Text>
-        <Text>Cancelled</Text>
+        <Text style={styles.number}>$ 3,089</Text>
+        <TouchableOpacity 
+        style={styles.cancelFlex}
+        onPress={()=> navigation.navigate('CancelDetail')}
+        >
+        <Text style={styles.cancelText}>Cancelled</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        </TouchableOpacity>
       </View>
       </View>
       </View>
-      
       <Text>Reason: system default reason</Text>
       </View>
+      </View>
+
+      <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
+      <View style={{marginVertical: 5}}>
+        <Text style={styles.orderNo}>Order No.69900349034034</Text>
+        <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
+      </View>
+      <View style={{marginTop: 10}}>
+      <View style={styles.product}>
+      <Image source={laptop}/>
+      <View>
+        <View>
+        <Text>Dell Precision 3571 Workstation</Text>
+        <Text>Color Family: Black</Text>
+        </View>
+        <View style={styles.price}>
+        <Text style={styles.number}>$ 3,089</Text>
+        <TouchableOpacity 
+        style={styles.cancelFlex}
+        onPress={()=> navigation.navigate('CancelDetail')}
+        >
+        <Text style={styles.cancelText}>Cancelled</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        </TouchableOpacity>
+      </View>
+      </View>
+      </View>
+      <Text>Reason: system default reason</Text>
+      </View>
+      </View>
+
+
+      <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
+      <View style={{marginVertical: 5}}>
+        <Text style={styles.orderNo}>Order No.69900349034034</Text>
+        <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
+      </View>
+      <View style={{marginTop: 10}}>
+      <View style={styles.product}>
+      <Image source={laptop}/>
+      <View>
+        <View>
+        <Text>Dell Precision 3571 Workstation</Text>
+        <Text>Color Family: Black</Text>
+        </View>
+        <View style={styles.price}>
+        <Text style={styles.number}>$ 3,089</Text>
+        <TouchableOpacity 
+        style={styles.cancelFlex}
+        onPress={()=> navigation.navigate('CancelDetail')}
+        >
+        <Text style={styles.cancelText}>Cancelled</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        </TouchableOpacity>
+      </View>
+      </View>
+      </View>
+      <Text>Reason: system default reason</Text>
+      </View>
+      </View>
+
+
+      <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
+      <View style={{marginVertical: 5}}>
+        <Text style={styles.orderNo}>Order No.69900349034034</Text>
+        <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
+      </View>
+      <View style={{marginTop: 10}}>
+      <View style={styles.product}>
+      <Image source={laptop}/>
+      <View>
+        <View>
+        <Text>Dell Precision 3571 Workstation</Text>
+        <Text>Color Family: Black</Text>
+        </View>
+        <View style={styles.price}>
+        <Text style={styles.number}>$ 3,089</Text>
+        <TouchableOpacity 
+        style={styles.cancelFlex}
+        onPress={()=> navigation.navigate('CancelDetail')}
+        >
+        <Text style={styles.cancelText}>Cancelled</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        </TouchableOpacity>
+      </View>
+      </View>
+      </View>
+      <Text>Reason: system default reason</Text>
+      </View>
+      </View>
+
+
+      <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
+      <View style={{marginVertical: 5}}>
+        <Text style={styles.orderNo}>Order No.69900349034034</Text>
+        <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
+      </View>
+      <View style={{marginTop: 10}}>
+      <View style={styles.product}>
+      <Image source={laptop}/>
+      <View>
+        <View>
+        <Text>Dell Precision 3571 Workstation</Text>
+        <Text>Color Family: Black</Text>
+        </View>
+        <View style={styles.price}>
+        <Text style={styles.number}>$ 3,089</Text>
+        <TouchableOpacity 
+        style={styles.cancelFlex}
+        onPress={()=> navigation.navigate('CancelDetail')}
+        >
+        <Text style={styles.cancelText}>Cancelled</Text>
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        </TouchableOpacity>
+      </View>
+      </View>
+      </View>
+      <Text>Reason: system default reason</Text>
+      </View>
+      </View>
+        </View>
+      </ScrollView>
+
+      
+
+      
     </View>
   )
 }
@@ -45,17 +180,36 @@ const styles = StyleSheet.create({
         fontWeight: '600'
     },
     header:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: 10
     },
     orderNo:{
         fontSize: 15,
         color: '#515254'
     },
     product:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderTopWidth: 0.2,
+        borderColor: '#9d9d9e',
+        paddingVertical: 10
     },
     price:{
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    cancelText:{
+        color: '#F94A29'
+    },
+    cancelFlex:{
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        borderRadius: 10, 
+        borderColor: '#ffff',
+        paddingHorizontal: 3 
+    },
+    number:{
+        fontSize: 16,
+        fontWeight: '500'
     }
 })
