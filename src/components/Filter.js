@@ -8,7 +8,7 @@ import Category from './Category';
 import { TextInput } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Filter() {
+export default function Filter({setItems}) {
 
   const [isModalVisible, setModalVisible] = useState(false);
 
@@ -18,13 +18,11 @@ export default function Filter() {
 
   const [categories] = useCategory();
 
-  useEffect(()=>{
-     fetch('https://fakestoreapi.com/products')
-     .then(response=>response.json())
-     .then(data => setItems(data))
-  },[])
+
+
 
   const categoryHandler = (category) => {
+   
     fetch(`https://fakestoreapi.com/products/category/${category}`)
     .then(res=>res.json())
     .then(json=>setItems(json))

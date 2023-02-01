@@ -18,7 +18,7 @@ export default function homeScreen({navigation}) {
       fetch('https://fakestoreapi.com/products')
       .then(response=>response.json())
       .then(data =>setApiData(data))
-   },[apidata])
+   },[])
 
    const categoryHandler = (category) => {
       fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -31,7 +31,7 @@ export default function homeScreen({navigation}) {
       const [term, setTerm] = useState('');
       const [searchApi, results, errorMessage] = useResults();
 
-      console.log(results);
+      // console.log(results);
       const filterResultByPrice = (price) => {
             return results.filter(result => {
                return result.price === price;

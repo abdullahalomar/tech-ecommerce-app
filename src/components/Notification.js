@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     },
     box:{
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         backgroundColor: '#d5d9e0',
         borderRadius: 20,
         paddingVertical: 10,

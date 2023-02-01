@@ -1,11 +1,12 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function Category({ category,filter }) {
+export default function Category({ category ,filter}) {
+
 
   return (
     <View style={styles.categoryBox}>
-      <TouchableOpacity onPress={(category)=>{return filter(category)}}>
+      <TouchableOpacity onPress={()=>filter(category)}>
       <Text style={{lineHeight: 15, textAlign: 'center', paddingVertical: 8}}>{category}</Text>
       </TouchableOpacity>
     </View>

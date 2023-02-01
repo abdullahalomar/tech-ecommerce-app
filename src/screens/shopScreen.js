@@ -4,7 +4,7 @@ import Item from '../components/Item';
 import MenubarScreen from '../components/MenubarScreen';
 import useCategory from '../hooks/useCategory';
 import Searchbar from '../components/SearchBar';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons,Feather } from '@expo/vector-icons';
 
 import {
   Button,
@@ -17,7 +17,8 @@ export default function shopScreen({navigation}) {
  
   const [items, setItems] = useState([]);
   const [categories] = useCategory();
-
+ 
+  const [isGrid, setIsGrid] = useState(true)
   useEffect(()=>{
      fetch('https://fakestoreapi.com/products')
      .then(response=>response.json())
@@ -59,17 +60,25 @@ export default function shopScreen({navigation}) {
           >
           <MaterialIcons name="local-shipping" size={24} color="#6d7c8f" />
           </TouchableOpacity>
-          <Filter/>
-          <TouchableOpacity style={styles.grid}>
-          <MaterialIcons name="view-list" size={24} color="#6d7c8f" />
-          </TouchableOpacity>
-          {/* <TouchableOpacity style={styles.gridFull}>
-          <Feather name="grid" size={20} color="#6d7c8f" />
-          </TouchableOpacity> */}
+          <Filter setItems={setItems}/>
+          {
+            isGrid ? (
+              <TouchableOpacity style={styles.grid} onPress={()=>setIsGrid(false)}>
+              <MaterialIcons name="view-list" size={24} color="#6d7c8f" />
+              </TouchableOpacity>
+            ) :
+            (
+              <TouchableOpacity style={styles.gridFull} onPress={()=>setIsGrid(true)}>
+              <Feather name="grid" size={20} color="#6d7c8f" />
+              </TouchableOpacity>
+            )
+          }
+        
+        
           </View>
           
         </View>
-       <View style={styles.flexBox}>
+        {isGrid ? (   <View style={styles.flexBox}>
         <ScrollView
         showsVerticalScrollIndicator={false}
         >
@@ -83,7 +92,11 @@ export default function shopScreen({navigation}) {
         </View>
         </ScrollView>
       
-       </View>
+       </View>) : (<View>
+
+        <Text>Row View</Text>
+       </View>)}
+    
     </View>
     </MenubarScreen>
   )

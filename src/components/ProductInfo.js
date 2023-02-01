@@ -50,9 +50,9 @@ export default function ProductInfo({ navigation }) {
            
             <View style={styles.sevenFlex}>
                {
-                colors.map((color)=>{
+                colors.map((color,id)=>{
                     return (
-                        <TouchableOpacity style={circle == color && styles.firstBox} onPress={()=>{
+                        <TouchableOpacity key={id} style={circle == color && styles.firstBox} onPress={()=>{
                             setCircle(color)
                         }}>
                             <View style={{...styles.circle,backgroundColor: color}}></View>

@@ -6,10 +6,9 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import laptop from '../../assets/laptop.png'
 import { TouchableOpacity } from 'react-native';
-import { CartProvider, useCart } from "react-use-cart";
+
 
 export default function Cart() {
-    const [count, setCount] = useState(1)
 
     const increase = () => {
         setCount(count + 1)
@@ -20,17 +19,9 @@ export default function Cart() {
         }
     } 
 
-    const {
-        isEmpty,
-        totalUniqueItems,
-        items,
-        updateItemQuantity,
-        removeItem,
-      } = useCart();
-      console.log(items);
   return (
     <View>
-        {/* <Text>Cart ({totalUniqueItems})</Text> */}
+    
       <View style={styles.secondMain}>
       <View style={styles.secSec}>
         <View style={{}}>
