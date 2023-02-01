@@ -8,10 +8,10 @@ import { MaterialIcons,Feather } from '@expo/vector-icons';
 
 import {
   Button,
-  DrawerLayoutAndroid,
   
 } from 'react-native';
 import Filter from '../components/Filter';
+import ItemGrid from '../components/ItemGrid';
 
 export default function shopScreen({navigation}) {
  
@@ -92,9 +92,20 @@ export default function shopScreen({navigation}) {
         </View>
         </ScrollView>
       
-       </View>) : (<View>
-
-        <Text>Row View</Text>
+       </View>) : ( <View style={styles.GridBox}>
+        <ScrollView
+        showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.cartBoxGrid}>
+        {
+          items.map(item => <ItemGrid
+          key={item.id}
+          item={item}
+          ></ItemGrid>)
+        }
+        </View>
+        </ScrollView>
+      
        </View>)}
     
     </View>
@@ -145,8 +156,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
 
-
-
+  GridBox:{
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginRight: 15,
+  },
+  cartBoxGrid: {
+    marginVertical: 15,
+    marginLeft: 15,
+  
+    
+  },
 
   container: {
     flex: 1,

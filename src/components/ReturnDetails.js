@@ -12,8 +12,8 @@ export default function ReturnDetails({navigation}) {
       <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
         <View></View>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Image style={{width: 170, height: 193, marginTop: 40, marginBottom: 15}} source={icon}/>
-        <Text style={{fontSize: 16, fontWeight: '700'}}>Oops</Text>
+        <Image style={{width: 200, height: 193, marginTop: 40, marginBottom: 15}} source={icon}/>
+        <Text style={{fontSize: 18, fontWeight: '700'}}>Oops</Text>
         <Text style={{marginVertical: 15, fontSize: 16, fontWeight: '700', color: '#515254'}}>There are no returns yet.</Text>
 
         <TouchableOpacity

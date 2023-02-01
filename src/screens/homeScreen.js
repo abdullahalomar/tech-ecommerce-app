@@ -55,11 +55,11 @@ export default function homeScreen({navigation}) {
 
 <View>
    <Image
-   style={{width: 360, height: 179, marginTop: 10}}
-   source={homebg}
+   style={{width: 360, height: 205, marginTop: 10,}}
+   source={require('../../assets/video/animate.gif')}
    >
    </Image>
-   <Text style={styles.valid}>*Valid from 27/03 to 01/04 2022. Min stock: 1 unit</Text>
+ 
 </View>
 
 

@@ -1,11 +1,12 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Item({item}) {
+export default function ItemGrid({item}) {
     const {image, title, price, rating} = item;
   return (
-    <TouchableOpacity style={styles.card}>
+    <View>
+      <TouchableOpacity style={styles.card}>
        <View style={styles.cardFlex}>
        <Image style={styles.image} resizeMode='contain' source={{ uri: image}} />
       <View style={styles.text}>
@@ -18,6 +19,7 @@ export default function Item({item}) {
       </View>
        </View>
     </TouchableOpacity>
+    </View>
   )
 }
 
@@ -35,18 +37,18 @@ const styles = StyleSheet.create({
        fontSize: 12
     },
     card:{
-      width:'46%', 
+      width:'70%', 
+      paddingVertical: 10,
       marginBottom: 15, 
       backgroundColor: 'white',
-      flexDirection: 'row',
-      justifyContent: 'space-evenly',
       borderRadius: 15,
-      paddingVertical: 10,
-      marginHorizontal: 5
+      flexDirection: 'row',
+      justifyContent: 'center',
+      marginHorizontal: 20
     },
     cardFlex:{
-         justifyContent: 'center', 
-         alignItems: 'center',
-       },
-
+      justifyContent: 'space-around', 
+      alignItems: 'center',
+      flexDirection: 'row'
+    }
 })

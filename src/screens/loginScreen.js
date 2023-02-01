@@ -36,6 +36,8 @@ export default function loginScreen({navigation}) {
             <View style={styles.bigCircle}></View>
       </View>
 
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View></View>
       <LinearGradient
         colors={['#DDDDDD', '#FFFFFF' ]}
         style={styles.secondSection}
@@ -92,6 +94,9 @@ export default function loginScreen({navigation}) {
              Facebook</Text>
         </TouchableOpacity>
       </LinearGradient>
+      <View></View>
+      </View>
+      
       </LinearGradient>
       
       
@@ -101,8 +106,8 @@ export default function loginScreen({navigation}) {
 
 const styles = StyleSheet.create({
      firstSection:{
-        width: 394,
-        height: '90%',
+        width: '100%',
+        height: '100%',
      },
      halfCircle:{
         width: 110,
@@ -178,7 +183,7 @@ const styles = StyleSheet.create({
      },
      loginButtonText:{
         textAlign: 'center',
-        marginTop: 8,
+        marginTop: 11,
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white'

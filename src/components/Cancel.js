@@ -179,11 +179,13 @@ export default function Cancel({navigation}) {
 const styles = StyleSheet.create({
     heading:{
         fontSize: 18,
-        fontWeight: '600'
+        fontWeight: '600',
+        paddingLeft: 10
     },
     header:{
         flexDirection: 'row',
-        marginBottom: 10
+        marginBottom: 10,
+        alignItems: 'center'
     },
     orderNo:{
         fontSize: 15,

@@ -1,14 +1,19 @@
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { Ionicons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import image from '../../assets/airPodp.jpg'
 
-export default function CancelDetail() {
+export default function CancelDetail({navigation}) {
   return (
     <View>
         <View style={styles.header}>
-        <Octicons name="chevron-left" size={24} color="black" />
+        <TouchableOpacity
+        onPress={()=> navigation.navigate('Cancel')}
+        >
+        <Ionicons name="ios-arrow-back-outline" size={24} color="black" />
+        </TouchableOpacity>
         <Text style={styles.heading}>CancelDetail</Text>
         </View>
         

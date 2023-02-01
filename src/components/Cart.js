@@ -10,6 +10,8 @@ import { TouchableOpacity } from 'react-native';
 
 export default function Cart() {
 
+    const [count, setCount] = useState(1);
+
     const increase = () => {
         setCount(count + 1)
     } 
