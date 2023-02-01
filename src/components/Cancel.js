@@ -15,7 +15,9 @@ export default function Cancel({navigation}) {
       </TouchableOpacity>
       <Text style={styles.heading}>My Cancellations</Text>
       </View>
-      <ScrollView>
+      <ScrollView
+      showsVerticalScrollIndicator={false}
+      >
         <View>
             <View style={{marginTop: 10, backgroundColor: 'white', paddingVertical: 10, borderRadius: 10, paddingHorizontal: 10}}>
       <View style={{marginVertical: 5}}>
