@@ -18,7 +18,13 @@ export default function homeScreen({navigation}) {
       fetch('https://fakestoreapi.com/products')
       .then(response=>response.json())
       .then(data =>setApiData(data))
-   },[])
+   },[apidata])
+
+   const categoryHandler = (category) => {
+      fetch(`https://fakestoreapi.com/products/category/${category}`)
+      .then(res=>res.json())
+      .then(json=>setApiData(json))
+    }
    
    
 
@@ -41,6 +47,7 @@ export default function homeScreen({navigation}) {
       term={term} 
       onTermChange={setTerm}
       onTermSubmit={()=> searchApi(term)}
+      navigation={navigation}
       />
       <ScrollView>
       <View style={styles.body}>
@@ -65,6 +72,8 @@ export default function homeScreen({navigation}) {
       categories.map(category => <Category
       key={category.id}
       category={category}
+      
+      filter={categoryHandler}
       />)
    }
   </ScrollView>

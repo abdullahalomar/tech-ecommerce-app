@@ -22,7 +22,7 @@ export default function PopUp() {
           style={styles.profileIcon}
           onPress={toggleModal}
           >
-          <Feather name="settings" size={26} color="#757678" />
+          <Feather name="settings" size={24} color="#757678" />
           </TouchableOpacity>
 
           <Modal 

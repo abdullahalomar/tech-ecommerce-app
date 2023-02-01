@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
-export default function Searchbar({ term, onTermChange, onTermSubmit }) {
+export default function Searchbar({ term, onTermChange, onTermSubmit, navigation }) {
   return (
     <View>
       <View style={styles.firstFlex}>
@@ -19,10 +19,13 @@ export default function Searchbar({ term, onTermChange, onTermSubmit }) {
   onEndEditing={onTermSubmit}
   />
 </View>
-  <View style={styles.bell}>
+  <TouchableOpacity 
+  style={styles.bell}
+  onPress={()=> navigation.navigate('Notification')}
+  >
       <View style={styles.bulletPoint}></View>
   <SimpleLineIcons style={styles.bellIcon} name="bell" size={20} color="#CFCFCF" />
-  </View>
+  </TouchableOpacity>
 </View>
     </View>
   )

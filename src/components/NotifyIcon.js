@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import PopUp from './PopUp';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function NotifyIcon({ navigation }) {
 
@@ -16,10 +17,15 @@ export default function NotifyIcon({ navigation }) {
         >
         <AntDesign name="hearto" size={24} color="#757678" />
         </TouchableOpacity>
+        <TouchableOpacity 
+        style={styles.iconBox}
+        onPress={()=> navigation.navigate('Notification')}
+        >
+        <Ionicons name="ios-notifications-outline" size={24} color="#757678" />
+        </TouchableOpacity>
         <View style={styles.iconBox}>
         <PopUp/>
         </View>
-        
         
         </View>
     </View>
@@ -29,15 +35,16 @@ export default function NotifyIcon({ navigation }) {
 const styles = StyleSheet.create({
     notification:{
         flexDirection: 'row',
-        marginHorizontal: '30%',
-        marginTop: '13%'
+        
+        marginTop: '13%',
+        justifyContent: 'space-evenly'
     },
     iconBox:{
         paddingVertical: 20,
         paddingHorizontal: 20,
         backgroundColor: 'white',
         borderRadius: 15,
-        marginRight: 26.5,
+        marginHorizontal: '5%',
         elevation: 4
     },
 })

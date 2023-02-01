@@ -24,6 +24,12 @@ export default function Filter() {
      .then(data => setItems(data))
   },[])
 
+  const categoryHandler = (category) => {
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+    .then(res=>res.json())
+    .then(json=>setItems(json))
+  }
+
   return (
     <View style={styles.body}>
       <TouchableOpacity 
@@ -39,7 +45,7 @@ export default function Filter() {
           >
             {/* category */}
             <View style={styles.category}>
-            <Text style={[styles.title, {marginTop: 30}]}>Category</Text>
+            <Text style={[styles.title, {marginTop: 15}]}>Category</Text>
             <TouchableOpacity>
             </TouchableOpacity>
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
@@ -47,6 +53,7 @@ export default function Filter() {
               categories.map(category => <Category
               key={category.id}
               category={category}
+              filter={categoryHandler}
               ></Category>)
             }
             </View>

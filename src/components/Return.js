@@ -19,7 +19,10 @@ export default function Return({ navigation }) {
         <MaterialIcons name="assignment-return" size={24} color="#567189" />
         <Text style={styles.title}>My Return</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.flex}>
+        <TouchableOpacity 
+        style={styles.flex}
+        onPress={()=> navigation.navigate('Cancel')}
+        >
         <MaterialCommunityIcons name="table-cancel" size={24} color="#567189" />
         <Text style={styles.title}>My Cancellations</Text>
         </TouchableOpacity>

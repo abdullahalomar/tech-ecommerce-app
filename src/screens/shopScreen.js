@@ -47,7 +47,7 @@ export default function shopScreen({navigation}) {
   return (
     <MenubarScreen navigation={navigation}>
       <View>
-        <Searchbar/>
+        <Searchbar navigation={navigation}/>
         
         
         <View style={styles.filterBox}>
