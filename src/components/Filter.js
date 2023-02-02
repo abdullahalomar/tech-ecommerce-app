@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Feather } from '@expo/vector-icons';
 import Modal from "react-native-modal";
-import { Ionicons } from '@expo/vector-icons';
 import useCategory from '../hooks/useCategory';
 import Category from './Category';
 import { TextInput } from 'react-native-gesture-handler';
@@ -17,8 +16,6 @@ export default function Filter({setItems}) {
   };
 
   const [categories] = useCategory();
-
-
 
 
   const categoryHandler = (category) => {
@@ -48,8 +45,8 @@ export default function Filter({setItems}) {
             </TouchableOpacity>
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
             {
-              categories.map(category => <Category
-              key={category.id}
+            categories.map((category,id) => <Category
+            key={id}
               category={category}
               filter={categoryHandler}
               ></Category>)

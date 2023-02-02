@@ -44,7 +44,7 @@ const navigator = createStackNavigator(
     CouponModal: CouponModal,
   },
   {
-    initialRouteName: "Profile",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       // title: "Tech ecommerce",
     },

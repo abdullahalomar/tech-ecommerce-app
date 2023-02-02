@@ -56,7 +56,7 @@ export default function homeScreen({navigation}) {
 <View>
    <Image
    style={{width: 360, height: 205, marginTop: 10,}}
-   source={require('../../assets/video/animate.gif')}
+   source={require('../../assets/video/oheading.gif')}
    >
    </Image>
  
@@ -69,8 +69,8 @@ export default function homeScreen({navigation}) {
   showsHorizontalScrollIndicator={false}
   >
    {
-      categories.map(category => <Category
-      key={category.id}
+      categories.map((category,id) => <Category
+      key={id}
       category={category}
       
       filter={categoryHandler}
