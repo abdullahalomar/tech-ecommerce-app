@@ -14,6 +14,7 @@ export default function productScreen({ navigation }) {
 
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([]);
+    const [addItem, setAddItem] = useState()
     const [isModalVisible, setModalVisible] = useState(false);
     
     const toggleModal = () => {
@@ -225,7 +226,7 @@ export default function productScreen({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity 
             style={styles.secFCart}
-            onPress={() => addItem(singleProducts)}
+            onPress={() => navigation.navigate('Cart')}
             >
                 <View style={styles.increaseBtn}><Text style={styles.buttonText}>Add to cart</Text></View>
             </TouchableOpacity>

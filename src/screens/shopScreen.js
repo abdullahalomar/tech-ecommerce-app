@@ -35,15 +35,7 @@ export default function shopScreen({navigation}) {
     }
   };
 
-  const navigationView = () => (
-    <View style={[styles.container, styles.navigationContainer]}>
-      <Text style={styles.paragraph}>I'm in the Drawer!</Text>
-      <Button
-        title="Close drawer"
-        onPress={() => drawer.current.closeDrawer()}
-      />
-    </View>
-  );
+ 
   
   return (
     <MenubarScreen navigation={navigation}>
@@ -73,8 +65,6 @@ export default function shopScreen({navigation}) {
               </TouchableOpacity>
             )
           }
-        
-        
           </View>
           
         </View>
@@ -92,7 +82,7 @@ export default function shopScreen({navigation}) {
         </View>
         </ScrollView>
       
-       </View>) : ( <View style={styles.GridBox}>
+       </View>) : ( <View style={{paddingBottom: 60}}>
         <ScrollView
         showsVerticalScrollIndicator={false}
         >
@@ -117,11 +107,11 @@ const styles = StyleSheet.create({
   flexBox:{
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginRight: 15,
+    marginHorizontal: 10,
+    paddingBottom: 35
   },
   cartBox: {
     marginVertical: 15,
-    marginLeft: 15,
     flexDirection:'row',
     flexWrap:'wrap',
     justifyContent:'center'
@@ -163,9 +153,7 @@ const styles = StyleSheet.create({
   },
   cartBoxGrid: {
     marginVertical: 15,
-    marginLeft: 15,
-  
-    
+    marginHorizontal: 20
   },
 
   container: {

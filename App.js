@@ -42,9 +42,9 @@ const navigator = createStackNavigator(
     CancelDetail: CancelDetail,
   },
   {
-    initialRouteName: "Shop",
+    initialRouteName: "Onboarding",
     defaultNavigationOptions: {
-      title: "Tech ecommerce",
+      // title: "Tech ecommerce",
     },
   }
 )

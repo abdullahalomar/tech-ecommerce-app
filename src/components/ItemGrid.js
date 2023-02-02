@@ -10,7 +10,7 @@ export default function ItemGrid({item}) {
        <View style={styles.cardFlex}>
        <Image style={styles.image} resizeMode='contain' source={{ uri: image}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{title.length < 20 ? title : title.substring(0, 20)}</Text>
+      <Text style={styles.font}>{title.length < 30 ? title : title.substring(0, 30)}</Text>
       <Text style={styles.font}>$ {price}</Text>
       <View style={{flexDirection: 'row'}}>
       <Text style={styles.fontRate}><AntDesign name="staro" size={14} color="#F2921D" /> {rating.rate}</Text>
@@ -25,30 +25,33 @@ export default function ItemGrid({item}) {
 
 const styles = StyleSheet.create({
     image:{
-        width: 80,
-        height: 60,
-        borderRadius: 8,
-        marginTop: 5
+        width: 100,
+        height: 100,
     },
     text:{
-        marginTop: 5
+        paddingLeft: 15
     },
     fontRate: {
-       fontSize: 12
+       fontSize: 14,
+       
     },
     card:{
-      width:'70%', 
       paddingVertical: 10,
       marginBottom: 15, 
       backgroundColor: 'white',
       borderRadius: 15,
       flexDirection: 'row',
-      justifyContent: 'center',
-      marginHorizontal: 20
+      justifyContent: 'space-between',
+      paddingHorizontal: 15
+      
     },
     cardFlex:{
-      justifyContent: 'space-around', 
       alignItems: 'center',
       flexDirection: 'row'
+    },
+    font:{
+      fontSize: 16,
+      fontWeight: '500',
+      paddingBottom: 2
     }
 })

@@ -139,7 +139,7 @@ const styles =StyleSheet.create({
     width: '75%',
     backgroundColor: 'white',
     marginHorizontal: 90,
-    borderRadius: 5,
+    borderRadius: 15,
     marginVertical: 130,
     position: 'absolute'
 },
@@ -210,7 +210,8 @@ category:{
         width: '40%',
         borderWidth: 1,
         borderColor: '#636466',
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        borderRadius: 10
       },
       star:{
         flexDirection: 'row',
