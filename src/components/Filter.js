@@ -125,9 +125,10 @@ export default function Filter({setItems}) {
             {/* rating */}
           
         <TouchableOpacity
+          style={{backgroundColor: '#BFACE2', borderRadius: 10, }}
           onPress={toggleModal}
           >
-            <Ionicons name="md-chevron-down-circle-outline" size={30} color="#636466" />
+            <Text style={{fontSize: 20, fontWeight: '700', textAlign: 'center', color: 'white'}}>Done</Text>
           </TouchableOpacity>
       </Modal>
     </View>

@@ -12,6 +12,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 
 
+
 export default function profileScreen({ navigation }) {
 
   return (
@@ -89,6 +90,8 @@ export default function profileScreen({ navigation }) {
       <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>To Review</Text>
       </TouchableOpacity>
+
+      
       </View>
     </View>
     {/* order */}
@@ -97,7 +100,7 @@ export default function profileScreen({ navigation }) {
       <Return navigation={navigation}/>
  
       {/* services */}
-      <Services/>
+      <Services navigation={navigation}/>
       
       {/* <View style={styles.titleBox}>
       <Text style={styles.title}>Notifications</Text>

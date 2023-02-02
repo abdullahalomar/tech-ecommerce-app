@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons'
 import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import Review from '../components/Review';
 
 
 
@@ -14,7 +15,6 @@ export default function productScreen({ navigation }) {
 
     const [counter, setCounter] = useState(1);
     const [singleProducts, setSingleProducts] = useState([]);
-    const [addItem, setAddItem] = useState()
     const [isModalVisible, setModalVisible] = useState(false);
     
     const toggleModal = () => {
@@ -49,22 +49,24 @@ export default function productScreen({ navigation }) {
         {/* menu */}
         <View style={styles.IconFlex}>
         <TouchableOpacity style={styles.firstIcon}>
-        <MaterialIcons 
+        {/* <MaterialIcons 
         style={styles.arrow} 
         name="keyboard-arrow-left" 
         size={35} 
         color="#CFCFCF" 
         onPress={()=> navigation.navigate('Home')}
-        />
+        /> */}
+        </TouchableOpacity>
+        
+        
+        <TouchableOpacity style={styles.shareIcon}>
+        {/* <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" /> */}
         </TouchableOpacity>
         <TouchableOpacity 
         style={styles.secondIcon}
+        onPress={()=> navigation.navigate('Wishlist')}
         >
-        <AntDesign style={styles.secondArrow} name="hearto" size={22} color="#86878a" />
-        </TouchableOpacity>
-        
-        <TouchableOpacity style={styles.shareIcon}>
-        <AntDesign style={styles.arrow} name="shoppingcart" size={24} color="#86878a" />
+        <AntDesign style={styles.secondArrow} name="heart" size={22} color="#F94A29" />
         </TouchableOpacity>
       </View>
         {/* menu */}
@@ -72,7 +74,8 @@ export default function productScreen({ navigation }) {
       <ScrollView>
         <View style={styles.productBody}>
         <LinearGradient
-        colors={['#fcfcfc', '#E5E5E5']}
+        // colors={['#fcfcfc', '#E5E5E5']}
+        colors={['white', 'white']}
         style={styles.container}
         start={{ x: 1, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -83,7 +86,9 @@ export default function productScreen({ navigation }) {
         <Image
         style={styles.head}
         source={{uri: singleProducts.image}}
-        ></Image>
+        resizeMode='contain'
+        >
+        </Image>
         </TouchableOpacity>
         
       </LinearGradient>
@@ -148,9 +153,10 @@ export default function productScreen({ navigation }) {
         {/* Featured */}
 
         {/* product details */}
+        <View>
         <LinearGradient 
         style={styles.fifthSection}
-        colors={[ '#C4ECFC', '#ebeced', ]}
+        colors={[ '#fcfcfc','#f0f0f0', ]}
         start={{ x: 0, y: 1 }}
         end={{ x: 0, y: 0 }}
         >
@@ -167,9 +173,10 @@ export default function productScreen({ navigation }) {
                 </Text>
                 
         </View>
-        
+        <Review/>
         </LinearGradient>
-
+        </View>
+        
         
         </View>
 
@@ -328,14 +335,14 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
         backgroundColor: 'white',
-        height: 270,
+        
         elevation: 10
     },
     fifth:{
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 25,
-        marginTop: 20
+        marginVertical: 20
     },
     twoHun:{
         color: '#909090'
@@ -472,16 +479,13 @@ const styles = StyleSheet.create({
     // menu
     IconFlex:{
         flexDirection: 'row',
-        marginTop: 10,
-        marginLeft: 15,
-        
+        backgroundColor: '#e8eaed',
+        borderRadius: 20
     },
     firstIcon:{
         width: 45,
         height: 45,
-        backgroundColor: 'white',
         borderRadius: 30,
-        
     },
     arrow:{
         marginLeft: 10,
@@ -490,19 +494,20 @@ const styles = StyleSheet.create({
     secondIcon:{
         width: 45,
         height: 45,
-        backgroundColor: '#e8e9eb',
+        backgroundColor: '#DDDDDD',
         borderRadius: 30,
         marginLeft: 218,
-        marginRight: 10
+        marginRight: 10,
+        marginVertical: 8
     },
     secondArrow:{
         marginLeft: 12,
-        marginTop: 13
+        marginTop: 13,
     },
     shareIcon:{
         width: 45,
         height: 45,
-        backgroundColor: '#e8e9eb',
+       
         borderRadius: 30,
     },
 })

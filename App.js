@@ -18,6 +18,7 @@ import Review from "./src/components/Review";
 import Notification from "./src/components/Notification";
 import Cancel from "./src/components/Cancel";
 import CancelDetail from "./src/components/CancelDetail";
+import CouponModal from "./src/components/CouponModal";
 
 
 const navigator = createStackNavigator(
@@ -40,9 +41,10 @@ const navigator = createStackNavigator(
     Notification: Notification,
     Cancel: Cancel,
     CancelDetail: CancelDetail,
+    CouponModal: CouponModal,
   },
   {
-    initialRouteName: "Onboarding",
+    initialRouteName: "Profile",
     defaultNavigationOptions: {
       // title: "Tech ecommerce",
     },

@@ -36,8 +36,10 @@ export default function Cart() {
        
         
         <View style={{}}>
+            <View>
             <Text style={styles.mack}>Macbook Air M1</Text>
             <Text style={styles.price}>$ 29,999</Text>
+            </View>
 
             <View style={{}}>
             <View style={styles.btnIcon}>
@@ -89,7 +91,8 @@ const styles = StyleSheet.create({
     mack:{
         fontSize: 17,
         fontWeight: '600',
-        color: '#4e5052'
+        color: '#4e5052',
+        paddingVertical: 5
     },
     price:{
         fontSize: 15,
@@ -109,6 +112,6 @@ const styles = StyleSheet.create({
     },
     btnIcon:{
         flexDirection: 'row',
-        paddingTop: 8
+        alignItems: 'center'
     },
 })

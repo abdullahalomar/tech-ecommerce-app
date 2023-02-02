@@ -52,7 +52,10 @@ export default function VisaCard() {
                 </View>
                 </TouchableOpacity>
     
-                <TouchableOpacity style={styles.visaSecTwo}>
+                <TouchableOpacity 
+                style={styles.visaSecTwo}
+                onPress={toggleModal}
+                >
                     <Image
                     style={styles.visaTwo}
                     source={visaImg}

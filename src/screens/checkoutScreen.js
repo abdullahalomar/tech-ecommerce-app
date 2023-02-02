@@ -29,7 +29,7 @@ export default function checkoutScreen({navigation}) {
         style={styles.firstIcon}
         onPress={()=> navigation.navigate('Cart')}
         >
-        <MaterialIcons style={styles.arrow} name="keyboard-arrow-left" size={25} color="#CFCFCF" />
+        
         </TouchableOpacity>
         <Text style={styles.firstText}>Checkout</Text>
         </View>
@@ -85,24 +85,24 @@ export default function checkoutScreen({navigation}) {
         <View style={styles.fifthSection}>
             <Text style={styles.add}>+ Add new</Text>
             <View style={styles.payMain}>
-                <View style={styles.gPay}>
+                <TouchableOpacity style={styles.gPay}>
                     <Image
                     style={{marginTop: 4, marginLeft: 22}}
                     source={googlePay}
                     ></Image>
-                </View>
-                <View style={styles.gPay}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.gPay}>
                 <Image
                 style={{marginLeft: 22, marginTop: 4}}
                 source={applePay}
                 ></Image>
-                </View>
-                <View style={styles.gPay}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.gPay}>
                 <Image
                 style={{marginLeft: 35, marginTop: 14, width: 26, height: 26}}
                 source={payPal}
                 ></Image>
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
 
@@ -148,16 +148,15 @@ const styles = StyleSheet.create({
         marginTop: 11
     },
     firstIcon:{
-        width: 47,
-        height: 47,
-        backgroundColor: 'white',
-        borderRadius: 30,
+        
+      
+        
         marginLeft: 16 
     },
     firstText:{
         fontStyle: 'normal',
-        fontSize: 16,
-        fontWeight: '500',
+        fontSize: 20,
+        fontWeight: '600',
         marginLeft: 15,
         marginTop: 12
     },

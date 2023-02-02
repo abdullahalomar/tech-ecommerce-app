@@ -114,8 +114,8 @@ export default function Review() {
         <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
         <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
         <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
+        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
+        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
         </View>
       </View>
       <View style={styles.message}>
@@ -152,14 +152,16 @@ const styles = StyleSheet.create({
     infoBox:{
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-around',
+        marginBottom: 10
     },
     message:{
         color: '#4e5052',
-        marginTop: 10
+        paddingHorizontal: 20
     },
     review:{
         marginHorizontal: 20,
+        paddingBottom: 80
     },
     icon:{
         paddingHorizontal: 2

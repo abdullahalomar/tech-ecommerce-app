@@ -12,7 +12,7 @@ export default function Success({navigation}) {
 
   return (
     <View>
-            <TouchableOpacity 
+        <TouchableOpacity 
            style={styles.button}
            onPress={toggleModal}
            >
@@ -104,9 +104,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginTop: 25 
     },
-
-
-
 
     button:{
         width: 321,

@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import { TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 import PopUp from './PopUp';
 import { Ionicons } from '@expo/vector-icons';
+
 
 export default function NotifyIcon({ navigation }) {
 

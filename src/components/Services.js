@@ -1,18 +1,20 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import CouponModal from './CouponModal';
 
-export default function Services() {
+
+export default function Services({navigation}) {
   return (
     <View style={{marginHorizontal: 20}}>
       <Text style={{fontSize: 20, fontWeight: '700'}}>My Services</Text>
       <View style={styles.section}>
-      <TouchableOpacity style={styles.option}>
+      {/* <TouchableOpacity style={styles.option}>
       <MaterialIcons name="message" size={30} color="#567189" />
       <Text style={styles.title}>My Messages</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity style={styles.option}>
       <MaterialIcons name="payment" size={30} color="#567189" />
       <Text style={styles.title}>Payment</Text>
@@ -25,10 +27,14 @@ export default function Services() {
       <Fontisto name="hipchat" size={30} color="#567189" />
       <Text style={styles.title}>Chat with us</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.option}>
+      <TouchableOpacity 
+      style={styles.option}
+      onPress={()=> navigation.navigate('Review')}
+      >
       <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>My Reviews</Text>
       </TouchableOpacity>
+      
       </View>
     </View>
   )
