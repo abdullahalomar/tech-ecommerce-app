@@ -1,12 +1,10 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState } from 'react'
-import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import headP from '../../assets/headPhonep.png'
 import googlePay from '../../assets/google-pay.png'
 import applePay from '../../assets/apple-pay.png'
 import payPal from '../../assets/paypal.png'
-import Modal from "react-native-modal";
 import VisaCard from '../components/VisaCard';
 import Success from '../components/Success';
 
@@ -85,19 +83,28 @@ export default function checkoutScreen({navigation}) {
         <View style={styles.fifthSection}>
             <Text style={styles.add}>+ Add new</Text>
             <View style={styles.payMain}>
-                <TouchableOpacity style={styles.gPay}>
+                <TouchableOpacity 
+                style={styles.gPay}
+                onPress={()=> navigation.navigate('Gpay')}
+                >
                     <Image
                     style={{marginTop: 4, marginLeft: 22}}
                     source={googlePay}
                     ></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.gPay}>
+                <TouchableOpacity 
+                style={styles.gPay}
+                onPress={()=> navigation.navigate('Gpay')}
+                >
                 <Image
                 style={{marginLeft: 22, marginTop: 4}}
                 source={applePay}
                 ></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.gPay}>
+                <TouchableOpacity 
+                style={styles.gPay}
+                onPress={()=> navigation.navigate('Gpay')}
+                >
                 <Image
                 style={{marginLeft: 35, marginTop: 14, width: 26, height: 26}}
                 source={payPal}

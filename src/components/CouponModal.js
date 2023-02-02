@@ -17,9 +17,9 @@ export default function CouponModal() {
     <View style={styles.body}>
       <TouchableOpacity 
       style={styles.option}
-      
+      onPress={toggleModal}
       >
-      <Image style={{width: 35, height: 34}} source={coupon}/>
+      <Image style={{width: 35, height: 30}} source={coupon}/>
       <Text style={styles.title}>Coupon</Text>
       </TouchableOpacity>
 
@@ -27,15 +27,15 @@ export default function CouponModal() {
           style={styles.modalBody}
           isVisible={isModalVisible}
           >
-            <Text style={styles.editProfile}>Edit Profile</Text>
-          <View style={{}}>
-         
+            <Text style={styles.editProfile}>Coupon For Discount</Text>
+          <View style={{marginHorizontal: 12}}>
+         <Image style={styles.couponCode} source={require('../../assets/video/coupon.gif')}/>
         </View>
         <TouchableOpacity
         style={styles.okBox}
           onPress={toggleModal}
           >
-            <Text style={styles.closeButton}>Ok</Text>
+            <Text style={styles.closeButton}>Continue Shopping</Text>
           </TouchableOpacity>
       </Modal>
     </View>
@@ -55,12 +55,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginVertical: 4,
+        marginVertical: 5,
         color: 'white'
     },
     okBox: {
         width: 176,
-        height: 40,
         backgroundColor: '#7da4e3',
         marginTop: 30,
         marginHorizontal: 60,
@@ -75,4 +74,17 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginTop: 25 
     },
+    title: {
+      fontSize: 13,
+      color: '#5d6063',
+  },
+  option:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 15
+},
+couponCode:{
+  width: 270,
+  height: 360,
+}
 })

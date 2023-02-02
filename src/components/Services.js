@@ -15,9 +15,12 @@ export default function Services({navigation}) {
       <MaterialIcons name="message" size={30} color="#567189" />
       <Text style={styles.title}>My Messages</Text>
       </TouchableOpacity> */}
-      <TouchableOpacity style={styles.option}>
+      <TouchableOpacity 
+      style={styles.option}
+      onPress={()=> navigation.navigate('PaymentOption')}
+      >
       <MaterialIcons name="payment" size={30} color="#567189" />
-      <Text style={styles.title}>Payment</Text>
+      <Text style={styles.title}>Payment Options</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.option}>
       <Feather name="help-circle" size={30} color="#567189" />
@@ -34,7 +37,7 @@ export default function Services({navigation}) {
       <MaterialIcons name="rate-review" size={30} color="#567189" />
       <Text style={styles.title}>My Reviews</Text>
       </TouchableOpacity>
-      
+      <CouponModal/>
       </View>
     </View>
   )

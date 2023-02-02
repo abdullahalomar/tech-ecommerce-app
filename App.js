@@ -19,6 +19,8 @@ import Notification from "./src/components/Notification";
 import Cancel from "./src/components/Cancel";
 import CancelDetail from "./src/components/CancelDetail";
 import CouponModal from "./src/components/CouponModal";
+import PaymentOption from "./src/components/PaymentOption";
+import Gpay from './src/components/Gpay'
 
 
 const navigator = createStackNavigator(
@@ -42,9 +44,11 @@ const navigator = createStackNavigator(
     Cancel: Cancel,
     CancelDetail: CancelDetail,
     CouponModal: CouponModal,
+    PaymentOption: PaymentOption,
+    Gpay: Gpay,
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Onboarding",
     defaultNavigationOptions: {
       // title: "Tech ecommerce",
     },

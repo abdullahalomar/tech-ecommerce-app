@@ -7,13 +7,8 @@ import image from '../../assets/airPodp.jpg'
 
 export default function CancelDetail({navigation}) {
   return (
-    <View>
+    <View style={styles.body}>
         <View style={styles.header}>
-        <TouchableOpacity
-        onPress={()=> navigation.navigate('Cancel')}
-        >
-        <Ionicons name="ios-arrow-back-outline" size={24} color="black" />
-        </TouchableOpacity>
         <Text style={styles.heading}>CancelDetail</Text>
         </View>
         
@@ -35,10 +30,10 @@ export default function CancelDetail({navigation}) {
             </View>
         </View>
 
-        <View style={styles.track}>
+        <View style={[styles.track]}>
             <Text style={styles.trackTitle}>Tracking Progress</Text>
             <View style={{flexDirection: 'row', marginTop: 10}}>
-            <Octicons name="dot-fill" size={24} color="#f2a23a" />
+            <Octicons name="dot-fill" size={24} color="#e36040" />
 
             <View style={styles.trackDetail}>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
@@ -60,9 +55,33 @@ export default function CancelDetail({navigation}) {
             <Text>An item(s) from your order has been cancelled.</Text>
             </View>
             </View>
+
+            <View style={{flexDirection: 'row', marginTop: 45}}>
+            <Octicons name="dot-fill" size={24} color="#8a8987" />
+
+            <View style={styles.trackDetail}>
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{}}>
+        
+            <Text style={[styles.cancelText, {color: '#4d5054'}]}>Cancellation in Progress</Text>
+            </View>
+            <View></View>
+            <View></View>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+            <View style={styles.time}>
+            <Text>01-31</Text>
+            <Text style={{paddingLeft: 7}}>00:11</Text>
+            </View>
+            <View></View>
+            <View></View>
+            </View>
+            <Text>Your refund request is being processed.</Text>
+            </View>
+            </View>
         </View>
 
-        <View style={styles.track}>            
+        {/* <View style={[styles.track, {borderBottomLeftRadius: 10, borderBottomRightRadius: 10}]}>            
         <View style={{flexDirection: 'row', marginTop: 10}}>
             <Octicons name="dot-fill" size={24} color="#8a8987" />
 
@@ -86,7 +105,7 @@ export default function CancelDetail({navigation}) {
             <Text>Your refund request is being processed.</Text>
             </View>
             </View>
-        </View>
+        </View> */}
 
         <View style={styles.item}>
             <Text style={styles.itemTitle}>Cancelled Item</Text>
@@ -125,18 +144,18 @@ const styles = StyleSheet.create({
     header:{
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 13,
-        marginHorizontal: 20
+        marginVertical: 15,
     },
     heading:{
-        fontSize: 17,
-        fontWeight: '500',
-        paddingLeft: 8
+        fontSize: 19,
+        fontWeight: '600',
     },
     notify:{
         backgroundColor: '#A084DC',
         paddingVertical: 10,
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        borderTopRightRadius: 15,
+        borderTopLeftRadius: 15
     },
     title:{
         fontSize: 19,
@@ -150,7 +169,8 @@ const styles = StyleSheet.create({
     },
     reason:{
         backgroundColor: 'white',
-        marginVertical: 15
+        marginVertical: 15,
+        borderRadius: 10
     },
     reasonTitle:{
         fontSize: 16,
@@ -161,6 +181,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingHorizontal: 15,
         paddingVertical: 15,
+        borderRadius: 10
     },
     trackDetail:{
         paddingHorizontal: 15
@@ -177,7 +198,7 @@ const styles = StyleSheet.create({
         borderColor: '#5b5b5e'
     },
     cancelText:{
-        color: '#f2a23a',
+        color: '#e36040',
         fontSize: 15,
         fontWeight: '600'
 
@@ -191,7 +212,8 @@ const styles = StyleSheet.create({
         marginTop: 15,
         backgroundColor: 'white',
         paddingHorizontal: 20,
-        paddingVertical: 15
+        paddingVertical: 15,
+        borderRadius: 10
     },
     itemTitle:{
         fontSize: 17,
@@ -221,7 +243,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginVertical: 15,
         paddingHorizontal: 20,
-        paddingVertical: 20
+        paddingVertical: 20,
+        borderRadius: 10
     },
     infoText:{
         fontSize: 16,
@@ -231,5 +254,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '500',
         color: '#7d7e80'
+    },
+    body:{
+        marginHorizontal: 20
     }
 })

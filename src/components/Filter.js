@@ -125,7 +125,7 @@ export default function Filter({setItems}) {
           style={{backgroundColor: '#BFACE2', borderRadius: 10, }}
           onPress={toggleModal}
           >
-            <Text style={{fontSize: 20, fontWeight: '700', textAlign: 'center', color: 'white'}}>Done</Text>
+            <Text style={{fontSize: 20, fontWeight: '700', textAlign: 'center', color: 'white', paddingVertical: 6}}>Done</Text>
           </TouchableOpacity>
       </Modal>
     </View>

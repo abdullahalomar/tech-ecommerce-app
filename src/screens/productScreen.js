@@ -187,7 +187,7 @@ export default function productScreen({ navigation }) {
        <View style={styles.productCounting}>
        <View style={{paddingVertical: 25}}>
        <View style={styles.seven}>
-            <Text style={styles.sevenNumber}>$ {singleProducts.price}</Text>
+            <Text style={styles.sevenNumber}>$ {singleProducts.price * counter}</Text>
            
             <View style={styles.sevenFlex}>
                {
