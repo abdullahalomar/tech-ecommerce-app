@@ -55,7 +55,7 @@ export default function loginScreen({navigation}) {
         start={{ x: 0, y: 0.5 }}
         end={{ x: 1, y: 0.5 }}
       >
-        <Text style={{marginLeft: 60, marginTop: 20, fontSize: 22, fontWeight: 'bold'}}>Login</Text>
+        <Text style={{marginLeft: 60, marginTop: 20, fontSize: 22, fontWeight: 'bold'}}>Registration</Text>
         <View style={{marginHorizontal: 30, marginTop: 30}}>
         <View style={{marginBottom: 30}}>
         <Text style={styles.label}>
@@ -81,19 +81,19 @@ export default function loginScreen({navigation}) {
         ></TextInput>
         </View>
         </View>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
             <Text style={styles.forgot}>Forgot password?</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity
         style={styles.loginButton}
         onPress={()=> loginUser(email, password)}
         >
-            <Text style={styles.loginButtonText}>Login</Text>
+            <Text style={styles.loginButtonText}>Registration</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
         style={{}}
-        onPress={()=> navigation.navigate('Registration')}
+        onPress={()=> navigation.navigate('registration')}
         >
             <Text style={styles.create}>Create account</Text>
         </TouchableOpacity>

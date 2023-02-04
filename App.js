@@ -21,7 +21,7 @@ import CancelDetail from "./src/components/CancelDetail";
 import CouponModal from "./src/components/CouponModal";
 import PaymentOption from "./src/components/PaymentOption";
 import Gpay from './src/components/Gpay'
-
+import Registration from './src/screens/Registration'
 
 const navigator = createStackNavigator(
   {
@@ -46,6 +46,7 @@ const navigator = createStackNavigator(
     CouponModal: CouponModal,
     PaymentOption: PaymentOption,
     Gpay: Gpay,
+    Registration : Registration,
   },
   {
     initialRouteName: "Onboarding",
