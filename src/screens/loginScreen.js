@@ -55,6 +55,8 @@ export default function loginScreen({navigation}) {
         start={{ x: 0, y: 0.5 }}
         end={{ x: 1, y: 0.5 }}
       >
+        
+        <View style={styles.box}>
         <Text style={{marginLeft: 60, marginTop: 20, fontSize: 22, fontWeight: 'bold'}}>Login</Text>
         <View style={{marginHorizontal: 30, marginTop: 30}}>
         <View style={{marginBottom: 30}}>
@@ -86,7 +88,8 @@ export default function loginScreen({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity
         style={styles.loginButton}
-        onPress={()=> loginUser(email, password)}
+      //   onPress={()=> loginUser(email, password)}
+        onPress={()=> navigation.navigate('Home')}
         >
             <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
@@ -97,6 +100,7 @@ export default function loginScreen({navigation}) {
         >
             <Text style={styles.create}>Create account</Text>
         </TouchableOpacity>
+        </View>
 
         {/* <TouchableOpacity
         style={styles.loginButton}
@@ -195,7 +199,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#706ef5',
         marginHorizontal: 60,
         borderRadius: 15,
-        marginTop: 13
+        marginTop: 50,
      },
      loginButtonText:{
         textAlign: 'center',
@@ -215,6 +219,8 @@ const styles = StyleSheet.create({
         width: 25,
         height: 20
      },
-
+     box:{
+      paddingVertical: 20
+     }
      
 })

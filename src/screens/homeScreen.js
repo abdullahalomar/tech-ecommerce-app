@@ -1,24 +1,18 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import homebg from '../../assets/homebg.png'
 import MenubarScreen from '../components/MenubarScreen'
 import SearchBar from '../components/SearchBar';
-import useResults from '../hooks/useResults';
-import ResultsList from '../components/ResultsList';
 import Category from '../components/Category';
 import useCategory from '../hooks/useCategory';
+import useProduct from '../hooks/useProduct';
+import ResultDetail from '../components/ResultDetail';
 
 
 export default function homeScreen({navigation}) {
 
    const [apidata, setApiData] = useState([]);
    const [categories] = useCategory();
-
-   useEffect(()=>{
-      fetch('https://fakestoreapi.com/products')
-      .then(response=>response.json())
-      .then(data =>setApiData(data))
-   },[])
+   const [results] = useProduct();
 
    const categoryHandler = (category) => {
       fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -29,7 +23,7 @@ export default function homeScreen({navigation}) {
    
 
       const [term, setTerm] = useState('');
-      const [searchApi, results, errorMessage] = useResults();
+      
 
       // console.log(results);
       const filterResultByPrice = (price) => {
@@ -72,7 +66,6 @@ export default function homeScreen({navigation}) {
       categories.map((category,id) => <Category
       key={id}
       category={category}
-      
       filter={categoryHandler}
       />)
    }
@@ -90,17 +83,20 @@ export default function homeScreen({navigation}) {
       </View>
   </View>
 
-  <ResultsList 
-  results={apidata}
-  navigation={navigation}
-  />
+  {
+   results.map((result, id) => <ResultDetail
+   key={id}
+   result={result}
+   />)
+  }
+  
   <View style={{marginTop: 10}}>
           <Text style={styles.sale}>Recently Viewed</Text>
       </View>
-  <ResultsList 
+  {/* <ResultsList 
   results={apidata}
   navigation={navigation}
-  />
+  /> */}
 </View>
       </ScrollView>
 

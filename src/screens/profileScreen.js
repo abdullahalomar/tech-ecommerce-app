@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
-import man from '../../assets/menavater.png'
 import MenubarScreen from '../components/MenubarScreen';
 import NotifyIcon from '../components/NotifyIcon';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -32,7 +31,7 @@ export default function profileScreen({ navigation }) {
           >
           <Image
           style={{width: 80, height: 80, borderRadius: 100, backgroundColor: 'white',}}
-          source={man}
+          source={require('../../assets/menavater.jpg')}
           ></Image>
           </TouchableOpacity>
          <View style={{marginTop: 10}}>

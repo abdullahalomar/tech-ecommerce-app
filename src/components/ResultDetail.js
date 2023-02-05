@@ -21,7 +21,7 @@ export default function ({result, navigation}) {
       <Badge/>
         <Image style={styles.image} resizeMode='contain' source={{ uri: result.image}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{result.title.length > 17 ? result.title.slice(0, 17) : result.title }</Text>
+      <Text style={styles.font}>{result.title.length > 17 ? result.title.slice(0, 17) : result.name }</Text>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <Text style={styles.priceFont}>$ {result.price}</Text>
       <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.rating.rate}</Text>
