@@ -6,8 +6,9 @@ import useCategory from '../hooks/useCategory';
 import Category from './Category';
 import { TextInput } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
+import useProductData from '../hooks/useCategory';
 
-export default function Filter({setItems}) {
+export default function Filter({setCategory}) {
 
   const [isModalVisible, setModalVisible] = useState(false);
 
@@ -15,14 +16,12 @@ export default function Filter({setItems}) {
     setModalVisible(!isModalVisible);
   };
 
-  const [categories] = useCategory();
-
+  const categories = useCategory();
+  
 
   const categoryHandler = (category) => {
    
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-    .then(res=>res.json())
-    .then(json=>setItems(json))
+    setCategory(category)
   }
 
   return (
@@ -45,8 +44,8 @@ export default function Filter({setItems}) {
             </TouchableOpacity>
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
             {
-            categories.map((category,id) => <Category
-            key={id}
+            categories.loading == false && categories.data.map((category,id) => <Category
+              key={id}
               category={category}
               filter={categoryHandler}
               ></Category>)

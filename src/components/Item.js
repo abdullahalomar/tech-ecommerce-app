@@ -3,17 +3,18 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 
 export default function Item({item}) {
-    const {image, title, price, rating} = item;
   return (
     <TouchableOpacity style={styles.card}>
        <View style={styles.cardFlex}>
-       <Image style={styles.image} resizeMode='contain' source={{ uri: image}} />
+       <Image style={styles.image} resizeMode='contain' source={{ uri: item.images[0].src}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{title.length < 20 ? title : title.substring(0, 20)}</Text>
-      <Text style={styles.font}>$ {price}</Text>
-      <View style={{flexDirection: 'row'}}>
-      <Text style={styles.fontRate}><AntDesign name="staro" size={14} color="#F2921D" /> {rating.rate}</Text>
-      <Text style={[styles.fontRate, {paddingLeft: 7}]}>({rating.count})</Text>
+      <Text style={styles.font}>{item.name.length < 20 ? item.name : item.name.substring(0, 20)}</Text>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <Text style={styles.font}>$ {item.price}</Text>
+      
+      <Text style={styles.fontRate}><AntDesign name="staro" size={14} color="#F2921D" /> {item.average_rating}</Text>
+      {/* <Text style={[styles.fontRate, {paddingLeft: 7}]}>({rating.count})</Text> */}
+      
       </View>
       </View>
        </View>
@@ -23,9 +24,10 @@ export default function Item({item}) {
 
 const styles = StyleSheet.create({
     image:{
-        width: 80,
-        height: 60,
-        borderRadius: 8,
+        width: '100%',
+        height: 130,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
     },
     text:{
         marginTop: 5
@@ -40,10 +42,11 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       borderRadius: 15,
-      paddingVertical: 10,
+      paddingBottom: 10,
       marginHorizontal: 5
     },
     cardFlex:{
+      width: '100%',
          justifyContent: 'center', 
          alignItems: 'center',
        },

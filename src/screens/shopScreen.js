@@ -12,31 +12,24 @@ import {
 } from 'react-native';
 import Filter from '../components/Filter';
 import ItemGrid from '../components/ItemGrid';
+import useProductData from '../hooks/useProduct';
+import { log } from 'react-native-reanimated';
 
 export default function shopScreen({navigation}) {
  
   const [items, setItems] = useState([]);
-  const [categories] = useCategory();
+  const [category, setCategory] = useState(null)
+  const categories = useCategory();
+  const products = useProductData(category);
+  console.log(category)
  
   const [isGrid, setIsGrid] = useState(true)
-  useEffect(()=>{
-     fetch('https://fakestoreapi.com/products')
-     .then(response=>response.json())
-     .then(data => setItems(data))
-  },[])
+  // useEffect(()=>{
+  //    fetch('https://fakestoreapi.com/products')
+  //    .then(response=>response.json())
+  //    .then(data => setItems(data))
+  // },[])
 
-  const drawer = useRef(null);
-  const [drawerPosition, setDrawerPosition] = useState('left');
-  const changeDrawerPosition = () => {
-    if (drawerPosition === 'left') {
-      setDrawerPosition('right');
-    } else {
-      setDrawerPosition('left');
-    }
-  };
-
- 
-  
   return (
     <MenubarScreen navigation={navigation}>
       <View>
@@ -52,7 +45,7 @@ export default function shopScreen({navigation}) {
           >
           <MaterialIcons name="local-shipping" size={24} color="#6d7c8f" />
           </TouchableOpacity>
-          <Filter setItems={setItems}/>
+          <Filter setCategory={setCategory}/>
           {
             isGrid ? (
               <TouchableOpacity style={styles.grid} onPress={()=>setIsGrid(false)}>
@@ -74,7 +67,7 @@ export default function shopScreen({navigation}) {
         >
           <View style={styles.cartBox}>
         {
-          items.map(item => <Item
+          products.loading == false && products.data.map(item => <Item
           key={item.id}
           item={item}
           ></Item>)
@@ -88,7 +81,7 @@ export default function shopScreen({navigation}) {
         >
           <View style={styles.cartBoxGrid}>
         {
-          items.map(item => <ItemGrid
+          products.loading == false && products.data.map(item => <ItemGrid
           key={item.id}
           item={item}
           ></ItemGrid>)

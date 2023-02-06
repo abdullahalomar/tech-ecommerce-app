@@ -6,6 +6,7 @@ import Category from '../components/Category';
 import useCategory from '../hooks/useCategory';
 import useProduct from '../hooks/useProduct';
 import ResultDetail from '../components/ResultDetail';
+import ResultDetailRecent from '../components/ResultDetailRecent';
 
 
 export default function homeScreen({navigation}) {
@@ -44,13 +45,13 @@ export default function homeScreen({navigation}) {
       navigation={navigation}
       />
       <ScrollView>
-      <View style={styles.body}>
-     {/* {errorMessage ? <Text>{errorMessage}</Text> : null} */}
 
+
+<View style={styles.body}>
 <View>
    <Image
    style={{width: 360, height: 205, marginTop: 10,}}
-   source={require('../../assets/video/oheading.gif')}
+   source={require('../../assets/video/heading.gif')}
    >
    </Image>
  
@@ -96,7 +97,7 @@ export default function homeScreen({navigation}) {
   }
   </ScrollView>
   
-  <View style={{marginTop: 10}}>
+  <View style={{marginTop: 20, marginBottom: 10}}>
           <Text style={styles.sale}>Recently Viewed</Text>
       </View>
       <ScrollView
@@ -104,7 +105,7 @@ export default function homeScreen({navigation}) {
   showsHorizontalScrollIndicator={false}
   >
   {
-   loading == false && data.map((result, id) => <ResultDetail
+   loading == false && data.map((result, id) => <ResultDetailRecent
    key={id}
    result={result}
    navigation={navigation}
@@ -122,7 +123,7 @@ export default function homeScreen({navigation}) {
 const styles = StyleSheet.create({
    bg:{
       width: '100%',
-      height: '95%',
+      height: '94.7%',
       // backgroundColor: '#E5E5E5'
    },
     body:{
@@ -159,7 +160,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 3,
-        marginTop: 5
+        marginTop: 5,
+        marginBottom: 10
      },
      firstDot:{
         width:20,
@@ -177,7 +179,8 @@ const styles = StyleSheet.create({
      seeMore:{
          fontSize: 16,
          fontWeight: '600',
-         color: '#464747'
+         color: '#464747',
+        
      },
      flat:{
          marginTop: 20,

@@ -15,18 +15,20 @@ export default function ({result, navigation}) {
       // end={{ x: 1, y: 1 }}
     >
       <TouchableOpacity 
-    
+    style={{paddingHorizontal: 25}}
     onPress={()=> {navigation.navigate('Product', {id:result.id})}}
     >
-      <Badge/>
-        <Image style={styles.image} resizeMode='contain' source={{ uri: result.images[0].src}} />
+    <Badge/>
+     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+       <Image style={styles.image} resizeMode='contain' source={{ uri: result.images[0].src}} />
       <View style={styles.text}>
       <Text style={styles.font}>{result.name.length > 17 ? result.name.slice(0, 17) : result.name }</Text>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={{}}>
       <Text style={styles.priceFont}>$ {result.price}</Text>
       <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.average_rating}</Text>
       </View>
       </View>
+    </View>
     </TouchableOpacity>
     </View>
   )
@@ -34,13 +36,10 @@ export default function ({result, navigation}) {
 
 const styles = StyleSheet.create({
     image:{
-        width: 120,
-        height: 100,
-        marginTop: 7,
-        borderBottomRightRadius: 20,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 5,
-        borderBottomLeftRadius: 5,
+        width: 160,
+        height: 80,
+        borderRadius: 8,
+        marginTop: 7
     },
     text:{
         marginTop: 7
@@ -56,12 +55,9 @@ const styles = StyleSheet.create({
       marginTop: 3
     },
     cart:{
+      width: 300,
       marginRight: 10,
-      borderTopLeftRadius: 20,
-      borderBottomRightRadius: 20,
-      borderTopRightRadius: 5,
-      borderBottomLeftRadius: 5,
-      paddingHorizontal: 10,
+      borderRadius: 10,
       paddingVertical: 10,
       backgroundColor: 'white',
       elevation: 1,
