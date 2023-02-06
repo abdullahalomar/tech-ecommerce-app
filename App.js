@@ -49,7 +49,7 @@ const navigator = createStackNavigator(
     Registration : Registration,
   },
   {
-    initialRouteName: "Onboarding",
+    initialRouteName: "Home",
     defaultNavigationOptions: {
       // title: "Tech ecommerce",
     },

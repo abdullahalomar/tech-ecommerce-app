@@ -7,7 +7,7 @@ export default function Category({ category ,filter}) {
   return (
     <View style={styles.categoryBox}>
       <TouchableOpacity onPress={()=>filter(category)}>
-      <Text style={{lineHeight: 15, textAlign: 'center', paddingVertical: 8}}>{category}</Text>
+      <Text style={{lineHeight: 15, textAlign: 'center', paddingVertical: 8}}>{category.name}</Text>
       </TouchableOpacity>
     </View>
   )

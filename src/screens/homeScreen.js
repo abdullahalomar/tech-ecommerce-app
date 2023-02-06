@@ -11,11 +11,11 @@ import ResultDetail from '../components/ResultDetail';
 export default function homeScreen({navigation}) {
 
    const [apidata, setApiData] = useState([]);
-   const [categories] = useCategory();
-   const [results] = useProduct();
+   const categories = useCategory();
+   const {data,loading,error} = useProduct();
 
    const categoryHandler = (category) => {
-      fetch(`https://fakestoreapi.com/products/category/${category}`)
+      fetch(`https://api.sohojearning.com/wp-json/wc/v3/products/categories/${category}`)
       .then(res=>res.json())
       .then(json=>setApiData(json))
     }
@@ -63,7 +63,7 @@ export default function homeScreen({navigation}) {
   showsHorizontalScrollIndicator={false}
   >
    {
-      categories.map((category,id) => <Category
+      categories.loading == false && categories.data.map((category,id) => <Category
       key={id}
       category={category}
       filter={categoryHandler}
@@ -83,20 +83,34 @@ export default function homeScreen({navigation}) {
       </View>
   </View>
 
+  <ScrollView
+  horizontal
+  showsHorizontalScrollIndicator={false}
+  >
   {
-   results.map((result, id) => <ResultDetail
+   loading == false && data.map((result, id) => <ResultDetail
    key={id}
    result={result}
+   navigation={navigation}
    />)
   }
+  </ScrollView>
   
   <View style={{marginTop: 10}}>
           <Text style={styles.sale}>Recently Viewed</Text>
       </View>
-  {/* <ResultsList 
-  results={apidata}
-  navigation={navigation}
-  /> */}
+      <ScrollView
+  horizontal
+  showsHorizontalScrollIndicator={false}
+  >
+  {
+   loading == false && data.map((result, id) => <ResultDetail
+   key={id}
+   result={result}
+   navigation={navigation}
+   />)
+  }
+  </ScrollView>
 </View>
       </ScrollView>
 
