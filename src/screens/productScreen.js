@@ -7,24 +7,18 @@ import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
 import Review from '../components/Review';
 import useSingleProduct from '../hooks/useSingleProduct'
+import Loading from '../components/Loading';
 
 export default function productScreen({ navigation }) {
 
 
     const [counter, setCounter] = useState(1);
-    // const [singleProducts, setSingleProducts] = useState([]);
     const [isModalVisible, setModalVisible] = useState(false);
-    // const singleProducts = useSingleProduct(navigation.state.params.id);
+    const singleProducts = useSingleProduct(navigation.state.params.id);
     
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
       };
-
-    // useEffect(()=>{
-    //     fetch(`https://fakestoreapi.com/products/${navigation.state.params.id}`)
-    //     .then(Response => Response.json())
-    //     .then(data => setSingleProducts(data))
-    // },[])
 
     const increment = () => {
         setCounter(counter + 1)
@@ -42,8 +36,9 @@ export default function productScreen({ navigation }) {
   return (
   
     <View style={styles.background}>
-        
-      <View style={styles.body}>
+      {
+        singleProducts.loading == false ? (
+            <View style={styles.body}>
       
         {/* menu */}
         <View style={styles.IconFlex}>
@@ -84,7 +79,7 @@ export default function productScreen({ navigation }) {
         >
         <Image
         style={styles.head}
-        source={{uri: singleProducts.images[0].src}}
+        source={{uri: singleProducts.data.images[0].src}}
         resizeMode='contain'
         >
         </Image>
@@ -99,36 +94,22 @@ export default function productScreen({ navigation }) {
       </View>
 
         {/* Featured */}
-        <View>
-        <View style={styles.featured}>
+         <View style={styles.featured}>
+        {
+            singleProducts.data.images.map(image => 
+                
             <TouchableOpacity
             onPress={toggleModal}
             >
                 <Image
                     style={styles.headSet}
-                    source={{uri: singleProducts.image}}
+                    source={{uri: image.src}}
                     resizeMode='contain'
                 ></Image>
             </TouchableOpacity>
-            <TouchableOpacity
-            onPress={toggleModal}
-            >
-            <Image
-                style={styles.headSet}
-                source={{uri: singleProducts.image}}
-                resizeMode='contain'
-                ></Image>
-            </TouchableOpacity>
-            <TouchableOpacity
-            onPress={toggleModal}
-            >
-            <Image
-                style={styles.headSet}
-                source={{uri: singleProducts.image}}
-                resizeMode='contain'
-                ></Image>
-            </TouchableOpacity>
-        </View>
+            
+                )
+        }
         </View>
         <Modal 
           style={styles.modalBody}
@@ -140,15 +121,19 @@ export default function productScreen({ navigation }) {
           >
             <Entypo  name="circle-with-cross" size={28} color="white" />
           </TouchableOpacity>
-            <Image
+            <View>
+            {
+                singleProducts.data.images.map( modalImage => 
+                    <Image
                 style={styles.headSetModal}
-                source={{uri: singleProducts.image}}
+                source={{uri: modalImage.src}}
                 ></Image>
-          <View style={{}}>
-          
-        </View>
-        
+                )
+            }
+            </View>
       </Modal>
+
+        
         {/* Featured */}
 
         {/* product details */}
@@ -161,32 +146,26 @@ export default function productScreen({ navigation }) {
         >
            <View style={styles.fifth}>
             <Text style={styles.free}>FREE SHIPPING</Text>
-            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>{singleProducts?.rating?.rate}</Text>({singleProducts?.average_rating})</Text>
+            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>{singleProducts?.data.average_rating}</Text>({singleProducts?.data.average_rating})</Text>
            </View>
 
            <View style={styles.six}>
-            <Text style={styles.sony}>{singleProducts.name}</Text>
+            <Text style={styles.sony}>{singleProducts.data.name}</Text>
             <Text 
             style={styles.long}>
-                {singleProducts.description}
-                </Text>
-                
+                {singleProducts.data.description}
+                </Text>   
         </View>
         <Review/>
         </LinearGradient>
         </View>
-        
-        
         </View>
-
-        
       </ScrollView>
       
-
        <View style={styles.productCounting}>
        <View style={{paddingVertical: 25}}>
        <View style={styles.seven}>
-            <Text style={styles.sevenNumber}>$ {singleProducts.price * counter}</Text>
+            <Text style={styles.sevenNumber}>$ {singleProducts.data.price * counter}</Text>
            
             <View style={styles.sevenFlex}>
                {
@@ -245,6 +224,8 @@ export default function productScreen({ navigation }) {
         {/* product details */}
         
       </View>
+        ) : <Loading/>
+      }
     </View>
    
   )
@@ -478,8 +459,9 @@ const styles = StyleSheet.create({
     // menu
     IconFlex:{
         flexDirection: 'row',
-        backgroundColor: '#e8eaed',
-        borderRadius: 20
+        backgroundColor: '#fafafa',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
     },
     firstIcon:{
         width: 45,

@@ -6,8 +6,12 @@ import kate from '../../assets/picture/Kate.jpg'
 import been from '../../assets/picture/been.jpg'
 import dua from '../../assets/picture/dua.jpg'
 import { FontAwesome } from '@expo/vector-icons';
+import useReview from '../hooks/useReview'
 
 export default function Review() {
+
+  const reviews = useReview();
+
   return (
     <View>
         <Text style={styles.heading}>Reviews</Text>
@@ -37,7 +41,7 @@ export default function Review() {
       </View>
       </View>
 
-      <View style={styles.box}>
+      {/* <View style={styles.box}>
       <View style={styles.border}></View>
       <View>
       <View style={styles.infoBox}>
@@ -122,7 +126,7 @@ export default function Review() {
         <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
       </View>
       </View>
-      </View>
+      </View> */}
       </View>
       
     </View>

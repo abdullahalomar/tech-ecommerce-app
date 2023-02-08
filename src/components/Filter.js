@@ -6,7 +6,6 @@ import useCategory from '../hooks/useCategory';
 import Category from './Category';
 import { TextInput } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
-import useProductData from '../hooks/useCategory';
 
 export default function Filter({setCategory}) {
 

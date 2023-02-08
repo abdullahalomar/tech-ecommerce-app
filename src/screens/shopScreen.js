@@ -14,21 +14,16 @@ import Filter from '../components/Filter';
 import ItemGrid from '../components/ItemGrid';
 import useProductData from '../hooks/useProduct';
 import { log } from 'react-native-reanimated';
+import useSingleProduct from '../hooks/useSingleProduct';
+import Loading from '../components/Loading';
 
 export default function shopScreen({navigation}) {
- 
-  const [items, setItems] = useState([]);
+
   const [category, setCategory] = useState(null)
   const categories = useCategory();
   const products = useProductData(category);
-  
- 
   const [isGrid, setIsGrid] = useState(true)
-  // useEffect(()=>{
-  //    fetch('https://fakestoreapi.com/products')
-  //    .then(response=>response.json())
-  //    .then(data => setItems(data))
-  // },[])
+  const singleProducts = useSingleProduct()
 
   return (
     <MenubarScreen navigation={navigation}>
@@ -63,8 +58,12 @@ export default function shopScreen({navigation}) {
             )
           }
           </View>
-          
         </View>
+
+          {
+            singleProducts.loading == false ? 
+            (
+              <View>
         {isGrid ? (   <View style={styles.flexBox}>
         <ScrollView
         showsVerticalScrollIndicator={false}
@@ -94,7 +93,10 @@ export default function shopScreen({navigation}) {
         </ScrollView>
       
        </View>)}
-    
+        </View>
+            ) : <Loading/>
+          }
+  
     </View>
     </MenubarScreen>
   )

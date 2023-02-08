@@ -1,17 +1,11 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
-import React from "react";
+import {View,Text,StyleSheet,TouchableOpacity,ScrollView,Image} from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import laptop from "../../assets/laptop.png";
 import { LinearGradient } from "expo-linear-gradient";
 import MenubarScreen from "../components/MenubarScreen";
 import { AntDesign } from "@expo/vector-icons";
+import { Feather } from '@expo/vector-icons';
+
 
 export default function wishlistScreen({ navigation }) {
   return (
@@ -39,11 +33,11 @@ export default function wishlistScreen({ navigation }) {
                 end={{ x: 0, y: 0.5 }}
               >
                 <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
+                  <Feather 
+                  style={styles.heart} 
+                  name="heart" 
+                  size={14} 
+                  color="#FF0032" 
                   />
                   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View></View>
@@ -78,11 +72,11 @@ export default function wishlistScreen({ navigation }) {
                 end={{ x: 0, y: 0.5 }}
               >
                 <View style={styles.cartContent}>
-                  <AntDesign
-                    style={styles.heart}
-                    name="heart"
-                    size={14}
-                    color="#FF0032"
+                <Feather 
+                  style={styles.heart} 
+                  name="heart" 
+                  size={14} 
+                  color="#FF0032" 
                   />
                   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View></View>
@@ -110,7 +104,12 @@ export default function wishlistScreen({ navigation }) {
             </View>
             
             
+
+           
+
+
           </View>
+          
         </ScrollView>
       </View>
     </MenubarScreen>
@@ -183,5 +182,7 @@ const styles = StyleSheet.create({
   },
   image:{
      paddingLeft: 90
-  }
+  } ,
+
+
 });

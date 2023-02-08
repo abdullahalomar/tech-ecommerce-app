@@ -3,8 +3,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Cart from '../components/Cart';
 import Promo from '../components/Promo';
 
+
 export default function cartScreen({navigation}) {
 
+  
     
   return (
     <View style={styles.background}>
