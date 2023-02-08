@@ -1,31 +1,30 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons'
 import Modal from "react-native-modal";
 import { Entypo } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 import Review from '../components/Review';
-
-
+import useSingleProduct from '../hooks/useSingleProduct'
 
 export default function productScreen({ navigation }) {
 
 
     const [counter, setCounter] = useState(1);
-    const [singleProducts, setSingleProducts] = useState([]);
+    // const [singleProducts, setSingleProducts] = useState([]);
     const [isModalVisible, setModalVisible] = useState(false);
+    // const singleProducts = useSingleProduct(navigation.state.params.id);
     
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
       };
 
-    useEffect(()=>{
-        fetch(`https://fakestoreapi.com/products/${navigation.state.params.id}`)
-        .then(Response => Response.json())
-        .then(data => setSingleProducts(data))
-    },[])
+    // useEffect(()=>{
+    //     fetch(`https://fakestoreapi.com/products/${navigation.state.params.id}`)
+    //     .then(Response => Response.json())
+    //     .then(data => setSingleProducts(data))
+    // },[])
 
     const increment = () => {
         setCounter(counter + 1)
@@ -85,7 +84,7 @@ export default function productScreen({ navigation }) {
         >
         <Image
         style={styles.head}
-        source={{uri: singleProducts.image}}
+        source={{uri: singleProducts.images[0].src}}
         resizeMode='contain'
         >
         </Image>
@@ -162,11 +161,11 @@ export default function productScreen({ navigation }) {
         >
            <View style={styles.fifth}>
             <Text style={styles.free}>FREE SHIPPING</Text>
-            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>{singleProducts?.rating?.rate}</Text>({singleProducts?.rating?.count})</Text>
+            <Text style={styles.twoHun}><AntDesign name="star" size={18} color="#E6BB66" /> <Text style={styles.point}>{singleProducts?.rating?.rate}</Text>({singleProducts?.average_rating})</Text>
            </View>
 
            <View style={styles.six}>
-            <Text style={styles.sony}>{singleProducts.title}</Text>
+            <Text style={styles.sony}>{singleProducts.name}</Text>
             <Text 
             style={styles.long}>
                 {singleProducts.description}

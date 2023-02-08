@@ -40,8 +40,7 @@ export default function Filter({setCategory}) {
             {/* category */}
             <View style={styles.category}>
             <Text style={[styles.title, {marginTop: 15}]}>Category</Text>
-            <TouchableOpacity>
-            </TouchableOpacity>
+            
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
             {
             categories.loading == false && categories.data.map((category,id) => <Category
@@ -121,7 +120,7 @@ export default function Filter({setCategory}) {
             {/* rating */}
           
         <TouchableOpacity
-          style={{backgroundColor: '#BFACE2', borderRadius: 10, }}
+          style={styles.closeButton}
           onPress={toggleModal}
           >
             <Text style={{fontSize: 20, fontWeight: '700', textAlign: 'center', color: 'white', paddingVertical: 6}}>Done</Text>
@@ -136,16 +135,19 @@ const styles =StyleSheet.create({
     width: '75%',
     backgroundColor: 'white',
     marginHorizontal: 90,
-    borderRadius: 15,
+    borderRadius: 5,
     marginVertical: 130,
     position: 'absolute'
 },
 closeButton:{
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 4,
-    color: 'white'
+    backgroundColor: '#BFACE2', 
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
+    // fontSize: 20,
+    // fontWeight: 'bold',
+    // textAlign: 'center',
+    // marginVertical: 4,
+    // color: 'white'
 },
 okBox: {
     width: 176,

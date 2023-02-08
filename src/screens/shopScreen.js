@@ -21,7 +21,7 @@ export default function shopScreen({navigation}) {
   const [category, setCategory] = useState(null)
   const categories = useCategory();
   const products = useProductData(category);
-  console.log(category)
+  
  
   const [isGrid, setIsGrid] = useState(true)
   // useEffect(()=>{
@@ -37,7 +37,11 @@ export default function shopScreen({navigation}) {
         
         
         <View style={styles.filterBox}>
-            <Text style={{paddingHorizontal: 10, fontSize: 14, fontWeight: '600', color: '#6d7c8f'}}>All</Text>
+            <TouchableOpacity
+            onPress={()=> setCategory(null)}
+            >
+            <Text style={{paddingHorizontal: 10, fontSize: 17, fontWeight: '600', color: '#6d7c8f'}}>All</Text>
+            </TouchableOpacity>
           <View style={styles.iconBox}>
           <TouchableOpacity 
           style={styles.ship}
