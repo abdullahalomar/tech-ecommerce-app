@@ -5,9 +5,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import MenubarScreen from "../components/MenubarScreen";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from '@expo/vector-icons';
-
+import { useState } from "react";
 
 export default function wishlistScreen({ navigation }) {
+
+  const [select, setSelect] = useState(false)
+
   return (
     <MenubarScreen navigation={navigation}>
       <View style={{}}>
@@ -33,12 +36,15 @@ export default function wishlistScreen({ navigation }) {
                 end={{ x: 0, y: 0.5 }}
               >
                 <View style={styles.cartContent}>
-                  <Feather 
-                  style={styles.heart} 
+                  <TouchableOpacity
+                  onPress={setSelect}
+                  style={styles.heart}>
+                  {select == false ? <Feather 
                   name="heart" 
                   size={14} 
                   color="#FF0032" 
-                  />
+                  /> : <Entypo name="heart" size={14} color="#F55050" />}
+                  </TouchableOpacity>
                   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View></View>
                     <Image style={styles.image} source={laptop}></Image>
@@ -57,7 +63,10 @@ export default function wishlistScreen({ navigation }) {
                     
                   </View>
                   {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity 
+                  style={styles.button}
+                  onPress={()=>  navigation.navigate('Cart')}
+                  >
                     <Text style={styles.buttonText}>Add to cart</Text>
                   </TouchableOpacity>
                 </View>
@@ -72,12 +81,15 @@ export default function wishlistScreen({ navigation }) {
                 end={{ x: 0, y: 0.5 }}
               >
                 <View style={styles.cartContent}>
-                <Feather 
-                  style={styles.heart} 
+                <TouchableOpacity
+                  onPress={setSelect}
+                  style={styles.heart}>
+                  {select == false ? <Feather 
                   name="heart" 
                   size={14} 
                   color="#FF0032" 
-                  />
+                  /> : <Entypo name="heart" size={14} color="#F55050" />}
+                  </TouchableOpacity>
                   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View></View>
                     <Image style={styles.image} source={laptop}></Image>
@@ -96,7 +108,10 @@ export default function wishlistScreen({ navigation }) {
                     
                   </View>
                   {/* <Entypo style={styles.addIcon} name="plus" size={24} color="black" /> */}
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity 
+                  style={styles.button}
+                  onPress={()=>  navigation.navigate('Cart')}
+                  >
                     <Text style={styles.buttonText}>Add to cart</Text>
                   </TouchableOpacity>
                 </View>

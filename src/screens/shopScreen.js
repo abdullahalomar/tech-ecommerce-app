@@ -63,7 +63,7 @@ export default function shopScreen({navigation}) {
           {
             singleProducts.loading == false ? 
             (
-              <View>
+              <ScrollView>
         {isGrid ? (   <View style={styles.flexBox}>
         <ScrollView
         showsVerticalScrollIndicator={false}
@@ -93,7 +93,7 @@ export default function shopScreen({navigation}) {
         </ScrollView>
       
        </View>)}
-        </View>
+        </ScrollView>
             ) : <Loading/>
           }
   
@@ -104,14 +104,12 @@ export default function shopScreen({navigation}) {
 
 const styles = StyleSheet.create({
   flexBox:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     marginHorizontal: 10,
     paddingBottom: 35
   },
   cartBox: {
     marginVertical: 15,
-    flexDirection:'row',
+    flexDirection: 'row',
     flexWrap:'wrap',
     justifyContent:'center'
   },

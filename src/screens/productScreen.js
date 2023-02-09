@@ -116,7 +116,7 @@ export default function productScreen({ navigation }) {
                     <Entypo name="circle-with-cross" size={28} color="white" />
                   </TouchableOpacity>
                   <View>
-                    <Image style={styles.headSetModal} source={image}></Image>
+                    <Image resizeMode="contain" style={styles.headSetModal} source={image}></Image>
                   </View>
                 </Modal>
 

@@ -16,15 +16,15 @@ export default function ({result, navigation}) {
     >
       <TouchableOpacity 
     
-    onPress={()=> {navigation.navigate('Product', {id:result.id})}}
+    onPress={()=> {navigation.navigate('Product', {id:result?.id})}}
     >
       <Badge/>
-        <Image style={styles.image} resizeMode='contain' source={{ uri: result?.images[0].src}} />
+        <Image style={styles.image} resizeMode='contain' source={{ uri: result?.images[0]?.src}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{result.name.length > 17 ? result.name.slice(0, 17) : result.name }</Text>
+      <Text style={styles.font}>{result?.name.length > 17 ? result?.name.slice(0, 17) : result?.name }</Text>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Text style={styles.priceFont}>$ {result.price}</Text>
-      <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.average_rating}</Text>
+      <Text style={styles.priceFont}>$ {result?.price}</Text>
+      <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result?.average_rating}</Text>
       </View>
       </View>
     </TouchableOpacity>

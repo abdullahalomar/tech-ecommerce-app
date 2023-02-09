@@ -7,6 +7,7 @@ import useCategory from '../hooks/useCategory';
 import useProduct from '../hooks/useProduct';
 import ResultDetail from '../components/ResultDetail';
 import ResultDetailRecent from '../components/ResultDetailRecent';
+import Slider from '../components/Slider';
 
 
 export default function homeScreen({navigation}) {
@@ -40,11 +41,12 @@ export default function homeScreen({navigation}) {
 
 <View style={styles.body}>
 <View>
-   <Image
+   {/* <Image
    style={{width: 360, height: 205, marginTop: 10,}}
    source={require('../../assets/video/heading.gif')}
    >
-   </Image>
+   </Image> */}
+   <Slider/>
  
 </View>
 
