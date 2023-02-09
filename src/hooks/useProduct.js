@@ -6,7 +6,7 @@ const useProductData = (category = null) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-console.log(category)
+
   useEffect(() => {
     const fetchData = async () => {
       try {

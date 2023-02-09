@@ -13,8 +13,8 @@ export default function Cancel({navigation}) {
       <ScrollView
       showsVerticalScrollIndicator={false}
       >
-        <View>
-            <View style={styles.box}>
+      <View>
+      <View style={styles.box}>
       <View style={{marginVertical: 5}}>
         <Text style={styles.orderNo}>Order No.69900349034034</Text>
         <Text style={styles.orderNo}>Requested on :31 Jan 2023</Text>
@@ -34,7 +34,7 @@ export default function Cancel({navigation}) {
         onPress={()=> navigation.navigate('CancelDetail')}
         >
         <Text style={styles.cancelText}>Cancelled</Text>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#567189" />
         </TouchableOpacity>
       </View>
       </View>
@@ -63,7 +63,7 @@ export default function Cancel({navigation}) {
         onPress={()=> navigation.navigate('CancelDetail')}
         >
         <Text style={styles.cancelText}>Cancelled</Text>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#567189" />
         </TouchableOpacity>
       </View>
       </View>
@@ -92,7 +92,7 @@ export default function Cancel({navigation}) {
         onPress={()=> navigation.navigate('CancelDetail')}
         >
         <Text style={styles.cancelText}>Cancelled</Text>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#567189" />
         </TouchableOpacity>
       </View>
       </View>
@@ -100,7 +100,6 @@ export default function Cancel({navigation}) {
       <Text style={styles.reason}>Reason: system default reason</Text>
       </View>
       </View>
-
 
       <View style={styles.box}>
       <View style={{marginVertical: 5}}>
@@ -122,7 +121,7 @@ export default function Cancel({navigation}) {
         onPress={()=> navigation.navigate('CancelDetail')}
         >
         <Text style={styles.cancelText}>Cancelled</Text>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="#F94A29" />
+        <MaterialIcons name="keyboard-arrow-right" size={24} color="#567189" />
         </TouchableOpacity>
       </View>
       </View>
@@ -134,9 +133,6 @@ export default function Cancel({navigation}) {
         </View>
       </ScrollView>
 
-      
-
-      
     </View>
   )
 }
@@ -167,7 +163,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     cancelText:{
-        color: '#F94A29'
+        color: '#7286D3'
     },
     cancelFlex:{
         flexDirection: 'row', 
@@ -189,6 +185,6 @@ const styles = StyleSheet.create({
       elevation: 3
     },
     reason:{
-      color: '#d15c3f'
+      color: '#F55050'
     }
 })

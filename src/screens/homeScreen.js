@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import MenubarScreen from '../components/MenubarScreen'
 import SearchBar from '../components/SearchBar';
 import Category from '../components/Category';
@@ -11,21 +11,13 @@ import ResultDetailRecent from '../components/ResultDetailRecent';
 
 export default function homeScreen({navigation}) {
 
+   const [category, setCategory] = useState(null)
    const [apidata, setApiData] = useState([]);
    const categories = useCategory();
-   const {data,loading,error} = useProduct();
+   const {data,loading,error} = useProduct(category);
 
-   const categoryHandler = (category) => {
-      fetch(`https://api.sohojearning.com/wp-json/wc/v3/products/categories/${category}`)
-      .then(res=>res.json())
-      .then(json=>setApiData(json))
-    }
-   
-   
-
+  
       const [term, setTerm] = useState('');
-      
-
       // console.log(results);
       const filterResultByPrice = (price) => {
             return results.filter(result => {
@@ -33,9 +25,6 @@ export default function homeScreen({navigation}) {
             })
       };
      
-
-     
-      
   return (
    <MenubarScreen navigation={navigation}>
     <View style={styles.bg}>
@@ -69,7 +58,7 @@ export default function homeScreen({navigation}) {
       categories.loading == false && categories.data.map((category,id) => <Category
       key={id}
       category={category}
-      filter={categoryHandler}
+      filter={setCategory}
       />)
    }
   </ScrollView>

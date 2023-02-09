@@ -2,13 +2,12 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { LinearGradient } from 'expo-linear-gradient';
 import Cart from '../components/Cart';
 import Promo from '../components/Promo';
-
+import { CartProvider } from '../Provider/Cart/CartProvider';
 
 export default function cartScreen({navigation}) {
 
-  
-    
   return (
+    <CartProvider>
     <View style={styles.background}>
      <ScrollView>
         <View style={styles.body}>
@@ -54,6 +53,7 @@ export default function cartScreen({navigation}) {
       </View>
         
     </View>
+    </CartProvider>
   )
 }
 
