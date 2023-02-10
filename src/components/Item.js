@@ -2,9 +2,13 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 
-export default function Item({item}) {
+export default function Item({item, navigation}) {
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity 
+    style={styles.card}
+    onPress={()=> {navigation.navigate('Product', {id:item?.id})}}
+    navigation={navigation}
+    >
        <View style={styles.cardFlex}>
        <Image style={styles.image} resizeMode='contain' source={{ uri: item.images[0].src}} />
       <View style={styles.text}>

@@ -64,8 +64,9 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 80,
         backgroundColor: 'white',
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
+        borderRadius: 40,
+      //   borderTopLeftRadius: 40,
+      //   borderTopRightRadius: 40,
         position: 'absolute',
         marginTop: '175%',
         elevation: 4

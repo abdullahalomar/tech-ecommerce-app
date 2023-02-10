@@ -2,10 +2,14 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 
-export default function ItemGrid({item}) {
+export default function ItemGrid({item, navigation}) {
   return (
     <View>
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity 
+      style={styles.card}
+      onPress={()=> {navigation.navigate('Product', {id:item?.id})}}
+      navigation={navigation}
+      >
        <View style={styles.cardFlex}>
        <Image style={styles.image} resizeMode='contain' source={{ uri: item.images[0].src}} />
       <View style={styles.text}>

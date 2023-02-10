@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Item from '../components/Item';
 import MenubarScreen from '../components/MenubarScreen';
 import useCategory from '../hooks/useCategory';
@@ -24,6 +24,7 @@ export default function shopScreen({navigation}) {
   const products = useProductData(category);
   const [isGrid, setIsGrid] = useState(true)
   const singleProducts = useSingleProduct()
+  
 
   return (
     <MenubarScreen navigation={navigation}>
@@ -60,6 +61,7 @@ export default function shopScreen({navigation}) {
           </View>
         </View>
 
+          <View style={{marginBottom: 440}}>
           {
             singleProducts.loading == false ? 
             (
@@ -73,6 +75,7 @@ export default function shopScreen({navigation}) {
           products.loading == false && products.data.map(item => <Item
           key={item.id}
           item={item}
+          navigation={navigation}
           ></Item>)
         }
         </View>
@@ -87,6 +90,7 @@ export default function shopScreen({navigation}) {
           products.loading == false && products.data.map(item => <ItemGrid
           key={item.id}
           item={item}
+          navigation={navigation}
           ></ItemGrid>)
         }
         </View>
@@ -96,6 +100,7 @@ export default function shopScreen({navigation}) {
         </ScrollView>
             ) : <Loading/>
           }
+          </View>
   
     </View>
     </MenubarScreen>

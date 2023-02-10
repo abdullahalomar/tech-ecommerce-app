@@ -16,7 +16,7 @@ export default function ({result, navigation}) {
     >
       <TouchableOpacity 
     
-    onPress={()=> {navigation.navigate('Product', {id:result?.id})}}
+      onPress={()=> {navigation.navigate('Product', {id:result?.id})}}
     >
       <Badge/>
         <Image style={styles.image} resizeMode='contain' source={{ uri: result?.images[0]?.src}} />
