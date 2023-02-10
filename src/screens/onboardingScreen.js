@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
    },
    btnText:{
       textAlign: 'center',
-      marginTop: 12,
+      marginTop: 15,
       marginBottom: 17,
       fontSize: 20,
       fontWeight: '900',

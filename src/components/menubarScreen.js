@@ -14,7 +14,7 @@ export default function MenubarScreen({children, navigation}) {
       {children}
       <LinearGradient
        style={styles.lastSection}
-       colors={['#aac3e3', '#d1d9e3', '#aac3e3', ]}
+       colors={['#90a8f5', '#d1d9e3', '#90a8f5', ]}
        start={{ x: 0, y: 1 }}
        end={{ x: 1, y: 1 }}
        >
@@ -62,14 +62,14 @@ export default function MenubarScreen({children, navigation}) {
 const styles = StyleSheet.create({
     lastSection:{
         width: '100%',
-        height: 80,
+        height: 70,
         backgroundColor: 'white',
         borderRadius: 40,
       //   borderTopLeftRadius: 40,
       //   borderTopRightRadius: 40,
         position: 'absolute',
         marginTop: '175%',
-        elevation: 4
+        elevation: 1
      },
      last:{
         flexDirection: 'row',

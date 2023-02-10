@@ -10,7 +10,7 @@ import useReview from '../hooks/useReview'
 
 export default function Review() {
 
-  const reviews = useReview();
+  const {data,loading,error} = useReview();
 
   return (
     <View>
@@ -18,116 +18,37 @@ export default function Review() {
      <ScrollView>
      <View style={styles.review}>
 
-      <View>
+      {
+        loading == false && data.map(review => 
+      <View style={styles.main}>
       <View style={styles.box}>
       <View style={styles.border}></View>
       <View>
       <View style={styles.infoBox}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.image} source={tom}/>
-        <Text style={styles.name}>Tom Cruise</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center', marginRight: 20}}>
+        <Image style={styles.image} source={{uri: review.reviewer_avatar_urls['24']}}/>
+        <View>
+        <Text style={styles.name}>{review.reviewer.length > 13 ? review.reviewer.slice(0, 13) : review.reviewer }</Text>
+        <Text style={styles.mail}>{review.reviewer_email.length > 20 ? review.reviewer_email.slice(0, 20) : review.reviewer_email }</Text>
+        </View>
         </View>
         <View style={{flexDirection: 'row',}}>
         <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
+        <Text>{review.rating}</Text>
         </View>
       </View>
-      <View style={styles.message}>
-        <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
+      
+      </View>
+      <View style={{}}>
+        
       </View>
       </View>
-      </View>
-
-      {/* <View style={styles.box}>
-      <View style={styles.border}></View>
-      <View>
-      <View style={styles.infoBox}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.image} source={amber}/>
-        <Text style={styles.name}>Amber Heard</Text>
-        </View>
-        <View style={{flexDirection: 'row',}}>
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        </View>
-      </View>
-      <View style={styles.message}>
-        <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
+      <View style={styles.messageBox}>
+      <Text style={styles.msg}>{review.review}</Text>
       </View>
       </View>
-      </View>
-
-      <View style={styles.box}>
-      <View style={styles.border}></View>
-      <View>
-      <View style={styles.infoBox}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.image} source={kate}/>
-        <Text style={styles.name}>Kate Winslet</Text>
-        </View>
-        <View style={{flexDirection: 'row',}}>
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        </View>
-      </View>
-      <View style={styles.message}>
-        <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
-      </View>
-      </View>
-      </View>
-
-      <View style={styles.box}>
-      <View style={styles.border}></View>
-      <View>
-      <View style={styles.infoBox}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.image} source={dua}/>
-        <Text style={styles.name}>Dua Lipa</Text>
-        </View>
-        <View style={{flexDirection: 'row',}}>
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        </View>
-      </View>
-      <View style={styles.message}>
-        <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
-      </View>
-      </View>
-      </View>
-
-      <View style={styles.box}>
-      <View style={styles.border}></View>
-      <View>
-      <View style={styles.infoBox}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image style={styles.image} source={been}/>
-        <Text style={styles.name}>Rowan Atkinson</Text>
-        </View>
-        <View style={{flexDirection: 'row',}}>
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        <FontAwesome style={styles.icon} name="star-half-empty" size={15} color="#F2921D" />
-        </View>
-      </View>
-      <View style={styles.message}>
-        <Text>“Hi thank you for doing business with us. Can you take 1 minute to leave a review about your experience with us? Just go here. Thanks for your help!”</Text>
-      </View>
-      </View>
-      </View> */}
-      </View>
+          )
+      }
       
     </View>
      </ScrollView>
@@ -153,16 +74,18 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         paddingLeft: 10
     },
+    mail:{
+        fontSize: 15,
+        fontWeight: '500',
+        paddingLeft: 10
+    },
     infoBox:{
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
         marginBottom: 10
     },
-    message:{
-        color: '#4e5052',
-        paddingHorizontal: 20
-    },
+    
     review:{
         marginHorizontal: 20,
         paddingBottom: 80
@@ -172,17 +95,27 @@ const styles = StyleSheet.create({
     },
     border:{
         borderLeftWidth: 3,
-        borderColor: '#645CBB',
+        borderColor: '#7286D3',
         borderRadius: 20
     },
     box:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginVertical: 15,
-        backgroundColor: '#dfe2e8',
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 20,
-        paddingVertical: 8
+        paddingVertical: 8,
+    },
+    main:{
+      backgroundColor: '#dfe2e8',
+      marginVertical: 15,
+      borderTopRightRadius: 20,
+      borderBottomRightRadius: 20,
+      
+    },
+    messageBox:{
+      marginBottom: 10,
+      marginHorizontal: 20
+    },
+    msg:{
+      textAlign: 'center',
     }
 })
 

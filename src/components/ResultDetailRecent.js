@@ -19,10 +19,10 @@ export default function ({result, navigation}) {
     onPress={()=> {navigation.navigate('Product', {id:result.id})}}
     >
     <Badge/>
-     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+     <View style={{flexDirection: 'row', }}>
        <Image style={styles.image} resizeMode='contain' source={{ uri: result?.images[0]?.src}} />
       <View style={styles.text}>
-      <Text style={styles.font}>{result.name.length > 17 ? result.name.slice(0, 17) : result.name }</Text>
+      <Text style={styles.font}>{result.name.length > 14 ? result.name.slice(0, 14) : result.name }</Text>
       <View style={{}}>
       <Text style={styles.priceFont}>$ {result.price}</Text>
       <Text style={styles.priceFont}><AntDesign name="staro" size={13} color="#e6840e" />{result.average_rating}</Text>
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
         width: 160,
         height: 80,
         borderRadius: 8,
-        marginTop: 7
+        marginTop: 7,
+        marginRight: 10
     },
     text:{
         marginTop: 7
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
       width: 300,
       marginRight: 10,
       borderRadius: 10,
-      paddingVertical: 10,
+      paddingVertical: 11,
       backgroundColor: 'white',
       elevation: 1,
     }
